@@ -1,0 +1,7 @@
+# Ignore large binary data
+*.h5
+*.bidatex
+
+# large data
+*.h5
+*.bidatex

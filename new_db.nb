@@ -1,0 +1,1267 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     56055,       1258]
+NotebookOptionsPosition[     53442,       1178]
+NotebookOutlinePosition[     53856,       1194]
+CellTagsIndexPosition[     53813,       1191]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Paths and Includes", "Section",
+ CellChangeTimes->{3.4658358838612556`*^9}],
+
+Cell[BoxData[
+ RowBox[{"SetOptions", "[", 
+  RowBox[{"$FrontEnd", ",", 
+   RowBox[{"\"\<CommonDefaultFormatTypes\>\"", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<Output\>\"", "\[Rule]", "StandardForm"}], "}"}]}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.5136178427124233`*^9, 3.513617843725658*^9}, {
+  3.5136178962983103`*^9, 3.5136178972627153`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"basepath", "=", 
+  RowBox[{
+  "$HomeDirectory", "<>", 
+   "\"\</vortex/tmd/mathematica_wigner\>\""}]}]], "Input",
+ CellChangeTimes->{{3.521308195673029*^9, 3.521308274895008*^9}, {
+  3.521308368999238*^9, 3.521308404363431*^9}, {3.568216672108698*^9, 
+  3.568216680393177*^9}, {3.602107170119711*^9, 3.602107171950583*^9}, {
+  3.6068434372544928`*^9, 3.60684346723527*^9}, {3.628208693127437*^9, 
+  3.62820870602936*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SetDirectory", "[", 
+   RowBox[{"basepath", "<>", "\"\</output\>\""}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{
+  3.465835883861718*^9, {3.488021649178638*^9, 3.488021649793486*^9}, {
+   3.5212209168462973`*^9, 3.521220937978141*^9}, 3.521221028684844*^9, {
+   3.521308338012092*^9, 3.5213083481380453`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"includepath", "=", 
+   RowBox[{"basepath", "<>", "\"\</include\>\""}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"AppendTo", "[", 
+   RowBox[{"$Path", ",", " ", "includepath"}], "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.521308972244502*^9, 3.521309004874366*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Needs", "[", "\"\<LatticeAnalysis`\>\"", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.400990976542016*^9, 3.400990981701366*^9}, 
+   3.401172050334284*^9, {3.401604121927861*^9, 3.401604126519025*^9}, {
+   3.401679053257921*^9, 3.401679059090093*^9}, {3.4225991979413013`*^9, 
+   3.422599216599668*^9}, 3.436874516642411*^9, 3.465835883862578*^9, {
+   3.507035282483769*^9, 3.5070352834328737`*^9}, 3.50704412221344*^9, {
+   3.521221020787808*^9, 3.5212210333352537`*^9}, {3.521308421579955*^9, 
+   3.521308432516077*^9}, {3.52130847210113*^9, 3.521308472430008*^9}, {
+   3.521308723999559*^9, 3.5213087384475813`*^9}, {3.5213090346120033`*^9, 
+   3.521309040307746*^9}, {3.521471894122332*^9, 3.521471894535529*^9}, {
+   3.52147373739493*^9, 3.521473762401009*^9}, {3.521835638267199*^9, 
+   3.52183564836001*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "do", " ", "not", " ", "keep", " ", "track", " ", "of", " ", 
+    "intermediate", " ", "results"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"$HistoryLength", "=", "0"}], ";"}]}]], "Input",
+ CellChangeTimes->{{3.5214733045433683`*^9, 3.521473314807867*^9}, 
+   3.521473630801197*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Configuration", "Section",
+ CellChangeTimes->{{3.521221115316156*^9, 3.52122113796704*^9}, 
+   3.5212217197229233`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"quarkchannel", "=", "\"\<down\>\""}], ";"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"can", " ", "be", " ", "\"\<up\>\""}], ",", " ", 
+    RowBox[{"\"\<down\>\"", " ", "or", " ", "\"\<u-d\>\""}]}], " ", "*)"}], 
+  " "}]], "Input",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQBmIQ/ZXpaYyRzSvHmKIDcSDaIEV/cZXtK8eeM6vA9NcW
+3YOLgPT5G9GHQLTjqjq5H0A6rvcWmJ6yL0Vzgd0rRwG/02D6ausdXRA9Q8VF
+D0z7e1iC6DNut8F02m/ustVAWidRD0y/ZFBdvwFI71L0AdM+axo/bwLSQh09
+YNrSJWzzdI7XjluYf28D0R82Pd4FolffNdgNojOWlZ86AKS7ri4G00c2HrgA
+olM6P4PputlJ10D0qcsrwPQa9bL4KxqvHQt+N4HprpULk0H0mpL9YDrK4F8z
+iP7Da9gCol/Wv7iopPna8YAT2yUQDQCi6Z5f
+  "]],
+
+Cell["\<\
+The following line sets up blocking during the creation of Jackknife samples \
+with block size 8.\
+\>", "Text",
+ CellChangeTimes->{{3.521474286629586*^9, 3.521474349972538*^9}, {
+  3.521540962052865*^9, 3.5215409633666286`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"MakeJacknifeSamplesB", "[", "x_", "]"}], ":=", 
+   RowBox[{"MakeJacknifeSamples", "[", 
+    RowBox[{"x", ",", "4"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.602107197329851*^9, 3.602107197430275*^9}, {
+  3.6021608168487377`*^9, 3.602160816895941*^9}, {3.645284077424448*^9, 
+  3.6452840774704533`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Constants", "Section",
+ CellChangeTimes->{{3.4161284091346617`*^9, 3.416128410010634*^9}, {
+  3.455354125983223*^9, 3.455354130746139*^9}, {3.455365967688918*^9, 
+  3.455365972816641*^9}, {3.521221675066144*^9, 3.521221708218614*^9}, {
+  3.5213092858316727`*^9, 3.52130928670268*^9}}],
+
+Cell[BoxData[
+ RowBox[{" ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"quarkchannelshort", "[", "quarkchannel_", "]"}], ":=", 
+    RowBox[{"Switch", "[", 
+     RowBox[{
+     "quarkchannel", ",", "\"\<up\>\"", ",", "\"\<U\>\"", ",", "\"\<down\>\"",
+       ",", "\"\<D\>\"", ",", "\"\<u-d\>\"", ",", "\"\<UminusD\>\"", ",", "_",
+       ",", 
+      RowBox[{"Message", "[", "\"\<INVALID QUARK CHANNEL\>\"", "]"}]}], 
+     "]"}]}], ";"}], " "}]], "Input",
+ CellChangeTimes->{{3.477771084212323*^9, 3.477771121372224*^9}, {
+  3.477771191123767*^9, 3.477771204091957*^9}, {3.507041987266773*^9, 
+  3.507042044381051*^9}, {3.521893664378231*^9, 3.5218936681128798`*^9}, {
+  3.521893711930613*^9, 3.521893723770982*^9}}],
+
+Cell[BoxData[
+ RowBox[{"nuclTMDpath", "=", "\"\</home/tmd/wigner_analys/\>\""}]], "Input",
+ CellChangeTimes->{{3.606843639012735*^9, 3.606843662488449*^9}, {
+  3.628208730449586*^9, 3.628208783752165*^9}, {3.628208983369953*^9, 
+  3.628208984562558*^9}, {3.6284681112583237`*^9, 3.628468111319248*^9}, {
+  3.6284681466998672`*^9, 3.6284681468084517`*^9}, {3.645284088751649*^9, 
+  3.645284089683641*^9}, {3.645284328756797*^9, 3.6452843309914083`*^9}, {
+  3.645284441725171*^9, 3.6452844417969027`*^9}, {3.645284481743085*^9, 
+  3.64528448272303*^9}, {3.9397369390107317`*^9, 3.9397369579086447`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"workTMDpath", "=", "\"\</home/tmd/wigner_analys/\>\""}]], "Input",
+ CellChangeTimes->{{3.477777068286229*^9, 3.477777164711388*^9}, {
+   3.4783416879839067`*^9, 3.478341688088814*^9}, {3.478345026946987*^9, 
+   3.478345027066893*^9}, {3.4801589476070213`*^9, 3.48015894912507*^9}, {
+   3.48085206263103*^9, 3.480852062727272*^9}, {3.480952375629698*^9, 
+   3.4809523776619873`*^9}, {3.5043789435902433`*^9, 3.504378943902042*^9}, {
+   3.505068285391094*^9, 3.5050682854702044`*^9}, {3.5063390501923923`*^9, 
+   3.506339050327779*^9}, {3.507041184034123*^9, 3.507041206010786*^9}, {
+   3.514144567728074*^9, 3.5141445677987423`*^9}, {3.521221483592746*^9, 
+   3.521221504600979*^9}, {3.5212215487783318`*^9, 3.521221586596002*^9}, {
+   3.521222105663659*^9, 3.521222106842783*^9}, {3.521472043720199*^9, 
+   3.521472062295793*^9}, {3.521472201285283*^9, 3.521472206180723*^9}, {
+   3.521472236501375*^9, 3.521472246437492*^9}, {3.521472320775146*^9, 
+   3.5214723229590816`*^9}, {3.521473147754562*^9, 3.521473148449483*^9}, {
+   3.5218929998616858`*^9, 3.521892999994466*^9}, {3.521976040609653*^9, 
+   3.521976041047175*^9}, {3.568216896279953*^9, 3.5682170230175333`*^9}, {
+   3.568217097422789*^9, 3.568217101834655*^9}, 3.568217135387972*^9, {
+   3.6021072297987623`*^9, 3.6021072737720747`*^9}, {3.60684349655723*^9, 
+   3.6068435113205547`*^9}, {3.628208791251034*^9, 3.628208828995472*^9}, {
+   3.628208988575322*^9, 3.6282089900297823`*^9}, {3.645284092176449*^9, 
+   3.645284093133445*^9}, {3.6452843335181*^9, 3.645284334788403*^9}, {
+   3.645284445467359*^9, 3.645284445558618*^9}, {3.645284485414792*^9, 
+   3.645284486341318*^9}, {3.9397369421695137`*^9, 3.9397369623160887`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"exportdatapath", "[", "quarkchannel_", "]"}], ":=", 
+    RowBox[{"workTMDpath", "<>", 
+     RowBox[{"quarkchannelshort", "[", "quarkchannel", "]"}], "<>", 
+     "\"\<_\>\""}]}], ";"}], " "}]], "Input",
+ CellChangeTimes->{{3.52130953380437*^9, 3.521309558453055*^9}, {
+   3.521893676377194*^9, 3.521893680544407*^9}, {3.521893728777618*^9, 
+   3.5218937508985*^9}, {3.521894062786845*^9, 3.521894065138136*^9}, {
+   3.602107304257831*^9, 3.6021073087143927`*^9}, 3.606843675932036*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"resamplingext", "=", 
+   RowBox[{"\"\<_\>\"", "<>", "\"\<jn\>\""}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.436872404566399*^9, 3.436872405747739*^9}, {
+   3.4368725136644363`*^9, 3.436872520496463*^9}, {3.4368725661372833`*^9, 
+   3.43687259991831*^9}, {3.4372218340613213`*^9, 3.4372218489516153`*^9}, 
+   3.437221967353435*^9, {3.437312293505266*^9, 3.437312293777822*^9}, {
+   3.445250497483543*^9, 3.445250500233862*^9}, {3.4452505849634647`*^9, 
+   3.4452505851998787`*^9}, {3.44525064711445*^9, 3.445250659875883*^9}, 
+   3.4658358838649397`*^9, {3.477820619738048*^9, 3.477820622479127*^9}, 
+   3.4778216003192*^9, {3.507044272260893*^9, 3.507044272807486*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Open Databases", "Section",
+ CellChangeTimes->{{3.401074534729836*^9, 3.401074535407317*^9}, {
+   3.401077287738246*^9, 3.401077290222715*^9}, 3.521976191703373*^9}],
+
+Cell[BoxData[
+ RowBox[{"nucmassdb", "=", 
+  RowBox[{"BIDATEXReader", "[", 
+   RowBox[{
+   "nuclTMDpath", "<>", "\"\<NucleonEnergy\>\"", "<>", "resamplingext", "<>", 
+    "\"\<.bidatex\>\""}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.507040993306525*^9, 3.507040997916202*^9}, {
+   3.507041297341263*^9, 3.50704138558116*^9}, {3.507044246394795*^9, 
+   3.507044248478443*^9}, {3.507044297434412*^9, 3.507044299593224*^9}, 
+   3.507044530986836*^9, {3.521976197863182*^9, 3.521976217383497*^9}, {
+   3.6021075644076567`*^9, 3.602107570224975*^9}, {3.606843580579658*^9, 
+   3.606843591707631*^9}}],
+
+Cell["First we test if we can read a smaller data base correctly", "Text",
+ CellChangeTimes->{{3.521992683367631*^9, 3.521992701335639*^9}}],
+
+Cell[BoxData[
+ RowBox[{"platdb", "=", 
+  RowBox[{"BIDATEXReader", "[", 
+   RowBox[{
+    RowBox[{"exportdatapath", "[", "quarkchannel", "]"}], "<>", 
+    "\"\<Plateaus\>\"", "<>", "resamplingext", "<>", "\"\<.bidatex\>\""}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.5070414003120613`*^9, 3.5070414096694317`*^9}, {
+   3.5070415009552794`*^9, 3.507041502016528*^9}, {3.507044254103634*^9, 
+   3.507044254879987*^9}, {3.5070443030242043`*^9, 3.5070443053761806`*^9}, {
+   3.5070445526673098`*^9, 3.507044554119937*^9}, 3.508183281437793*^9, 
+   3.511113043610978*^9, {3.52197622018369*^9, 3.52197622079158*^9}, {
+   3.521977598165579*^9, 3.521977601002137*^9}}],
+
+Cell["Let's see how many entries are in this data base", "Text",
+ CellChangeTimes->{{3.522058568394206*^9, 3.522058584454804*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Length", "[", 
+  RowBox[{"MemDBSelect", "[", 
+   RowBox[{"platdb", ",", 
+    RowBox[{"{", "}"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.5220585265680857`*^9, 3.522058547296689*^9}}],
+
+Cell["Lets look at the first entry", "Text",
+ CellChangeTimes->{{3.522058595775288*^9, 3.5220586028792477`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"MemDBGet", "[", 
+  RowBox[{"platdb", ",", "1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.5219898439501343`*^9, 3.5219898543465147`*^9}}],
+
+Cell[BoxData["platdb"], "Input",
+ CellChangeTimes->{{3.5224352931824102`*^9, 3.5224352938386602`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"MemDBGet", "[", 
+  RowBox[{"platdb", ",", 
+   RowBox[{"MemDBSelect", "[", 
+    RowBox[{"platdb", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"linkPath", "\[Rule]", 
+        RowBox[{"{", "}"}]}], ",", 
+       RowBox[{"gammaValue", "\[Rule]", "8"}], ",", 
+       RowBox[{"numberFilter", "\[Rule]", "Re"}], ",", 
+       RowBox[{"sideExtent", "\[Rule]", "0"}]}], "}"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"sinkMom", ",", "data"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.5224352249806013`*^9, 3.5224352798951893`*^9}, {
+  3.522435322939868*^9, 3.5224353584285173`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"MemDBGet", "[", 
+  RowBox[{"platdb", ",", 
+   RowBox[{"MemDBSelect", "[", 
+    RowBox[{"platdb", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"linkPath", "\[Rule]", 
+        RowBox[{"{", "}"}]}], ",", 
+       RowBox[{"gammaValue", "\[Rule]", "11"}], ",", 
+       RowBox[{"numberFilter", "\[Rule]", "Im"}], ",", 
+       RowBox[{"sideExtent", "\[Rule]", "0"}]}], "}"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"sinkMom", ",", "data", ",", "section"}], "}"}]}], "]"}]], "Input",\
+
+ CellChangeTimes->{{3.5224352249806013`*^9, 3.5224352798951893`*^9}, {
+  3.522435322939868*^9, 3.5224353584285173`*^9}, {3.522435392765953*^9, 
+  3.52243539371485*^9}, {3.522435433911324*^9, 3.522435439627912*^9}, {
+  3.5224354818156567`*^9, 3.52243548274078*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Look at some ratios again, to check DB capabilities", "Section",
+ CellChangeTimes->{{3.5070535671334457`*^9, 3.507053579697743*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["get nucleon mass and global parameters", "Subsection",
+ CellChangeTimes->{{3.522058637681335*^9, 3.522058659251046*^9}}],
+
+Cell[BoxData[
+ RowBox[{"massData", "=", 
+  RowBox[{"MemDBGet", "[", 
+   RowBox[{"nucmassdb", ",", 
+    RowBox[{
+     RowBox[{"MemDBSelect", "[", 
+      RowBox[{"nucmassdb", ",", 
+       RowBox[{"{", 
+        RowBox[{"momTransfer", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], "}"}]}], "]"}], "[", 
+     RowBox[{"[", "1", "]"}], "]"}], ",", "energy"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.507054094673794*^9, 3.507054097439848*^9}, 
+   3.5070541739086437`*^9, {3.5070542303484*^9, 3.507054230483261*^9}, {
+   3.5219799258050423`*^9, 3.521979927132642*^9}}],
+
+Cell[BoxData[
+ RowBox[{"latL", "=", 
+  RowBox[{"glLatL", "/.", 
+   RowBox[{"MemDBGetGlobals", "[", "nucmassdb", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.507054237831883*^9, 3.507054260610716*^9}}],
+
+Cell[BoxData[
+ RowBox[{"lata", "=", 
+  RowBox[{"glLata", "/.", 
+   RowBox[{"MemDBGetGlobals", "[", "nucmassdb", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.507054237831883*^9, 3.507054260610716*^9}, {
+  3.507674578818342*^9, 3.5076745866018333`*^9}, {3.509545490983335*^9, 
+  3.5095454919246893`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "lp", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"MemDBCalcKey", "[", 
+      RowBox[{"platdb", ",", "length", ",", "ind", ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"lp", "=", 
+         RowBox[{"PathToShift", "[", 
+          RowBox[{
+           RowBox[{"MemDBGet", "[", 
+            RowBox[{"platdb", ",", "ind", ",", "linkPath"}], "]"}], ",", 
+           "3"}], "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"Max", "[", 
+         RowBox[{
+          RowBox[{"Abs", "[", 
+           RowBox[{"lp", "[", 
+            RowBox[{"[", "1", "]"}], "]"}], "]"}], ",", 
+          RowBox[{"Abs", "[", 
+           RowBox[{"lp", "[", 
+            RowBox[{"[", "2", "]"}], "]"}], "]"}]}], "]"}]}]}], 
+      "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.646700434399949*^9, 3.6467004447434883`*^9}, {
+  3.646700519231772*^9, 3.6467005408040447`*^9}, {3.6467006389526587`*^9, 
+  3.646700645646275*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "lp", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"MemDBCalcKey", "[", 
+      RowBox[{"platdb", ",", "link", ",", "ind", ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"lp", "=", 
+         RowBox[{"PathToShift", "[", 
+          RowBox[{
+           RowBox[{"MemDBGet", "[", 
+            RowBox[{"platdb", ",", "ind", ",", "linkPath"}], "]"}], ",", 
+           "3"}], "]"}]}], ";", "\[IndentingNewLine]", "lp"}]}], 
+      "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.646749452713683*^9, 3.646749495267808*^9}, {
+  3.646749736354706*^9, 3.646749757225601*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "lp", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"MemDBCalcKey", "[", 
+      RowBox[{
+      "platdb", ",", "tmomlength", ",", "ind", ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"lp", "=", 
+         RowBox[{"MemDBGet", "[", 
+          RowBox[{"platdb", ",", "ind", ",", "sinkMom"}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Max", "[", 
+         RowBox[{
+          RowBox[{"Abs", "[", 
+           RowBox[{"lp", "[", 
+            RowBox[{"[", "1", "]"}], "]"}], "]"}], ",", 
+          RowBox[{"Abs", "[", 
+           RowBox[{"lp", "[", 
+            RowBox[{"[", "2", "]"}], "]"}], "]"}]}], "]"}]}]}], 
+      "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.64674561042934*^9, 3.64674565274524*^9}, {
+  3.646745781055211*^9, 3.646745787968096*^9}, {3.6467460718541203`*^9, 
+  3.64674607259765*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "lp", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"MemDBCalcKey", "[", 
+      RowBox[{
+      "platdb", ",", "longmom", ",", "ind", ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"lp", "=", 
+         RowBox[{"MemDBGet", "[", 
+          RowBox[{"platdb", ",", "ind", ",", "sinkMom"}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"lp", "[", 
+         RowBox[{"[", "3", "]"}], "]"}]}]}], "\[IndentingNewLine]", "]"}], 
+     ";"}]}], "\[IndentingNewLine]", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.646745996351033*^9, 3.646746068635779*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "lp", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"MemDBCalcKey", "[", 
+      RowBox[{
+      "platdb", ",", "etavz", ",", "ind", ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"lp", "=", 
+         RowBox[{"PathToShift", "[", 
+          RowBox[{
+           RowBox[{"MemDBGet", "[", 
+            RowBox[{"platdb", ",", "ind", ",", "sideLink"}], "]"}], ",", 
+           "3"}], "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"lp", "[", 
+         RowBox[{"[", "3", "]"}], "]"}]}]}], "\[IndentingNewLine]", "]"}], 
+     ";"}]}], "\[IndentingNewLine]", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.645441492194427*^9, 3.645441618424559*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"lp1", ",", "lp2", ",", "refval"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"MemDBCalcKey", "[", 
+      RowBox[{
+      "platdb", ",", "reference", ",", "ind", ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"lp1", "=", 
+         RowBox[{"PathToShift", "[", 
+          RowBox[{
+           RowBox[{"MemDBGet", "[", 
+            RowBox[{"platdb", ",", "ind", ",", "linkPath"}], "]"}], ",", 
+           "3"}], "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"lp2", "=", 
+         RowBox[{"MemDBGet", "[", 
+          RowBox[{"platdb", ",", "ind", ",", "sinkMom"}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"refval", "=", "0"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"lp1", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], "\[GreaterEqual]", "0"}], " ", "&&",
+            " ", 
+           RowBox[{
+            RowBox[{"lp2", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], ">", "0"}]}], ",", 
+          RowBox[{"refval", "=", "1"}]}], "]"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"lp1", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], ">", "0"}], " ", "&&", " ", 
+           RowBox[{
+            RowBox[{"Max", "[", 
+             RowBox[{
+              RowBox[{"Abs", "[", 
+               RowBox[{"lp2", "[", 
+                RowBox[{"[", "1", "]"}], "]"}], "]"}], ",", 
+              RowBox[{"Abs", "[", 
+               RowBox[{"lp2", "[", 
+                RowBox[{"[", "2", "]"}], "]"}], "]"}]}], "]"}], "\[Equal]", 
+            "0"}]}], ",", 
+          RowBox[{"refval", "=", "1"}]}], "]"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"Max", "[", 
+             RowBox[{
+              RowBox[{"Abs", "[", 
+               RowBox[{"lp1", "[", 
+                RowBox[{"[", "1", "]"}], "]"}], "]"}], ",", 
+              RowBox[{"Abs", "[", 
+               RowBox[{"lp1", "[", 
+                RowBox[{"[", "2", "]"}], "]"}], "]"}]}], "]"}], "\[Equal]", 
+            "0"}], " ", "&&", " ", 
+           RowBox[{
+            RowBox[{"Max", "[", 
+             RowBox[{
+              RowBox[{"Abs", "[", 
+               RowBox[{"lp2", "[", 
+                RowBox[{"[", "1", "]"}], "]"}], "]"}], ",", 
+              RowBox[{"Abs", "[", 
+               RowBox[{"lp2", "[", 
+                RowBox[{"[", "2", "]"}], "]"}], "]"}]}], "]"}], "\[Equal]", 
+            "0"}]}], ",", 
+          RowBox[{"refval", "=", "1"}]}], "]"}], ";", "\[IndentingNewLine]", 
+        "refval"}]}], "\[IndentingNewLine]", "]"}], ";"}]}], 
+   "\[IndentingNewLine]", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.6467462870526257`*^9, 3.646746315297777*^9}, {
+   3.646746900120512*^9, 3.646746949847871*^9}, {3.646747105974656*^9, 
+   3.646747148097535*^9}, {3.646747315245216*^9, 3.646747318165365*^9}, {
+   3.646747419114319*^9, 3.646747448366188*^9}, {3.6467476097164783`*^9, 
+   3.646747629476287*^9}, {3.646747924159403*^9, 3.646748027438538*^9}, {
+   3.6467480604921923`*^9, 3.646748065508317*^9}, {3.646748355020237*^9, 
+   3.646748356041798*^9}, {3.646748565186368*^9, 3.64674857131385*^9}, {
+   3.646748637398291*^9, 3.64674866830044*^9}, {3.6467487589718523`*^9, 
+   3.646748763840172*^9}, {3.6467487987949247`*^9, 3.646748870281188*^9}, {
+   3.646748928516135*^9, 3.6467489302124434`*^9}, {3.646748982144393*^9, 
+   3.646749006995352*^9}, {3.64674932396516*^9, 3.646749324759107*^9}, 
+   3.6467493702473087`*^9, {3.646750751267128*^9, 3.64675077080628*^9}, {
+   3.6467509403905077`*^9, 3.646750951453068*^9}, {3.646750989173856*^9, 
+   3.64675099771288*^9}, {3.646751028359056*^9, 3.646751031529166*^9}}],
+
+Cell[BoxData["platdb"], "Input",
+ CellChangeTimes->{{3.628432594881754*^9, 3.6284325981239653`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "form a ratio of imaginary to real part for ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Gamma]", "0"], TraditionalForm]], "None"]
+}], "Subsection",
+ CellChangeTimes->{{3.5220589043870296`*^9, 3.522058930108259*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"tstind", " ", "=", " ", 
+   RowBox[{"MemDBSelect", "[", 
+    RowBox[{"platdb", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"section", "\[Rule]", "\"\<ulinks\>\""}], ",", 
+       RowBox[{"gammaValue", "\[Rule]", "8"}], ",", 
+       RowBox[{"linkPath", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"2", ",", "2", ",", "2"}], "}"}]}], ",", 
+       RowBox[{"sinkMom", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "1"}], ",", "0", ",", 
+          RowBox[{"-", "1"}]}], "}"}]}], ",", 
+       RowBox[{"numberFilter", "\[Rule]", "Re"}]}], "}"}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.5220589844396553`*^9, 3.522059060912362*^9}, {
+  3.5220591473328943`*^9, 3.5220591686339703`*^9}, {3.522059306736678*^9, 
+  3.522059342144169*^9}, {3.522059377922738*^9, 3.522059383551837*^9}, {
+  3.568217432182268*^9, 3.568217433175679*^9}, {3.6282086671126127`*^9, 
+  3.628208668287568*^9}, {3.6454418632338343`*^9, 3.645441867006157*^9}}],
+
+Cell[BoxData[
+ RowBox[{"MemDBGet", "[", 
+  RowBox[{"platdb", ",", "tstind", ",", "sideLink"}], "]"}]], "Input",
+ CellChangeTimes->{{3.5220590624385843`*^9, 3.522059073134531*^9}, {
+  3.522059290591216*^9, 3.522059291507119*^9}, {3.522059326599744*^9, 
+  3.522059327900804*^9}}],
+
+Cell[BoxData[
+ RowBox[{"MemDBGet", "[", 
+  RowBox[{"platdb", ",", "tstind", ",", "momTransfer"}], "]"}]], "Input",
+ CellChangeTimes->{{3.645442826550454*^9, 3.64544286042376*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ratdb", "=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"sel", ",", "res", ",", "ind", ",", "count", ",", "sel1"}], 
+      "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"sel", "=", 
+       RowBox[{"MemDBSelect", "[", 
+        RowBox[{"platdb", ",", 
+         RowBox[{"{", 
+          RowBox[{"section", "\[Rule]", "\"\<ulinks\>\""}], "}"}]}], "]"}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", 
+       RowBox[{"Length", "[", "sel", "]"}], "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"count", "=", "1"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"res", "=", 
+       RowBox[{"MemDBZip", "[", 
+        RowBox[{"platdb", ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "section", ",", "tmomlength", ",", "longmom", ",", "length", ",", 
+           "etavz"}], "}"}], ",", "ind", ",", "data", ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"(*", " ", 
+          RowBox[{
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Length", "[", "ind", "]"}], "=!=", "2"}], ",", 
+             RowBox[{
+              RowBox[{"Print", "[", 
+               RowBox[{"MemDBGet", "[", 
+                RowBox[{"platdb", ",", "ind"}], "]"}], "]"}], ";", 
+              RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";"}], " ", "*)"}], 
+         "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"thisgammaValue", "=", "8"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"thisnumberFilter", "=", "Re"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"(*", " ", 
+           RowBox[{
+            RowBox[{"thisgammaValue", "=", "4"}], ";", "\[IndentingNewLine]", 
+            
+            RowBox[{"thisnumberFilter", "=", "Im"}], ";"}], " ", "*)"}], 
+          "\[IndentingNewLine]", 
+          RowBox[{"sel1", "=", 
+           RowBox[{"MemDBSelectUnique", "[", 
+            RowBox[{"platdb", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"gammaValue", "\[Rule]", "thisgammaValue"}], ",", 
+               RowBox[{"numberFilter", "\[Rule]", "thisnumberFilter"}], ",", 
+               RowBox[{"reference", "\[Rule]", "1"}]}], "}"}], ",", 
+             RowBox[{"Selection", "\[Rule]", "ind"}]}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"thistmomlength", "=", 
+           RowBox[{"MemDBGet", "[", 
+            RowBox[{"platdb", ",", "sel1", ",", "tmomlength"}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"thislongmom", "=", 
+           RowBox[{"MemDBGet", "[", 
+            RowBox[{"platdb", ",", "sel1", ",", "longmom"}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"thislength", "=", 
+           RowBox[{"MemDBGet", "[", 
+            RowBox[{"platdb", ",", "sel1", ",", "length"}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"thisetavz", "=", 
+           RowBox[{"MemDBGet", "[", 
+            RowBox[{"platdb", ",", "sel1", ",", "etavz"}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"negsel1", "=", 
+           RowBox[{"MemDBSelectUnique", "[", 
+            RowBox[{"platdb", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"section", "\[Rule]", "\"\<ulinks\>\""}], ",", 
+               RowBox[{"gammaValue", "\[Rule]", "thisgammaValue"}], ",", 
+               RowBox[{"numberFilter", "\[Rule]", "thisnumberFilter"}], ",", 
+               RowBox[{"sinkMom", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{"0", ",", "thistmomlength", ",", "thislongmom"}], 
+                 "}"}]}], ",", 
+               RowBox[{"link", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"-", "1"}], "*", "thislength"}], ",", "0", ",", 
+                  "0"}], "}"}]}], ",", 
+               RowBox[{"etavz", "\[Rule]", "thisetavz"}]}], "}"}]}], "]"}]}], 
+          ";", "\[IndentingNewLine]", 
+          RowBox[{"sel2", "=", 
+           RowBox[{"MemDBSelectUnique", "[", 
+            RowBox[{"platdb", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"section", "\[Rule]", "\"\<ulinks\>\""}], ",", 
+               RowBox[{"gammaValue", "\[Rule]", "thisgammaValue"}], ",", 
+               RowBox[{"numberFilter", "\[Rule]", "thisnumberFilter"}], ",", 
+               RowBox[{"sinkMom", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{"thistmomlength", ",", "0", ",", "thislongmom"}], 
+                 "}"}]}], ",", 
+               RowBox[{"link", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{"0", ",", "thislength", ",", "0"}], "}"}]}], ",", 
+               RowBox[{"etavz", "\[Rule]", "thisetavz"}]}], "}"}]}], "]"}]}], 
+          ";", "\[IndentingNewLine]", 
+          RowBox[{"negsel2", "=", 
+           RowBox[{"MemDBSelectUnique", "[", 
+            RowBox[{"platdb", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"section", "\[Rule]", "\"\<ulinks\>\""}], ",", 
+               RowBox[{"gammaValue", "\[Rule]", "thisgammaValue"}], ",", 
+               RowBox[{"numberFilter", "\[Rule]", "thisnumberFilter"}], ",", 
+               RowBox[{"sinkMom", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{"thistmomlength", ",", "0", ",", "thislongmom"}], 
+                 "}"}]}], ",", 
+               RowBox[{"link", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{"0", ",", 
+                  RowBox[{
+                   RowBox[{"-", "1"}], "*", "thislength"}], ",", "0"}], 
+                 "}"}]}], ",", 
+               RowBox[{"etavz", "\[Rule]", "thisetavz"}]}], "}"}]}], "]"}]}], 
+          ";", "\[IndentingNewLine]", 
+          RowBox[{"negqsel1", "=", 
+           RowBox[{"MemDBSelectUnique", "[", 
+            RowBox[{"platdb", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"section", "\[Rule]", "\"\<ulinks\>\""}], ",", 
+               RowBox[{"gammaValue", "\[Rule]", "thisgammaValue"}], ",", 
+               RowBox[{"numberFilter", "\[Rule]", "thisnumberFilter"}], ",", 
+               RowBox[{"sinkMom", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{"0", ",", 
+                  RowBox[{
+                   RowBox[{"-", "1"}], "*", "thistmomlength"}], ",", 
+                  "thislongmom"}], "}"}]}], ",", 
+               RowBox[{"link", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{"thislength", ",", "0", ",", "0"}], "}"}]}], ",", 
+               RowBox[{"etavz", "\[Rule]", "thisetavz"}]}], "}"}]}], "]"}]}], 
+          ";", "\[IndentingNewLine]", 
+          RowBox[{"negqnegsel1", "=", 
+           RowBox[{"MemDBSelectUnique", "[", 
+            RowBox[{"platdb", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"section", "\[Rule]", "\"\<ulinks\>\""}], ",", 
+               RowBox[{"gammaValue", "\[Rule]", "thisgammaValue"}], ",", 
+               RowBox[{"numberFilter", "\[Rule]", "thisnumberFilter"}], ",", 
+               RowBox[{"sinkMom", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{"0", ",", 
+                  RowBox[{
+                   RowBox[{"-", "1"}], "*", "thistmomlength"}], ",", 
+                  "thislongmom"}], "}"}]}], ",", 
+               RowBox[{"link", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"-", "1"}], "*", "thislength"}], ",", "0", ",", 
+                  "0"}], "}"}]}], ",", 
+               RowBox[{"etavz", "\[Rule]", "thisetavz"}]}], "}"}]}], "]"}]}], 
+          ";", "\[IndentingNewLine]", 
+          RowBox[{"negqsel2", "=", 
+           RowBox[{"MemDBSelectUnique", "[", 
+            RowBox[{"platdb", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"section", "\[Rule]", "\"\<ulinks\>\""}], ",", 
+               RowBox[{"gammaValue", "\[Rule]", "thisgammaValue"}], ",", 
+               RowBox[{"numberFilter", "\[Rule]", "thisnumberFilter"}], ",", 
+               RowBox[{"sinkMom", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"-", "1"}], "*", "thistmomlength"}], ",", "0", ",",
+                   "thislongmom"}], "}"}]}], ",", 
+               RowBox[{"link", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{"0", ",", "thislength", ",", "0"}], "}"}]}], ",", 
+               RowBox[{"etavz", "\[Rule]", "thisetavz"}]}], "}"}]}], "]"}]}], 
+          ";", "\[IndentingNewLine]", 
+          RowBox[{"negqnegsel2", "=", 
+           RowBox[{"MemDBSelectUnique", "[", 
+            RowBox[{"platdb", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"section", "\[Rule]", "\"\<ulinks\>\""}], ",", 
+               RowBox[{"gammaValue", "\[Rule]", "thisgammaValue"}], ",", 
+               RowBox[{"numberFilter", "\[Rule]", "thisnumberFilter"}], ",", 
+               RowBox[{"sinkMom", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"-", "1"}], "*", "thistmomlength"}], ",", "0", ",",
+                   "thislongmom"}], "}"}]}], ",", 
+               RowBox[{"link", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{"0", ",", 
+                  RowBox[{
+                   RowBox[{"-", "1"}], "*", "thislength"}], ",", "0"}], 
+                 "}"}]}], ",", 
+               RowBox[{"etavz", "\[Rule]", "thisetavz"}]}], "}"}]}], "]"}]}], 
+          ";", "\[IndentingNewLine]", 
+          RowBox[{"reval1", "=", 
+           RowBox[{"MemDBGet", "[", 
+            RowBox[{"platdb", ",", "sel1", ",", "data"}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"negreval1", "=", 
+           RowBox[{"MemDBGet", "[", 
+            RowBox[{"platdb", ",", "negsel1", ",", "data"}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"reval2", "=", 
+           RowBox[{"MemDBGet", "[", 
+            RowBox[{"platdb", ",", "sel2", ",", "data"}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"negreval2", "=", 
+           RowBox[{"MemDBGet", "[", 
+            RowBox[{"platdb", ",", "negsel2", ",", "data"}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"negqreval1", "=", 
+           RowBox[{"MemDBGet", "[", 
+            RowBox[{"platdb", ",", "negqsel1", ",", "data"}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"negqnegreval1", "=", 
+           RowBox[{"MemDBGet", "[", 
+            RowBox[{"platdb", ",", "negqnegsel1", ",", "data"}], "]"}]}], ";",
+           "\[IndentingNewLine]", 
+          RowBox[{"negqreval2", "=", 
+           RowBox[{"MemDBGet", "[", 
+            RowBox[{"platdb", ",", "negqsel2", ",", "data"}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"negqnegreval2", "=", 
+           RowBox[{"MemDBGet", "[", 
+            RowBox[{"platdb", ",", "negqnegsel2", ",", "data"}], "]"}]}], ";",
+           "\[IndentingNewLine]", 
+          RowBox[{"denomsinkMom", "=", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", "thislongmom"}], "}"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"denomsel1", "=", 
+           RowBox[{"MemDBSelectUnique", "[", 
+            RowBox[{"platdb", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"section", "\[Rule]", "\"\<ulinks\>\""}], ",", 
+               RowBox[{"gammaValue", "\[Rule]", "thisgammaValue"}], ",", 
+               RowBox[{"sinkMom", "\[Rule]", "denomsinkMom"}], ",", 
+               RowBox[{"numberFilter", "\[Rule]", "thisnumberFilter"}], ",", 
+               RowBox[{"link", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{"thislength", ",", "0", ",", "0"}], "}"}]}], ",", 
+               RowBox[{"etavz", "\[Rule]", "thisetavz"}]}], "}"}]}], "]"}]}], 
+          ";", "\[IndentingNewLine]", 
+          RowBox[{"denomnegsel1", "=", 
+           RowBox[{"MemDBSelectUnique", "[", 
+            RowBox[{"platdb", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"section", "\[Rule]", "\"\<ulinks\>\""}], ",", 
+               RowBox[{"gammaValue", "\[Rule]", "thisgammaValue"}], ",", 
+               RowBox[{"sinkMom", "\[Rule]", "denomsinkMom"}], ",", 
+               RowBox[{"numberFilter", "\[Rule]", "thisnumberFilter"}], ",", 
+               RowBox[{"link", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"-", "1"}], "*", "thislength"}], ",", "0", ",", 
+                  "0"}], "}"}]}], ",", 
+               RowBox[{"etavz", "\[Rule]", "thisetavz"}]}], "}"}]}], "]"}]}], 
+          ";", "\[IndentingNewLine]", 
+          RowBox[{"denomsel2", "=", 
+           RowBox[{"MemDBSelectUnique", "[", 
+            RowBox[{"platdb", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"section", "\[Rule]", "\"\<ulinks\>\""}], ",", 
+               RowBox[{"gammaValue", "\[Rule]", "thisgammaValue"}], ",", 
+               RowBox[{"sinkMom", "\[Rule]", "denomsinkMom"}], ",", 
+               RowBox[{"numberFilter", "\[Rule]", "thisnumberFilter"}], ",", 
+               RowBox[{"link", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{"0", ",", "thislength", ",", "0"}], "}"}]}], ",", 
+               RowBox[{"etavz", "\[Rule]", "thisetavz"}]}], "}"}]}], "]"}]}], 
+          ";", "\[IndentingNewLine]", 
+          RowBox[{"denomnegsel2", "=", 
+           RowBox[{"MemDBSelectUnique", "[", 
+            RowBox[{"platdb", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"section", "\[Rule]", "\"\<ulinks\>\""}], ",", 
+               RowBox[{"gammaValue", "\[Rule]", "thisgammaValue"}], ",", 
+               RowBox[{"sinkMom", "\[Rule]", "denomsinkMom"}], ",", 
+               RowBox[{"numberFilter", "\[Rule]", "thisnumberFilter"}], ",", 
+               RowBox[{"link", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{"0", ",", 
+                  RowBox[{
+                   RowBox[{"-", "1"}], "*", "thislength"}], ",", "0"}], 
+                 "}"}]}], ",", 
+               RowBox[{"etavz", "\[Rule]", "thisetavz"}]}], "}"}]}], "]"}]}], 
+          ";", "\[IndentingNewLine]", 
+          RowBox[{"denomreval1", "=", 
+           RowBox[{"MemDBGet", "[", 
+            RowBox[{"platdb", ",", "denomsel1", ",", "data"}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"denomnegreval1", "=", 
+           RowBox[{"MemDBGet", "[", 
+            RowBox[{"platdb", ",", "denomnegsel1", ",", "data"}], "]"}]}], 
+          ";", "\[IndentingNewLine]", 
+          RowBox[{"denomreval2", "=", 
+           RowBox[{"MemDBGet", "[", 
+            RowBox[{"platdb", ",", "denomsel2", ",", "data"}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"denomnegreval2", "=", 
+           RowBox[{"MemDBGet", "[", 
+            RowBox[{"platdb", ",", "denomnegsel2", ",", "data"}], "]"}]}], 
+          ";", "\[IndentingNewLine]", 
+          RowBox[{"db1", "=", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"reval1", "-", "negreval1"}], ")"}], "/", "2"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"db2", "=", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"reval2", "-", "negreval2"}], ")"}], "/", "2"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"negqdb1", "=", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"negqreval1", "-", "negqnegreval1"}], ")"}], "/", 
+            "2"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"negqdb2", "=", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"negqreval2", "-", "negqnegreval2"}], ")"}], "/", 
+            "2"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"dq2db1", "=", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"db1", "-", "negqdb1"}], ")"}], "/", "2"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"dq1db2", "=", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"db2", "-", "negqdb2"}], ")"}], "/", "2"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"cross", "=", 
+           RowBox[{"dq2db1", "-", "dq1db2"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"denom", "=", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+             "denomreval1", "+", "denomnegreval1", "+", "denomreval2", "+", 
+              "denomnegreval2"}], ")"}], "/", "4"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"ratio", "=", 
+           RowBox[{"cross", "/", "denom"}]}], ";", "\[IndentingNewLine]", 
+          "ratio"}], "\[IndentingNewLine]", ",", 
+         RowBox[{"Selection", "\[Rule]", "sel"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "res"}]}], "\[IndentingNewLine]", "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.5070535947814837`*^9, 3.507053664743326*^9}, {
+   3.507053732250671*^9, 3.507053838261483*^9}, {3.507054303593992*^9, 
+   3.5070543467323112`*^9}, {3.507054390981926*^9, 3.507054432011557*^9}, {
+   3.507635654354622*^9, 3.5076357240661*^9}, {3.507636073852474*^9, 
+   3.5076361978225527`*^9}, {3.507636231578745*^9, 3.507636256900167*^9}, 
+   3.507638291489448*^9, {3.507638323353918*^9, 3.507638324359276*^9}, {
+   3.507638366539603*^9, 3.507638419975601*^9}, {3.5076387505972347`*^9, 
+   3.507638867006008*^9}, {3.507639716946595*^9, 3.507639745788011*^9}, {
+   3.507639957689333*^9, 3.50763995863888*^9}, {3.5076400567973833`*^9, 
+   3.507640240978105*^9}, {3.508183287890997*^9, 3.508183292516844*^9}, {
+   3.509545669932959*^9, 3.5095456912743*^9}, {3.509545748118874*^9, 
+   3.509545763443989*^9}, {3.514050462231146*^9, 3.514050464164056*^9}, {
+   3.521980015367404*^9, 3.5219800566719112`*^9}, {3.521980102355867*^9, 
+   3.521980109064467*^9}, {3.52198075073321*^9, 3.521980781779587*^9}, {
+   3.5220593971258507`*^9, 3.522059403985262*^9}, {3.5682174710360327`*^9, 
+   3.5682174719353323`*^9}, {3.628208661722645*^9, 3.6282086627718763`*^9}, {
+   3.62826714483456*^9, 3.628267183742373*^9}, {3.628270678745796*^9, 
+   3.628270678798231*^9}, {3.628270712280119*^9, 3.628270730457884*^9}, {
+   3.628382844517537*^9, 3.628382868132875*^9}, {3.628386689493204*^9, 
+   3.6283866988562317`*^9}, {3.62838734432025*^9, 3.628387352163137*^9}, {
+   3.628387388831304*^9, 3.6283873910876207`*^9}, {3.6284326990862017`*^9, 
+   3.628432800400818*^9}, {3.628432880671052*^9, 3.628432882022341*^9}, {
+   3.628432983458913*^9, 3.628433037693489*^9}, {3.6284330857211123`*^9, 
+   3.628433168654907*^9}, {3.6284332442682047`*^9, 3.6284332602653027`*^9}, {
+   3.628433302606209*^9, 3.628433303129107*^9}, {3.628433548897575*^9, 
+   3.628433595007577*^9}, {3.6284337780530453`*^9, 3.6284337799449177`*^9}, {
+   3.628434001568283*^9, 3.628434022992868*^9}, {3.628434058793874*^9, 
+   3.628434087923815*^9}, {3.628434130257732*^9, 3.6284341460873613`*^9}, {
+   3.62843417738739*^9, 3.628434370185446*^9}, {3.628434452870469*^9, 
+   3.628434457369088*^9}, {3.6284345028736763`*^9, 3.628434519167305*^9}, {
+   3.6284346355083523`*^9, 3.6284347301091013`*^9}, {3.645284623039732*^9, 
+   3.645284623849101*^9}, {3.6452847086601133`*^9, 3.645284782108774*^9}, 
+   3.645284839695126*^9, {3.64528501445498*^9, 3.645285015233371*^9}, {
+   3.6452850505355253`*^9, 3.64528506366753*^9}, {3.64528535177325*^9, 
+   3.64528535958151*^9}, {3.645286145575275*^9, 3.6452861591295853`*^9}, {
+   3.645286600741272*^9, 3.64528660836043*^9}, {3.645286684160057*^9, 
+   3.645286686797906*^9}, {3.6452867197689857`*^9, 3.6452867559704857`*^9}, {
+   3.645286790559988*^9, 3.645286790857177*^9}, {3.645314616970455*^9, 
+   3.645314628179843*^9}, {3.645315072504018*^9, 3.645315122108639*^9}, {
+   3.645315170552908*^9, 3.64531528878087*^9}, {3.64531540302205*^9, 
+   3.6453154617889433`*^9}, {3.645315507789003*^9, 3.6453155106479607`*^9}, {
+   3.645315672326174*^9, 3.645315684959833*^9}, {3.645315757695834*^9, 
+   3.645315765075551*^9}, {3.6453160368422956`*^9, 3.6453160504525757`*^9}, {
+   3.645318489783059*^9, 3.645318519912676*^9}, {3.645318586015441*^9, 
+   3.645318613143564*^9}, {3.645318765275923*^9, 3.645318844284881*^9}, {
+   3.6453189459048634`*^9, 3.645318953170223*^9}, 3.6453191401214952`*^9, {
+   3.645319625701851*^9, 3.645319628981882*^9}, {3.645319661476215*^9, 
+   3.645319665541594*^9}, {3.645324299388933*^9, 3.645324304578784*^9}, {
+   3.645324348234413*^9, 3.645324462995564*^9}, {3.6453245805959167`*^9, 
+   3.6453245849149103`*^9}, {3.64532475601339*^9, 3.645324762715282*^9}, {
+   3.645441668800791*^9, 3.6454416886949778`*^9}, {3.645441734948842*^9, 
+   3.6454418375466843`*^9}, {3.645441904623213*^9, 3.645441924585724*^9}, {
+   3.645442196026976*^9, 3.645442197213067*^9}, {3.645445760065604*^9, 
+   3.6454457673993053`*^9}, {3.64545827460331*^9, 3.6454584831783733`*^9}, {
+   3.6454588289314127`*^9, 3.645458837370648*^9}, {3.645459231514001*^9, 
+   3.6454592346930323`*^9}, {3.6454595224132032`*^9, 3.645459666326622*^9}, {
+   3.645460023989567*^9, 3.645460126401643*^9}, {3.645580714827948*^9, 
+   3.645580740365653*^9}, {3.645580817409446*^9, 3.645580838088159*^9}, {
+   3.645580940251395*^9, 3.645581013280244*^9}, {3.6455812361960278`*^9, 
+   3.645581240155843*^9}, {3.645581374367484*^9, 3.6455813869849787`*^9}, {
+   3.645611524126021*^9, 3.645611525776969*^9}, {3.64561376472187*^9, 
+   3.6456138074340067`*^9}, {3.645695649471231*^9, 3.645695686351111*^9}, {
+   3.645695898664926*^9, 3.64569591240408*^9}, {3.645696005969396*^9, 
+   3.645696155750759*^9}, {3.646652433992639*^9, 3.646652481384494*^9}, {
+   3.6466527374058933`*^9, 3.646652758879347*^9}, {3.6466533349269114`*^9, 
+   3.646653357037524*^9}, {3.646699359421417*^9, 3.646699525246501*^9}, {
+   3.6467009311770153`*^9, 3.646700934239352*^9}, 3.646700970588065*^9, {
+   3.646701191826683*^9, 3.6467012030843763`*^9}, {3.646701345074423*^9, 
+   3.64670135675779*^9}, {3.646701415765847*^9, 3.646701496367989*^9}, {
+   3.646701601950965*^9, 3.646701673246325*^9}, {3.6467019026593103`*^9, 
+   3.646701920824024*^9}, {3.646702270189321*^9, 3.646702362138597*^9}, {
+   3.646745859653379*^9, 3.646745863922433*^9}, {3.6467459520061626`*^9, 
+   3.646745954274562*^9}, {3.646749046941237*^9, 3.646749062586667*^9}, {
+   3.64674912893792*^9, 3.646749163743167*^9}, {3.646749636952588*^9, 
+   3.6467496872553053`*^9}, {3.646749793505157*^9, 3.6467498430961637`*^9}, {
+   3.646749873625339*^9, 3.64674991571627*^9}, {3.6467501710921497`*^9, 
+   3.646750178942691*^9}, {3.646750220641645*^9, 3.646750241177051*^9}, {
+   3.6467502787515306`*^9, 3.6467503099241467`*^9}, {3.646751319773342*^9, 
+   3.646751325603574*^9}, {3.64675223727073*^9, 3.646752278620964*^9}, {
+   3.646752378049909*^9, 3.646752411062752*^9}, {3.646847826132103*^9, 
+   3.64684782714363*^9}, {3.646847857903729*^9, 3.646847928162931*^9}, 
+   3.64684804884321*^9, {3.6468480803995733`*^9, 3.646848254351754*^9}, {
+   3.646848453156509*^9, 3.646848485358354*^9}, {3.646848516049261*^9, 
+   3.6468485326970654`*^9}, {3.646848615084496*^9, 3.64684888416591*^9}, {
+   3.6468489277538*^9, 3.646848938437253*^9}, 3.64684935317173*^9, {
+   3.6469116559269457`*^9, 3.6469118717773037`*^9}, {3.6469119108940277`*^9, 
+   3.646911937984277*^9}, {3.646911975781064*^9, 3.646911985031855*^9}, {
+   3.646912045477735*^9, 3.646912120801634*^9}, {3.646912332843505*^9, 
+   3.6469123360142717`*^9}, {3.6469123831011744`*^9, 3.646912384147118*^9}, {
+   3.64691243314998*^9, 3.646912436926066*^9}, {3.6469124975884533`*^9, 
+   3.646912566440482*^9}, {3.646912606038403*^9, 3.646912627126278*^9}, {
+   3.646912830817321*^9, 3.646912949951097*^9}, {3.646913128553988*^9, 
+   3.646913204142076*^9}, {3.646913611405712*^9, 3.646913614786285*^9}, {
+   3.6469147464417667`*^9, 3.646914774186817*^9}, {3.646914813200591*^9, 
+   3.646914836165552*^9}, {3.646914946601324*^9, 3.646914950769668*^9}, {
+   3.646914983937428*^9, 3.6469150491879597`*^9}, {3.6469151053582497`*^9, 
+   3.646915108291416*^9}, {3.646915187877146*^9, 3.646915207529335*^9}, {
+   3.646915582064393*^9, 3.646915636279758*^9}, {3.646915840781682*^9, 
+   3.646915857609303*^9}, {3.6469161518690166`*^9, 3.646916163762237*^9}, {
+   3.6469162080424557`*^9, 3.64691621352877*^9}, {3.646916289003446*^9, 
+   3.646916295799295*^9}, {3.6469164829574823`*^9, 3.646916567894451*^9}, {
+   3.646916646671489*^9, 3.6469167015939074`*^9}, {3.6469167437639637`*^9, 
+   3.646916769760599*^9}, {3.6469174364890957`*^9, 3.6469175235025187`*^9}, {
+   3.646917570708102*^9, 3.646917705779714*^9}, {3.646917785025828*^9, 
+   3.6469177888608418`*^9}, {3.646918072756053*^9, 3.646918095700057*^9}, {
+   3.647201541923333*^9, 3.647201592775176*^9}, {3.6472016562736073`*^9, 
+   3.6472017065458107`*^9}, {3.64720295403088*^9, 3.647202955574574*^9}, {
+   3.647203438767892*^9, 3.647203566500164*^9}, {3.647207944192944*^9, 
+   3.647208044933255*^9}, {3.647210930376502*^9, 3.647210936011321*^9}, {
+   3.647211088778695*^9, 3.647211226064818*^9}, 3.647211364219129*^9, {
+   3.6472114637833433`*^9, 3.647211583154913*^9}, {3.647211637514689*^9, 
+   3.647211638174365*^9}, {3.647212457172064*^9, 3.6472126476516857`*^9}, {
+   3.647212680974565*^9, 3.647212713073656*^9}, {3.647212768878703*^9, 
+   3.6472127829330378`*^9}, {3.6472130328759403`*^9, 3.647213035190235*^9}, 
+   3.647214939313711*^9, {3.647253098290745*^9, 3.647253199374125*^9}, {
+   3.6472532455814247`*^9, 3.6472532462711487`*^9}, {3.647253336068544*^9, 
+   3.6472533422055387`*^9}, {3.6472533754416103`*^9, 3.647253573412427*^9}, {
+   3.6472537077986307`*^9, 3.6472537250203867`*^9}, {3.6472537572860126`*^9, 
+   3.647253803273321*^9}, {3.647254241542075*^9, 3.6472542445509872`*^9}, {
+   3.939737175664057*^9, 3.939737207988645*^9}}],
+
+Cell[BoxData["ratdb"], "Input",
+ CellChangeTimes->{{3.628432862134343*^9, 3.628432865207026*^9}, {
+  3.647254558754451*^9, 3.6472545636943207`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"tst", "=", 
+  RowBox[{"MemDBGet", "[", 
+   RowBox[{"ratdb", ",", 
+    RowBox[{"MemDBSelect", "[", 
+     RowBox[{"ratdb", ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"tmomlength", "\[Rule]", "1"}], ",", 
+        RowBox[{"longmom", "\[Rule]", "0"}], ",", 
+        RowBox[{"etavz", "\[Rule]", "0"}]}], "}"}]}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"length", ",", "data"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.507052396684245*^9, 3.507052451228492*^9}, {
+   3.507053390851804*^9, 3.507053412666079*^9}, {3.5070535201109657`*^9, 
+   3.507053521083983*^9}, {3.507638181992865*^9, 3.507638188943759*^9}, {
+   3.5076383031302853`*^9, 3.507638303343721*^9}, 3.5219807948579817`*^9, {
+   3.628270187932253*^9, 3.628270191824081*^9}, {3.62827023779817*^9, 
+   3.628270239604978*^9}, {3.6452866188234863`*^9, 3.6452866235313787`*^9}, {
+   3.645286826910613*^9, 3.6452868282029543`*^9}, {3.645315354318273*^9, 
+   3.6453153592362747`*^9}, 3.64532448760259*^9, {3.6453247873687973`*^9, 
+   3.6453248086051073`*^9}, {3.645445485258855*^9, 3.6454454937397346`*^9}, {
+   3.64545974222653*^9, 3.645459773478631*^9}, {3.6454599954358807`*^9, 
+   3.6454599978512077`*^9}, {3.645695715789802*^9, 3.645695717950985*^9}, 
+   3.6467017166110287`*^9, {3.6467513651711483`*^9, 3.646751386033589*^9}}],
+
+Cell["This is our signal:", "Text",
+ CellChangeTimes->{{3.522059512470731*^9, 3.522059522899476*^9}, {
+  3.628434857934943*^9, 3.628434863612235*^9}}],
+
+Cell[BoxData[
+ RowBox[{"ErrorListPlot", "[", 
+  RowBox[{
+   RowBox[{"MakeErrBars", "[", "tst", "]"}], ",", 
+   RowBox[{"Frame", "\[Rule]", "True"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.507053418382831*^9, 3.5070534218370953`*^9}, {
+  3.5070534805246696`*^9, 3.507053504354918*^9}, {3.521981356509572*^9, 
+  3.521981356639217*^9}}],
+
+Cell[BoxData[
+ RowBox[{"ByteCount", "[", "ratdb", "]"}]], "Input",
+ CellChangeTimes->{{3.647213756289412*^9, 3.6472137695464354`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"MemDBTrimMemory", "[", "ratdb", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.64721378043757*^9, 3.6472138013915854`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"ByteCount", "[", "ratdb", "]"}]], "Input",
+ CellChangeTimes->{{3.647213805045253*^9, 3.647213815601535*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{"BIDATEXWriter", "[", 
+   RowBox[{"ratdb", ",", 
+    RowBox[{
+     RowBox[{"exportdatapath", "[", "quarkchannel", "]"}], "<>", 
+     "\"\<ME_num_8\>\"", "<>", "resamplingext", "<>", "\"\<.bidatex\>\""}]}], 
+   "]"}], " ", "*)"}]], "Input",
+ CellChangeTimes->{{3.647213822003696*^9, 3.647213843121945*^9}, {
+  3.647213885535264*^9, 3.647213941498313*^9}, {3.647213977546362*^9, 
+  3.6472139855167437`*^9}, {3.939737225192288*^9, 3.9397372300933647`*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1176, 809},
+WindowMargins->{{266, Automatic}, {85, Automatic}},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> True}},
+FrontEndVersion->"10.1 for Linux x86 (64-bit) (March 23, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 81, 1, 74, "Section"],
+Cell[651, 25, 360, 8, 30, "Input"],
+Cell[1014, 35, 445, 9, 30, "Input"],
+Cell[1462, 46, 346, 7, 30, "Input"],
+Cell[1811, 55, 318, 8, 50, "Input"],
+Cell[2132, 65, 851, 13, 30, "Input"],
+Cell[2986, 80, 362, 9, 50, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3385, 94, 125, 2, 74, "Section"],
+Cell[3513, 98, 674, 16, 30, "Input"],
+Cell[4190, 116, 238, 5, 30, "Text"],
+Cell[4431, 123, 357, 8, 30, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4825, 136, 290, 4, 74, "Section"],
+Cell[5118, 142, 705, 15, 50, "Input"],
+Cell[5826, 159, 601, 8, 30, "Input"],
+Cell[6430, 169, 1717, 23, 30, "Input"],
+Cell[8150, 194, 544, 11, 30, "Input"],
+Cell[8697, 207, 705, 11, 30, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9439, 223, 171, 2, 74, "Section"],
+Cell[9613, 227, 595, 11, 30, "Input"],
+Cell[10211, 240, 140, 1, 30, "Text"],
+Cell[10354, 243, 662, 12, 30, "Input"],
+Cell[11019, 257, 130, 1, 30, "Text"],
+Cell[11152, 260, 214, 5, 30, "Input"],
+Cell[11369, 267, 112, 1, 30, "Text"],
+Cell[11484, 270, 159, 3, 30, "Input"],
+Cell[11646, 275, 102, 1, 30, "Input"],
+Cell[11751, 278, 617, 15, 30, "Input"],
+Cell[12371, 295, 780, 18, 50, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13188, 318, 138, 1, 74, "Section"],
+Cell[CellGroupData[{
+Cell[13351, 323, 126, 1, 39, "Subsection"],
+Cell[13480, 326, 604, 14, 30, "Input"],
+Cell[14087, 342, 198, 4, 30, "Input"],
+Cell[14288, 348, 300, 6, 30, "Input"],
+Cell[14591, 356, 1074, 27, 126, "Input"],
+Cell[15668, 385, 734, 18, 126, "Input"],
+Cell[16405, 405, 994, 26, 126, "Input"],
+Cell[17402, 433, 671, 17, 126, "Input"],
+Cell[18076, 452, 753, 19, 126, "Input"],
+Cell[18832, 473, 3931, 90, 221, "Input"],
+Cell[22766, 565, 100, 1, 30, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22903, 571, 236, 6, 41, "Subsection"],
+Cell[23142, 579, 1014, 23, 30, "Input"],
+Cell[24159, 604, 277, 5, 30, "Input"],
+Cell[24439, 611, 179, 3, 30, "Input"],
+Cell[24621, 616, 25882, 490, 1228, "Input"],
+Cell[50506, 1108, 148, 2, 30, "Input"],
+Cell[50657, 1112, 1333, 24, 30, "Input"],
+Cell[51993, 1138, 150, 2, 30, "Text"],
+Cell[52146, 1142, 335, 7, 30, "Input"],
+Cell[52484, 1151, 134, 2, 30, "Input"],
+Cell[52621, 1155, 157, 3, 30, "Input"],
+Cell[52781, 1160, 132, 2, 30, "Input"],
+Cell[52916, 1164, 498, 10, 30, "Input"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

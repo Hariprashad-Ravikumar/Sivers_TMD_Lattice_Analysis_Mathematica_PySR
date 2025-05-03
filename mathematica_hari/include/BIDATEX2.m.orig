@@ -1,0 +1,247 @@
+(* ::Package:: *)
+
+BeginPackage["BIDATEX2`"]
+
+BIDATEXDebug = False;
+
+BIDATEXReader::"eof" = "Format error: unexpected end of file.";
+BIDATEXReader::"unsupported" = "Format error: unsupported type `1` at `2`.";
+BIDATEXReader::"endlist" = "Format error: unexpected end_list at `1`.";
+BIDATEXReader::"except" = "Reading error: general exception at `1`.";
+
+BIDATEXReader::usage = "BIDATEXReader[filename] reads a file in BIDATEX format.";
+
+BIDATEXWriter::"unsupported" = "Format error: unsupported type `1` at `2`.";
+BIDATEXWriter::usage = "BIDATEXWriter[expression,filename] writes a file containing <expression> in BIDATEX format."
+
+SelectGroup::usage = "SelectGroup[struc,selec] selects a specific group given by the
+	selection criteria <selec> from the rule structures in <struc>."
+
+TakeUnique::notfound:="List ist empty.";
+TakeUnique::notunique:="List has multiple entries.";
+TakeUnique::usage = "Takes the first element of a list and aborts if the list does not have exactly one element.";
+
+Nothing::usage = "internally used in the BIDATEX format";
+
+head::usage = "internally used to label Mathematica heads in the BIDATEX format";
+args::usage = "internally used to label Mathematica arguments in heads in the BIDATEX format";
+mathematicaExpr::usage = "internally used to label Mathematica expressions in the BIDATEX format";
+
+Begin["`Private`"]
+
+(* ************** READER ************* *)
+
+BIDATEXReadNamed[f_InputStream] := Module[{labelname,res},
+	labelname=BinaryRead[f,"TerminatedString"];
+	If[BIDATEXDebug,Print["Reading named item: " <> ToString[labelname]]];
+	Switch[labelname,
+		_String,res=BIDATEXReadItem[f];If[res===$Failed,$Failed,Symbol[labelname]->res],
+		_, Message[BIDATEXReader::"eof"]; $Failed]
+]
+
+BIDATEXVecList[v_]:=Take[v[[2]],v[[1]]];
+
+BIDATEXReadListPure[f_InputStream]:=Module[{res,tmp},
+	res={0,Table[0,{10}]};
+	While[True,
+		tmp=BIDATEXReadItem[f];
+		If[tmp===BIDATEXEndList,Break[]];
+		If[tmp===$Failed,Return[$Failed]];
+		(* Append to vector *)
+		(*AppendTo[res,tmp]; *)
+		If[++res[[1]]>Length[res[[2]]],res[[2]]=Join[res[[2]],res[[2]] ] ];
+		res[[2,res[[1]]]]=tmp;
+	];
+	Take[res[[2]],res[[1]]]
+]
+
+(* a wrapper for general Mathematica expressions *)
+BIDATEXReadList[f_InputStream] := Module[{l},
+	l=BIDATEXReadListPure[f];
+	If[MatchQ[l,{head->_,args->_}],
+		ToExpression[l[[1,2]],InputForm]@@l[[2,2]],
+		If[MatchQ[l,{mathematicaExpr->_}],
+			ToExpression[l[[1,2]]],
+			l]
+		]
+	];
+
+BIDATEXReadMulti[f_InputStream]:=Module[{ndim,dims,type,nitems,res},
+	ndim=BinaryRead[f,"UnsignedInteger8",ByteOrdering->1];
+	If[BIDATEXDebug,Print["Number of dimensions: " <> ToString[ndim]]];
+	If[ndim===EndOfFile,Message[BIDATEXReader::"eof"];Return[$Failed]];
+	type = BinaryRead[f,"TerminatedString"];
+	If[BIDATEXDebug,Print["Element type: " <> type]];
+	If[type===EndOfFile,Message[BIDATEXReader::"eof"];Return[$Failed]];
+	dims=BinaryReadList[f,"UnsignedInteger32",ndim,ByteOrdering->1];
+	If[BIDATEXDebug,Print["Dimensions: " <> ToString[dims]]]; 
+	If[dims===EndOfFile,Message[BIDATEXReader::"eof"];Return[$Failed]];
+	nitems=Times@@dims;
+	res=Switch[type,
+		"Real32",BinaryReadList[f,"Real32",nitems,ByteOrdering->1],
+		"Real64",BinaryReadList[f,"Real64",nitems,ByteOrdering->1],
+		"Complex64",BinaryReadList[f,"Complex64",nitems,ByteOrdering->1],
+		"Complex128",BinaryReadList[f,"Complex128",nitems,ByteOrdering->1],
+		"Int32",BinaryReadList[f,"Integer32",nitems,ByteOrdering->1],
+		"UInt32",BinaryReadList[f,"UnsignedInteger32",nitems,ByteOrdering->1],
+		_String,Message[BIDATEXReader::"unsupported",type,StreamPosition[f]]; $Failed,
+		_,Message[BIDATEXReader::"except",StreamPosition[f]]; $Failed];
+	If[MemberQ[res,EndOfFile],Message[BIDATEXReader::"eof"]; res=$Failed];
+	If[MemberQ[dims,0],
+		res=Array[0&,dims],
+		While[Length[dims]>1,
+			res=Partition[res,Last[dims]];
+			dims=Most[dims];
+		];
+	];
+	res
+]
+
+
+BIDATEXReadItem[f_InputStream]:=Module[{type,res},
+	type=BinaryRead[f,"TerminatedString"];
+	If[BIDATEXDebug,Print["Reading item of type: "<>ToString[type]]];
+	res=Switch[type,
+		"named",BIDATEXReadNamed[f],
+		"nothing",Nothing,
+		"begin_list",BIDATEXReadList[f],
+		"end_list",BIDATEXEndList,
+		"multi",BIDATEXReadMulti[f],
+		"Real32",BinaryRead[f,"Real32",ByteOrdering->1],
+		"Real64",BinaryRead[f,"Real64",ByteOrdering->1],
+		"Complex64",BinaryRead[f,"Complex64",ByteOrdering->1],
+		"Complex128",BinaryRead[f,"Complex128",ByteOrdering->1],
+		"Int8",BinaryRead[f,"Integer8",ByteOrdering->1],
+		"Int16",BinaryRead[f,"Integer16",ByteOrdering->1],
+		"Int32",BinaryRead[f,"Integer32",ByteOrdering->1],
+		"Int64",BinaryRead[f,"Integer64",ByteOrdering->1],
+		"Int128",BinaryRead[f,"Integer128",ByteOrdering->1],
+		"UInt8",BinaryRead[f,"UnsignedInteger8",ByteOrdering->1],
+		"UInt16",BinaryRead[f,"UnsignedInteger16",ByteOrdering->1],
+		"UInt32",BinaryRead[f,"UnsignedInteger32",ByteOrdering->1],
+		"UInt64",BinaryRead[f,"UnsignedInteger64",ByteOrdering->1],
+		"UInt128",BinaryRead[f,"UnsignedInteger128",ByteOrdering->1],
+		"String",BinaryRead[f,"TerminatedString"],
+		_String,Message[BIDATEXReader::"unsupported",type,StreamPosition[f]];$Failed,
+		_,Message[BIDATEXReader::"eof"];$Failed];
+	If[res===EndOfFile,Message[BIDATEXReader::"eof"]; res=$Failed];
+	res
+	]
+
+
+BIDATEXReader[fname_String]:=Module[{f,endian,res,ver},
+	f= OpenRead[fname,BinaryFormat->True];
+	ver= BinaryRead[f,"TerminatedString"];
+	If[BIDATEXDebug,Print["reading file marked as: " <>ver]]; 
+	res=BIDATEXReadItem[f];
+	Close[f];
+	If[res===BIDATEXEndList,Message[BIDATEXReader::"endlist",StreamPosition[f]]; $Failed, res]
+]
+
+(* ************* WRITER ************** *)
+
+
+BIDATEXWriteNamed[f_OutputStream,expression_Rule]:=Module[{},
+	BinaryWrite[f,"named","TerminatedString"];
+	BinaryWrite[f,ToString[expression[[1]]],"TerminatedString"];
+	BIDATEXWriteItem[f,expression[[2]]];
+	];
+
+BIDATEXWriteNumber[f_,expression_]:=Module[{num},
+	num=N[expression,53*Log[2]/Log[10]];
+	Switch[Head[num],
+		Real,BinaryWrite[f,"Real64","TerminatedString"];BinaryWrite[f,expression,"Real64",ByteOrdering->1],
+		Complex,BinaryWrite[f,"Complex128","TerminatedString"];BinaryWrite[f,expression,"Complex128",ByteOrdering->1],
+		_,Message[BIDATEXWriter::"unsupported",ToString[Head[num]],StreamPosition[f]]; Close[f]; Abort[];
+	];
+];
+
+BIDATEXWriteList[f_,expression_List]:=Module[{numarr,heads,dims,diff,testarr},
+	If[Length[expression]>0 && ArrayQ[expression] && (testarr=N[expression,53*Log[2]/Log[10]]; ArrayQ[testarr,_,NumberQ]), 
+		(*we can write it as a multi*)
+		numarr=expression;
+		heads=Union[Head/@Flatten[numarr]];
+		diff=Complement[heads,{Complex,Integer,Real}];
+		If[diff=!={},
+			numarr=testarr;
+			heads=Union[Head/@Flatten[numarr]];
+			diff=Complement[heads,{Complex,Integer,Real}];
+			If[diff=!={},Message[BIDATEXWriter::"unsupported",diff[[1]],StreamPosition[f]]; Close[f]; Abort[];];
+		];
+		heads=If[MemberQ[heads,Complex],{"Complex128","Complex128"},
+			If[MemberQ[heads,Real],{"Real64","Real64"},
+				{"Int32","Integer32"}]];
+		dims=Dimensions[numarr];
+		BinaryWrite[f,"multi","TerminatedString"];
+		BinaryWrite[f,Length[dims],"UnsignedInteger8",ByteOrdering->1];
+		BinaryWrite[f,heads[[1]],"TerminatedString"];
+		BinaryWrite[f,dims,"UnsignedInteger32",ByteOrdering->1];
+		BinaryWrite[f,Flatten[numarr],heads[[2]],ByteOrdering->1];
+		Return[];
+	];
+	(* conventional list *)
+	BinaryWrite[f,"begin_list","TerminatedString"];
+	Map[BIDATEXWriteItem[f,#]&,expression]; 
+	BinaryWrite[f,"end_list","TerminatedString"];
+	Return[];
+	];
+
+
+BIDATEXWriteItem[f_OutputStream,expression_]:=Module[{h},
+	h=Head[expression];
+	If[h==String, BinaryWrite[f,"String","TerminatedString"]; BinaryWrite[f,expression,"TerminatedString"];Return[]];
+	If[h==Integer,BinaryWrite[f,"Int32","TerminatedString"]; BinaryWrite[f,expression,"Integer32",ByteOrdering->1];Return[]];
+	If[NumberQ[Quiet[N[expression]]],BIDATEXWriteNumber[f,expression];Return[]];
+	If[h==Rule && Length[expression]==2 && (Head[expression[[1]]]==String || Head[expression[[1]]]==Symbol), BIDATEXWriteNamed[f,expression]; Return[]];
+	If[h==List, BIDATEXWriteList[f,expression]; Return[]];
+	(* Message[BIDATEXWriter::"unsupported",ToString[Head[expression]],StreamPosition[f]]; Close[f]; Abort[]; *)
+	(* special notation for a Mathematica symbol *)
+	If[h==Symbol,BIDATEXWriteList[f,{"head"->ToString[h],"args"->{ToString[expression]}}];Return[]];
+	If[h==Function,BIDATEXWriteList[f,{"mathematicaExpr"->ToString[expression,InputForm]}];Return[]];
+	(* special notation for an arbitrary Mathematica head *)
+	BIDATEXWriteList[f,{"head"->ToString[h,InputForm],"args"->List@@expression}];
+];
+
+BIDATEXWriter[expression_,fname_String]:=Module[{},
+	f= OpenWrite[fname,BinaryFormat->True];
+	BinaryWrite[f,"BIDATEX binary data exchange format, Ver. 0.1","TerminatedString"];
+	BIDATEXWriteItem[f,expression];
+	Close[f];
+];
+
+(* convenience functions *)
+
+
+CheckGroupCrit[selecitem_,rules_List]:=Module[{s},
+	s = Select[rules,selecitem[[1]]==#[[1]] &];
+	If[s==={},Return[NotSpecified]];
+	If[Head[selecitem]===Rule,
+		And@@Map[selecitem[[2]]===#[[2]] &,s],
+		And@@Map[TrueQ[selecitem[[2]][#[[2]]]] &,s]
+	]
+]
+
+SelectGroup[struc_List,selec_List,header_:{}]:=Module[{rules,valid,newselec,notrules},
+	rules=Cases[struc,_Rule];
+	(* If we have a pure list (no rules), we simply descend into it.*)
+	If[Length[rules]==0,Return[Flatten[Map[SelectGroup[#,selec,header]&,struc],1]]];
+	(* OK, so we have rules. We must check whether they agree with "selec" *)
+	valid=True;
+	newselec={};
+	Map[Switch[CheckGroupCrit[#,rules],False,valid=False,NotSpecified,AppendTo[newselec,#],True,True] &,selec];
+	If[valid==False,Return[{}]];
+	notrules=DeleteCases[struc,_Rule];
+	If[Length[notrules]==0,Return[If[Length[newselec]==0,{Join[header,rules]},{}]]];
+	Flatten[Map[SelectGroup[#,newselec,Join[header,rules]]&,notrules],1]
+]
+
+TakeUnique[l_List]:=
+	Switch[Length[l],
+		1,l[[1]],
+		0,Message[TakeUnique::notfound,selec]; Return[Null],
+		_,Message[TakeUnique::notunique,selec]; Return[Null]
+	]
+
+End[]
+
+EndPackage[]

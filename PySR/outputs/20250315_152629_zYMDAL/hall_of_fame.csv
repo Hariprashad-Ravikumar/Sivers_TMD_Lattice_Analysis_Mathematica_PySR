@@ -1,0 +1,8 @@
+Complexity,Loss,Equation
+1,0.0006506703,"0.011491025"
+4,0.0005013875,"gaussian(bT * 1.7638065)"
+5,0.00028929408,"gaussian(bL) * gaussian(bT)"
+7,0.00022923862,"gaussian(bT) * gaussian(bL * 0.7518853)"
+9,0.00013495184,"(gaussian(bL * -0.5941109) * 0.6498232) * gaussian(bT)"
+11,5.373138e-5,"(gaussian(bT * 0.63409376) * 0.37073) * gaussian(bL * 0.6008716)"
+16,5.3726908e-5,"(gaussian(bT * -0.6355339) * (gaussian(bL * -0.31932786) * gaussian(bL * -0.5096522))) * 0.3725668"

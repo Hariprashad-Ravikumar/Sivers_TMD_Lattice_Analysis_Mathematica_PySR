@@ -1,0 +1,7 @@
+Complexity,Loss,Equation
+1,1.5918167e-5,"0.01052533"
+2,1.36125645e-5,"gaussian(bsq)"
+3,1.4932305e-6,"Lorentzian(bsq, 2.102672)"
+5,1.0873604e-6,"Lorentzian(bsq, 3.9952145) * 1.4441282"
+8,6.6877834e-7,"(gaussian(Pb) * Lorentzian(0.6902951, bsq)) * 0.32139534"
+9,5.2722843e-8,"(Lorentzian(2.668498, bsq) * Lorentzian(0.9266615, bsq)) * 3.8887095"

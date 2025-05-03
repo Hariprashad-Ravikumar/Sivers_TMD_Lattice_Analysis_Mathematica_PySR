@@ -1,0 +1,12 @@
+Complexity,Loss,Equation
+1,6.40502e-7,"-0.00028543454"
+4,2.8287036e-7,"decay(bsq) * -0.10662786"
+5,1.718956e-8,"Lorentzian(bsq, 5.2965884) * -0.13023719"
+7,1.649261e-8,"Lorentzian(bsq * -0.60905015, 1.7107804) * -0.04598647"
+8,1.4983256e-8,"Lorentzian(bsq * 0.4480617, gaussian(Pb)) * -0.023955224"
+11,1.2956537e-8,"(gaussian(gaussian(bsq * Pb)) * Lorentzian(bsq, 1.6229353)) * -0.11362257"
+13,7.7023685e-9,"Lorentzian(bsq * 0.6032555, bsq) * (gaussian(gaussian(Pb * 2.1428823)) * -0.0653581)"
+15,7.626812e-9,"Lorentzian(bsq * 0.60431784, bsq) * (gaussian(gaussian(Pb * 2.1436174) * 0.9952902) * -0.06572832)"
+19,7.252986e-9,"Lorentzian(0.59931135 * bsq, bsq) * ((-0.10002022 * 0.62387574) * gaussian(decay(gaussian(-1.8615507)) * gaussian(2.213544 * Pb)))"
+21,6.849352e-9,"Lorentzian(0.59931135 * bsq, bsq) * ((-0.10002022 * 0.62387574) * gaussian(decay(bsq * gaussian(-1.8615507)) * gaussian(2.213544 * Pb)))"
+24,6.8367156e-9,"Lorentzian(bsq * 0.59931135, bsq) * ((-0.10002022 * 0.62387574) * gaussian(decay((gaussian(0.22810258) * bsq) * gaussian(-1.8615507)) * gaussian(2.213544 * Pb)))"

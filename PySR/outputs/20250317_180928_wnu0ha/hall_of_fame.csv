@@ -1,0 +1,12 @@
+Complexity,Loss,Equation
+1,1.5918167e-5,"0.01052533"
+2,1.36125645e-5,"gaussian(bsq)"
+4,6.5475238e-6,"sech(bsq) * 0.5503574"
+6,2.3963398e-6,"sech(bsq * -0.44627348) * 0.2549888"
+9,2.2251656e-6,"sech(sech(Pb) * (bsq * -0.44985914)) * 0.24618223"
+11,1.0249992e-6,"sech(gaussian(gaussian(sech(bsq * -0.2577408))) * bsq) * 0.4187538"
+13,9.844155e-7,"sech((gaussian(gaussian(sech(bsq * 0.2894965))) * bsq) * 1.1131204) * 0.46496224"
+14,7.153792e-7,"gaussian(sech(gaussian(bsq))) * sech(gaussian(gaussian(sech(bsq * 0.28095502))) * bsq)"
+16,6.5287406e-7,"gaussian(sech(gaussian(bsq * -3.0413811))) * sech(bsq * gaussian(gaussian(sech(bsq * 0.28113943))))"
+17,5.56414e-7,"sech((sech(Pb) * gaussian(gaussian(sech(bsq * 0.25998452)))) * bsq) * gaussian(sech(gaussian(bsq)))"
+19,4.9571355e-7,"sech(sech(Pb) * (gaussian(gaussian(sech(0.25998452 * bsq))) * bsq)) * gaussian(sech(gaussian(bsq * 1.7975619)))"

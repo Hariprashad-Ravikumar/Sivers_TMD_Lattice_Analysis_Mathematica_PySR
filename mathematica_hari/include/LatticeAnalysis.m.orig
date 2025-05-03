@@ -1,0 +1,425 @@
+(* ::Package:: *)
+
+BeginPackage["LatticeAnalysis`",{"Resampling3`","MemDB`","BDatabase2`","ErrorBarPlots`"}]
+
+ModifyRules::usage="ModifyRules[oldrules,newrules] replaces rules in <oldrules> by the corresponding ones in <newrules>. \
+	Rules that in <newrules> that have no correspondance in <oldrules> are appended.";
+
+Options[ResamplingFit2D]=Sort[{
+	DataSelection->All,
+	PointStyle->{},
+	SelectedPointStyle->{},
+	CurveStyle->{},
+	FillStyle->{},
+	ShowOptions->{},
+	xRange->Automatic,
+	yScaleFcn->Identity,
+	yScaledModel->Automatic
+	}];
+
+ResamplingFit2D::usage="ResamplingFit2D[xdata,ydata,model,xvar,param,Options...] is a convenience function that invokes \
+	ResamplingFit, produces a plot using ResamplingPlot and outputs everything as a list of rules. \
+	xdata: x-values, ydata: y-values (resampled), model: a model expression in terms of a variable given \
+	by xvar and parameters param that will be fitted to the data.";
+
+(*Here we define a function that converts a selected part of a BDatabase into a MemDB data base structure.
+We make use of the internal structure of these data bases to make this process efficient.
+Conversion is pretty fast.*)
+
+BDBtoMemDB::usage="BDBtoMemDB[bdb,indices] converts part of a BDatabase, as specified using <indices> into a MemDB data base. \
+	The indices can be obtained using the BDBSelect command";
+
+
+Options[Get2Point]={
+	correlatorType->"2point",
+	numberFilter->Re,
+	Resampling->MakeJacknifeSamples,
+	resamplingType->JacknifeSamples
+	};
+Get2Point::usage="Get2Point[bdb,indices,Options...] retrieves two-point functions \
+	from the BDatabase, applies <numberFilter>, and performs Resampling. \
+	A second version, Get2Point[bdb,criteria,Options...] automatically \
+	selects data as given by the list of rules <criteria>.";
+
+
+Options[Get3Point]={
+	numberFilter->Re,
+	Resampling->MakeJacknifeSamples,
+	resamplingType->JacknifeSamples,
+	DeleteKeys->{sideLinks,comment},
+	HasSink->True,
+	TakeAtSource->False
+	};
+Get3Point::usage="Get3Point[bdb,indices,Options...] retrieves three-point functions 
+	(or other correlators such as vacuum expectation values) \
+	from the BDatabase. Just as Get2Point you can pass BDatabase indices or selection criteria as \
+	a list of rules. Don't forget to specify, e.g., correlatorType->\"3point\". \
+	Get3Point will also automatically find the keys sideNum, sideExtent and sideLinks and extract \
+	from those the link path defining the side of staple links. It is stored in the key sideLink. Typically, \
+	Get3Point is used for three-point functions, which have a source and a sink. The data will then automatically be \
+	rotated and cropped such that the source is at the first and the sink at the last position of the array. \
+	For data that have no sink (such as vacuum expectation values), use the option HasSink->False. Setting \ 
+	the option TakeAtSource->True only returns the value at the source.";
+
+Options[Mom0Ratio]=Join[Options[Get2Point],{Criteria2pt->{section->"std"}}];
+Mom0Ratio::mom0supp="Only zero momentum transfer supported!";
+Mom0Ratio::usage="Mom0Ratio[threeptmdb,bdb,Options...] will form ratios of 3- and 2-point functions. \
+	You have to supply a MemDB data base structure with 3-point functions in threeptmdb and \
+	a BDatabase in bdb.";
+
+Options[PlateauAverage]={AveragingPoints->3};
+PlateauAverage::nint="The number of points to average over cannot be centered within the correlator.";
+PlateauAverage::resty="Invalid/missing specification of resampling type in the global section of the data base";
+PlateauAverage::usage="PlateauAverage[ratiodb,Options...] will extract the plateau average from ratios, as obtained, \
+	e.g., with Mom0Ratio. The option AveragingPoints defines how many points (centered between source and sink) \
+	will be considered in the average.";
+
+Options[MakeErrBars]={
+	MinErrBarSize->0,(* do not show error bars for data points with error smaller than this value *)
+	MaxError->0 (* exclude data points entirely if the error is larger than this value; default value 0 means do not exclude any points. *)
+	};
+MakeErrBars::usage = "MakeErrBars[data,Options...] takes data in the form {{xvalue1,yvalue1},{xvalue2,yvalue2},...}, \
+	where the xvalues are numbers and the yvalues can of type JacknifeSamples or BootstrapSamples. The result \
+	is ready for plotting with the Mathematica built in function ErrorBarPlot[]"; 
+
+PathToShift::usage = "PathToShift[alinkpath,mindim:0] determines the displacement vector for a given link path. \
+	Give result as a vector with at least mindim components.";
+
+ShiftToPath::usage = "ShiftToPath[ashift]: For a specified displacement vector, \
+	create a step-like link path returned as a sequence of integers, \
+	each one specifying the direction of one lattice step.";
+
+
+SplitList::usage = "SplitList[list,elno] is a convenience funtion for a frequent task: Sort <list> \
+	according to the <elno>'th element of each list item, then find groups with equal values \
+	in these components.";
+
+CalculateOnceBIDATEX::usage = "CalculateOnceBIDATEX[variable,filename,func] \
+	is useful for long calculations: if the <filename> points to an existing file, \
+	it will be loaded into the <variable>, otherwise <func> will be evaluated, \
+	stored as a BIDATEX file under the given <filename> and assigned to the <variable>."
+
+hbarc = .197326968; 
+hbarc::usage = "\[HBar]c = 1 = .197326968 GeV fm, in natural units (NIST value)";
+
+data::usage = "Symbol used for the default data entry in the data base";
+aBDBIndex::usage = "Key name used for reference to the corresponding BDatabase entry.";
+fitSamples::usage = "fitSamples";
+plot::usage = "plot";
+chisqrPDOF::usage = "chi squared per degree of freedom";
+fitParameters::usage = "fit parameters";
+numberFilter::usage = "typically Re or Im";
+tSource::usage = "source location";
+tSink::usage = "sink location";
+tSep::usage = "source-sink-separation"
+sideNum::usage = "index to side link path"
+sideExtent::usage = "length of side links";
+sideLinks::usage = "structure with general side link information";
+sideLink::usage = "specification of specific side link";
+correlatorType::usage = "2point, 3point, vacexp, etc.";
+sourceType::usage= "NUCL_U_MIXED_NONREL, etc., also NUCL_UminusD_MIXED_NONREL supported here.";
+resamplingType::usage="JacknifeSamples or BootstrapSamples";
+sinkMom::usage="sink momentum";
+momTransfer::usage="momentum transfer";
+analysisStep::usage="Mom0Ratio,PlateauAverage or some other indicator for what the data is at this stage.";
+
+
+Begin["`Private`"]
+
+ModifyRules[oldrules_List,newrule_Rule] := 
+	ModifyRules[oldrules,{newrule}];
+
+ModifyRules[oldrules_List,newrules_List] := 
+	Join[Complement[oldrules,newrules,SameTest->(#1[[1]]===#2[[1]]&)],newrules];
+
+ModifyRules[oldrules_List,newrules_List,deleterules_List]:=
+	Join[Complement[oldrules,newrules,List/@deleterules,SameTest->(#1[[1]]===#2[[1]]&)],newrules];
+
+
+ResamplingFit2D[xdata_List,ydata_,model_,xvar_Symbol,param_List,options___?OptionQ]:=
+	Module[{fitdat,par,jdat,ptpl,selpl,fpl,pts,ebounds,datasel,pointstyle,selpointstyle,
+		curvestyle,fillstyle,showopts,xrange,yrange,yscalefcn,ysclmdl,pl,tmp,dt},
+		{datasel,pointstyle,selpointstyle,curvestyle,fillstyle,showopts,xrange,yscalefcn,ysclmdl}=
+			{DataSelection,PointStyle,SelectedPointStyle,CurveStyle,FillStyle,ShowOptions,xRange,yScaleFcn,yScaledModel}
+			/.Flatten[{options,Options[ResamplingFit2D]}];
+		dt=ResamplingDataType[ydata];
+		fillstyle=ModifyRules[{PlotStyle->None},fillstyle];
+		selpointstyle=ModifyRules[{PlotStyle->RGBColor[0.8,0.2,0]},selpointstyle];
+		jdat=StrucThread[dt,ydata];
+		jdat=Map[yscalefcn,jdat,{ArrayDepth[List@@jdat]}];
+		jdat=ResamplingStatistics[jdat];
+		pts=MapThread[(
+			ebounds=StdErrorBounds[#2];
+			{{#1,ebounds[[1]]},ErrorBar[ebounds[[2]]/. Indeterminate->0]}
+			)&,{xdata,jdat}];
+		ptpl=ErrorListPlot[pts,pointstyle];
+		If[datasel=!=All,selpl=ErrorListPlot[pts[[datasel]],selpointstyle]];
+		tmp=(StrucUnThread[dt,ydata])[[datasel]];
+		fitdat=ResamplingFit[
+			List/@(xdata[[datasel]]),
+			tmp,
+			model,
+			{xvar},
+			param
+			];
+		par=If[Head[#]===List,#[[1]],#]&/@param;
+		If[xrange==Automatic,xrange={Min[xdata],Max[xdata]}; xrange=Mean[xrange]+(xrange-Mean[xrange])*1.1];
+		If[ysclmdl===Automatic,ysclmdl=yscalefcn@model];
+		fpl=ResamplingPlot[fitdat,ysclmdl,{xvar,Sequence@@xrange},par,curvestyle,fillstyle];
+		yrange=StdErrorBounds/@jdat;
+		yrange=(#[[1]]+#[[2]])&/@yrange;
+		yrange={Min[yrange[[All,1]]],Max[yrange[[All,2]]]};
+		yrange=Mean[yrange]+(yrange-Mean[yrange])*1.1;
+		showopts=ModifyRules[{PlotRange->{xrange,yrange},Frame->True,Axes->False},showopts];
+		pl=Show[Sequence@@If[datasel===All,{fpl,ptpl},{fpl,ptpl,selpl}],Sequence@@showopts];
+		{
+			fitSamples->fitdat,
+			plot->pl,
+			fitParameters->MapThread[Rule,{par,ResamplingStatistics[fitdat[[All,2]],Verbose->False,Autocorr->False]}],
+			chisqrPDOF->fitdat[[1,1]]/(Length[pts[[datasel]]]-1-Length[par])
+		}
+	];
+
+
+SetAttributes[BDBtoMemDB,HoldFirst];
+BDBtoMemDB[bdb_,indices_BDBIndex]:=
+	Module[{mdb,numclasskeynames,ckeys,skeytab,ckeytab,skeytabs,keyindex,dat},
+		mdb=NewMemDB[];
+		(* get the index information from the bdb: *)
+		(* first, set the key names *)
+		mdb[[1]]=Join[
+			(symboltable/.(classlookup/.bdb[[1]]))[[All,1]],
+			(symboltable/.bdb[[1]])[[All,1]]
+			];
+		(* next, set the value lists *)
+		mdb[[4]]=Join[
+			(symboltable/.(classlookup/.bdb[[1]]))[[All,2,2;;]],
+			(symboltable/.bdb[[1]])[[All,2,2;;]]
+			];
+		(* The value list lengths should correspond to the above *)
+		mdb[[3]]=Length/@mdb[[4]];
+		(* get the key combinations *)
+		ckeytab=(keytable/.(classlookup/.bdb[[1]]));
+		skeytabs=(keytable/.(sublookups/.bdb[[1]]));
+		mdb[[6]]=Flatten[List@@Map[Function[{i},
+			ckeys=ckeytab[[i[[1]]]];
+			skeytab=skeytabs[[i[[1]]]];
+			Map[Function[{j},
+				Join[ckeys,skeytab[[j]]]
+				],i[[2]]]
+			],indices],1]; 
+		(* number of combinations should correspond to the above *)
+		mdb[[7]] = Length[mdb[[6]]]; 
+		(* fill the rest of the fields appropriately *)
+		mdb[[5]]=Table[{},{Length[mdb[[1]]]}];
+		mdb[[9]]=Table[Identity,{Length[mdb[[1]]]}];
+		mdb[[10]]=Table[Identity,{Length[mdb[[1]]]}];
+		(* the index to the original etry in the BDatabase will be stored in "aBDBIndex" *)
+		MemDBSetDataKey[mdb,aBDBIndex,BDBIndex[{#[[1]],{#[[2]]}}]&]; 
+		(* data will be stored in the field "data" *)
+		MemDBSetDataKey[mdb,data]; 
+		(* finally, we fetch the data *)
+		keyindex=data/.mdb[[2]];
+		dat=BDBGetData[bdb,indices];
+		mdb[[4,keyindex]]=dat;
+		mdb[[3,keyindex]]=Length[dat];
+		mdb[[6,All,keyindex]]=Range[1,Length[dat]];
+		(* now fill in the indices *)
+		keyindex=aBDBIndex/.mdb[[2]];
+		mdb[[4,keyindex]]=
+			Flatten[
+			List@@Map[Function[{i},
+			Map[{i[[1]],#}&,i[[2]]]
+			],indices]
+			,1]; 
+		mdb[[3,keyindex]]=Length[dat];
+		mdb[[6,All,keyindex]]=Range[1,Length[dat]];
+		mdb
+	];
+
+
+SetAttributes[Get2Point,HoldFirst];
+Get2Point[bdb_,indices_BDBIndex,OptionsPattern[]] :=
+	Module[{mdb,tsrc,dat,ind,postfcns,numfilter,resamptype,glob,arst},
+		numfilter=OptionValue[numberFilter];
+		resamptype=OptionValue[resamplingType];
+		postfcns=OptionValue[Resampling][numfilter[#]]&;
+		mdb=BDBtoMemDB[bdb,indices];
+		mdb=MemDBMap[mdb,data,(
+			tsrc=MemDBGet[mdb,#2,tSource];
+			postfcns[Map[RotateLeft[#,tsrc]&,#1]]
+			)&,
+			AutoApplyFunctions->{(arst@@#&)/.{arst->resamptype},List@@#&}
+		];
+		MemDBCalcKey[mdb,numberFilter,ind,numfilter];
+		glob=MemDBGetGlobals[mdb];
+		If[Head[glob]==List,
+			AppendTo[glob,resamplingType->resamptype];
+			MemDBSetGlobals[mdb,glob];
+		];
+		mdb
+	];
+
+Get2Point[bdb_,criteria_List,opts:OptionsPattern[]] := 
+	Module[{crit},
+		crit=Join[criteria,{correlatorType->OptionValue[correlatorType]}];
+		Get2Point[bdb,BDBSelect[bdb,crit],opts]
+	];
+
+SetAttributes[Get3Point,{HoldFirst}];
+Get3Point[bdb_,indices_BDBIndex,OptionsPattern[]] := 
+	Module[{mdb,resdb,tsrc,tsnk,tsep,dat,postfcns,i,entry,sideext,side,numfilter,resamptype,glob,aslot},
+		numfilter=OptionValue[numberFilter];
+		resamptype=OptionValue[resamplingType];
+		postfcns=OptionValue[Resampling][numfilter[#]]&;
+		mdb=BDBtoMemDB[bdb,indices];
+		resdb=NewMemDB[];
+		MemDBSetDataKey[resdb,data,(aslot@@#&)/.{aslot->resamptype},List@@#&];
+		MemDBSetDataKey[resdb,aBDBIndex,BDBIndex[{#[[1]],{#[[2]]}}]&,{#[[1,1]],#[[1,2,1]]}&]; 
+		Map[Function[{ind},
+			dat=MemDBGet[mdb,ind,data];
+			tsrc=MemDBGet[mdb,ind,tSource];
+			dat=Map[RotateLeft[#,tsrc]&,dat];
+			entry=MemDBGet[mdb,ind];
+			If[OptionValue[HasSink],
+				tsnk=MemDBGet[mdb,ind,tSink];
+				tsep=tsnk-tsrc;
+				If[tsep<0,tsep+=Dimensions[dat][[3]]];
+				dat=Map[Take[#,tsep+1]&,dat];
+				AppendTo[entry,tSep->tsep];
+				];
+			If[OptionValue[TakeAtSource],dat=dat[[All,1]]];
+			dat=postfcns[dat];
+			sideext=sideExtent/.entry;
+			If[IntegerQ[sideext],
+				side=Select[sideLinks/.entry,(sideNum/.#)==(sideNum/.entry) &];
+				If[Length[side]==1,
+					side=side[[1]];
+					side=Take[sideLink/.side,Abs[sideext]];
+					If[sideext<0,side=-side];
+					AppendTo[entry,sideLink->side];
+				];
+			];
+			entry=FilterRules[entry,Except[OptionValue[DeleteKeys]]];
+			entry=ModifyRules[entry,{data->dat,numberFilter->numfilter}] ;
+			MemDBAppend[resdb,entry];
+			],MemDBSelect[mdb,{}]];
+		glob=MemDBGetGlobals[resdb];
+		If[Head[glob]==List,
+			AppendTo[glob,resamplingType->resamptype];
+			MemDBSetGlobals[resdb,glob];
+			];
+		resdb
+	];
+
+
+
+Get3Point[bdb_,criteria_List,opts:OptionsPattern[]] := 
+	Module[{crit,sel,ind,db1,db2,i},
+		(* crit=Join[criteria,{correlatorType->OptionValue[correlatorType]}]; *)
+		crit=criteria;
+		If[(sourceType/.crit)==="NUCL_UminusD_MIXED_NONREL",
+			crit=ModifyRules[crit,{sourceType->"NUCL_U_MIXED_NONREL"}];
+			ind=BDBSelect[bdb,crit];
+			db1=Get3Point[bdb,ind,opts];
+			ind=BDBSelectOther[bdb,ind,{sourceType->"NUCL_D_MIXED_NONREL"}];
+			db2=Get3Point[bdb,ind,opts];
+			MemDBCalcKey[db1,data,i,MemDBGet[db1,i,data]-MemDBGet[db2,i,data]];
+			MemDBCalcKey[db1,sourceType,i,"NUCL_UminusD_MIXED_NONREL"]
+			,
+			db1=Get3Point[bdb,BDBSelect[bdb,crit],opts]
+			];
+		db1
+	];
+
+SetAttributes[Mom0Ratio,{HoldAll}];
+Mom0Ratio[threeptmdb_,bdb_,opts:OptionsPattern[]] := 
+	Module[{mom,tsep,twoptmdb,ind,denom,resdb},
+		mom=MemDBListValues[threeptmdb,momTransfer];
+		If[Complement[mom,{{0,0,0}}]=!={},
+			Message[Mom0Ratio::mom0supp]; Abort[];
+			];
+		twoptmdb=Get2Point[bdb,OptionValue[Criteria2pt],FilterRules[{opts},Options[Get2Point]]];
+		resdb=MemDBMap[threeptmdb,data,(
+			tsep=MemDBGet[threeptmdb,#2,tSep];
+			mom=MemDBGet[threeptmdb,#2,sinkMom];
+			ind=MemDBSelectUnique[twoptmdb,{momTransfer->mom}];
+			denom=MemDBGet[twoptmdb,ind,data];
+			denom=StrucUnThread[OptionValue[resamplingType],denom];
+			denom=denom[[tsep+1]];
+			#/denom
+			)&,AutoApplyFunctions->{OptionValue[resamplingType]@@#&,List@@#&}];
+		MemDBCalcKey[resdb,analysisStep,ind,"Mom0Ratio"];
+		resdb
+	];
+
+SetAttributes[PlateauAverage,{HoldFirst}];
+PlateauAverage[ratiodb_,opts:OptionsPattern[]] := 
+	Module[{tsep,seldat,resdb,resamptype,windowpts,avgpts,ind,aslot},
+		avgpts=OptionValue[AveragingPoints];
+		resamptype=resamplingType/.MemDBGetGlobals[ratiodb];
+		If[resamptype===resamplingType,
+			Message[PlateauAverage::resty];
+			Abort[];
+			];
+		resdb=MemDBMap[ratiodb,data,(
+			tsep=MemDBGet[ratiodb,#2,tSep];
+			windowpts=(tsep+1-avgpts)/2;
+			If[!IntegerQ[windowpts],Message[PlateauAverage::nint]; Abort[]];
+			windowpts = windowpts+Range[OptionValue[AveragingPoints]];
+			seldat=StrucUnThread[resamptype,#][[windowpts]];
+			(Plus@@seldat)/avgpts
+			)&,AutoApplyFunctions->{(aslot@@#&)/.{aslot->resamptype},List@@#&}];
+		MemDBCalcKey[resdb,analysisStep,ind,"PlateauAverage"];
+		resdb
+	];
+
+MakeErrBars[dat_,OptionsPattern[]]:=Module[{cleanres},
+	cleanres=Select[dat,#[[2]]=!=Indeterminate&];
+	cleanres=Map[{#[[1]],StdErrorBounds[ResamplingStatistics[#[[2]]]]}&,cleanres];
+	cleanres=Select[cleanres,And@@RealQ/@Flatten[List@@#[[2]]]&];
+	cleanres=Map[{{#[[1]],#[[2,1]]},ErrorBar[#[[2,2]]]}&,cleanres];
+	If[OptionValue[MaxError]>0,cleanres=Select[cleanres,Abs[#[[2,1,2]]-#[[2,1,1]]]<OptionValue[MaxError]&]];
+	cleanres=Map[If[Abs[#[[2,1,2]]-#[[2,1,1]]]<OptionValue[MinErrBarSize],{#[[1]],ErrorBar[0]},#]&,cleanres]
+	];
+
+PathToShift[alinkpath_,mindim_Integer:0]:=Module[{dirs},
+	dirs=Range[1,Max[mindim,Max[Abs[alinkpath]]]];
+	Map[Function[{dir},Plus@@Select[alinkpath,Abs[#]==dir&]/dir],dirs]
+];
+
+ShiftToPath[ashift_List]:=Module[{res,target,is,n,p},
+	n=Plus@@Abs[ashift];
+	is=0&/@ashift;
+	Table[
+		target=ashift*lpos/n;
+		p=Ordering[Abs[target-is],-1][[1]];
+		(*Print[{target,is,p}//N];*)
+		If[(target-is)[[p]]>=0,
+			++is[[p]];
+			p,
+			--is[[p]];
+			-p
+			]
+	,{lpos,1,n}]
+];
+
+SplitList[l_List,elno_Integer]:=Module[{res},
+	res=SortBy[l,#[[elno]]&];
+	res=Split[res,#1[[elno]]==#2[[elno]]&];
+	res
+];
+
+SetAttributes[CalculateOnceBIDATEX,HoldAll];
+CalculateOnceBIDATEX[variable_,filename_,func_]:=
+	If[FileType[filename]===File,
+		ReleaseHold[Clear[variable]];
+		variable=BIDATEXReader[filename];
+		Print["Loaded previously calculated "<>ToString[HoldForm[variable]]<>" from file "<>filename<>"."],
+		ReleaseHold[Clear[variable]];
+		variable=func;
+		BIDATEXWriter[variable,filename];
+	];
+
+End[]
+EndPackage[]

@@ -1,0 +1,13 @@
+Complexity,Loss,Equation
+1,1.3425141e-5,"-0.004080003"
+4,9.769348e-7,"Lorentzian(bL) * -0.0113286385"
+6,9.113633e-9,"gaussian(bL * 0.60969305) * -0.010123927"
+8,7.3411424e-9,"(gaussian(bL * 0.604615) * -0.010191969) + 7.9460944e-5"
+12,5.410407e-10,"gaussian((bL * gaussian(gaussian(bL) * 0.6169074)) * 0.615664) * -0.009998029"
+13,4.9316384e-10,"gaussian((bL * 0.62186325) * Lorentzian(Lorentzian(bL) * Lorentzian(A12))) * -0.009995042"
+14,3.81618e-10,"gaussian(Lorentzian(gaussian(gaussian(gaussian(bL * 0.19577861))) + -0.004879128) * bL) * -0.009981451"
+17,1.2683167e-10,"gaussian(Lorentzian(gaussian(gaussian(gaussian((gaussian(Lorentzian(gaussian(bL))) * bL) * 0.5450499)))) * bL) * -0.009998207"
+19,3.5092637e-13,"(gaussian(bL * Lorentzian(gaussian(gaussian(gaussian(bL * (gaussian(Lorentzian(gaussian(bL))) * 0.53745055)))))) * -0.010020148) + 2.0674599e-5"
+21,4.385308e-14,"(gaussian(bL * Lorentzian(gaussian(gaussian(gaussian((bL * 0.5368488) * gaussian(gaussian(gaussian(bL) * 0.9810065))))))) * -0.010021434) + 2.1217347e-5"
+25,1.35903565e-14,"A12 * ((gaussian(bL * Lorentzian(gaussian(gaussian(gaussian((gaussian(Lorentzian(gaussian(bL * (bL * -0.99672186)))) * bL) * 0.53745055))))) * -0.010020912) + 2.098617e-5)"
+28,1.1723769e-14,"(gaussian(Lorentzian(gaussian(gaussian(gaussian((bL * 0.53745055) * gaussian(gaussian(gaussian(bL) * Lorentzian(((bL * bL) * 0.67216355) + -0.8261586))))))) * bL) * -0.010021088) + 2.0965379e-5"

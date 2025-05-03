@@ -1,0 +1,8 @@
+Complexity,Loss,Equation
+1,2.713194e-9,"-0.0002342546"
+5,2.2450866e-9,"Lorentzian(bL, -0.89816856) * -0.00031230418"
+7,1.128457e-9,"Lorentzian(bL, bT * bT) * -0.009674293"
+9,1.0341706e-9,"(Lorentzian(bT, 0.5011121) * Lorentzian(bL, 2.1997283)) * -0.032816112"
+10,1.0230973e-9,"Lorentzian(bT, 0.688586) * (gaussian(bL * 0.42213494) * -0.01359313)"
+11,8.821194e-10,"(Lorentzian(bT, bL * bL) * -0.106816515) * Lorentzian(bL, 6.7419)"
+13,8.530486e-10,"(Lorentzian(bL, 8.265026) * -0.11597435) * Lorentzian(bT, bL * (bL * 0.7768353))"

@@ -1,0 +1,12 @@
+Complexity,Loss,Equation
+1,5.6710345e-8,"0.0012734586"
+5,4.8548962e-8,"Lorentzian(bT, 4.424342) * 0.027197348"
+7,1.5355402e-8,"Lorentzian(bL, bT * bT) * 0.050925475"
+9,1.38090135e-8,"(Lorentzian(bT, 1.1119195) * Lorentzian(bL, 2.7930055)) * 0.22325794"
+12,1.205928e-8,"(Lorentzian(bL, bT * bT) * 0.06174256) * gaussian(bL * -0.18823929)"
+14,1.19153984e-8,"Lorentzian(bL * 0.9204196, bT * bT) * (gaussian(bL * 0.20845422) * 0.06079493)"
+15,9.313358e-9,"(Lorentzian(-0.5366214, bT * -0.61179) * (Lorentzian(bL, bT * bT) * -0.029404746)) * bT"
+17,8.950819e-9,"((Lorentzian(0.58098274, bT * -0.6117009) * bT) * Lorentzian(bL * -1.1769524, bT * bT)) * -0.031618003"
+19,8.807718e-9,"((Lorentzian(bL, (bT * bT) * 0.6430679) * 0.66928023) * (Lorentzian(-0.5525585, bT * -0.6116376) * bT)) * -0.032682173"
+20,7.567409e-9,"(Lorentzian(bL, bT * bT) * (gaussian(bL * 0.14734785) * bT)) * (Lorentzian(0.409085, bT * -0.40605596) * -0.022637092)"
+22,7.1172384e-9,"((Lorentzian(bL, bT * bT) * gaussian((bT * -0.040257975) * bL)) * bT) * (Lorentzian(0.40907156, bT * -0.40607423) * -0.022423258)"

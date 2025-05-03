@@ -1,0 +1,13 @@
+Complexity,Loss,Equation
+1,1.7003711e-7,"-0.00018592706"
+6,1.322867e-7,"-0.0009614849 * gaussian(bL * -0.38671798)"
+8,9.2076824e-8,"((bL * bL) * gaussian(bL)) * -0.0087056765"
+10,6.810418e-8,"gaussian(bT * gaussian(gaussian(bL * 0.24316362))) * -0.004495561"
+11,3.0119075e-8,"(gaussian(bT * -0.41943836) * gaussian(bL * 0.40641227)) * -0.007316506"
+15,2.9424825e-8,"(gaussian(bL * 0.4093982) * -0.0074503887) * gaussian((gaussian(gaussian(bT)) * bT) * 0.4252037)"
+16,2.7496155e-8,"((gaussian(bL * 0.4503365) * gaussian(gaussian(gaussian(bT)))) * gaussian(bT * -0.39003032)) * -0.01928221"
+18,2.7066532e-8,"(gaussian(bL * 0.4484356) * -0.019827409) * (gaussian(bT * -0.40201485) * gaussian(gaussian(gaussian(bT * 0.880418))))"
+20,2.6835329e-8,"gaussian((bL * 0.4111665) * gaussian((bT * (0.009511339 * bL)) * bT)) * (-0.007346028 * gaussian(-0.4195697 * bT))"
+22,2.6749218e-8,"gaussian(gaussian(((bT * (0.024409048 * bT)) * -0.41951504) * bL) * (bL * -0.41423708)) * (gaussian(bT * -0.41951504) * -0.0074030207)"
+28,2.5323057e-8,"(gaussian(((bL * -0.41423708) * gaussian((bT * (bT * -0.0102399625)) * bL)) * gaussian(gaussian(bT * (bL * -0.5620896)))) * gaussian(bT * -0.41951504)) * -0.0074030207"
+30,2.5052254e-8,"(gaussian(bT * -0.41952455) * gaussian(bL * ((gaussian(((bT * 0.024401031) * bT) * (bL * -0.4195149)) * gaussian(gaussian((bT * bL) * -0.5620898))) * -0.4142446))) * -0.0071265823"

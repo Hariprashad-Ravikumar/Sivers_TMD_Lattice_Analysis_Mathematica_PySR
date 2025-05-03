@@ -1,0 +1,8 @@
+Complexity,Loss,Equation
+1,1.5918167e-5,"0.010525331"
+2,1.4977074e-5,"sech(bsq)"
+3,1.4932302e-6,"Lorentzian(bsq, 2.1027172)"
+5,1.0873591e-6,"Lorentzian(bsq, 3.998344) * 1.4448249"
+7,9.241121e-7,"Lorentzian(Pb, 3.3827248) * Lorentzian(0.65926206, bsq)"
+8,8.163473e-7,"(sech(Pb) * 0.30198336) * Lorentzian(0.6667897, bsq)"
+9,5.2908035e-8,"(Lorentzian(0.9503385, bsq) * Lorentzian(2.545843, bsq)) * 3.7009373"
