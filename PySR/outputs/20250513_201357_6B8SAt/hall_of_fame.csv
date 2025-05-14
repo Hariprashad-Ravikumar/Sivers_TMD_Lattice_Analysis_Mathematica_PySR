@@ -1,0 +1,13 @@
+Complexity,Loss,Equation
+1,1.9320632e-7,"3.3527613e-8"
+3,1.4392448e-7,"Pb * -0.0014486922"
+6,9.424607e-8,"(Pb * gaussian(Pb)) * -0.005265776"
+8,2.2527056e-8,"(Pb * sech(bsq * 0.1390386)) * -0.024268206"
+11,1.7197545e-8,"sech(sech(Pb) * (bsq * -0.18938251)) * (Pb * -0.029002784)"
+13,1.3101917e-8,"Pb * (sech((bsq * -0.16282044) * sech(bsq * 0.023126187)) * -0.027435847)"
+15,5.9637886e-9,"Pb * (sech((bsq * -0.29703876) * gaussian(gaussian(gaussian(-0.042685263 * bsq)))) * -0.040539928)"
+17,5.6405822e-9,"(sech(bsq * (gaussian(gaussian(gaussian(bsq * -0.045200773) * 1.121074)) * -0.29551512)) * -0.04290553) * Pb"
+21,5.343968e-9,"(sech(gaussian(gaussian(gaussian(bsq * -0.04170657) * gaussian(sech(bsq) * 2.8880942))) * (-0.29751456 * bsq)) * Pb) * -0.04062995"
+23,5.058382e-9,"sech(gaussian(sech(gaussian((bsq * bsq) * 0.014041625)) * gaussian(gaussian(bsq * -0.042651273))) * (bsq * -0.29692093)) * (Pb * -0.042232335)"
+25,4.8644364e-9,"sech((gaussian(gaussian(gaussian(bsq * -0.042382218) * gaussian(sech((bsq * -0.19541954) * bsq) * -1.808941))) * -0.29734978) * bsq) * (Pb * -0.040887676)"
+27,4.840116e-9,"-0.040786143 * (sech(bsq * (-0.29721838 * gaussian(gaussian(gaussian(bsq * -0.04253878) * gaussian(sech((bsq * (-0.79033077 * bsq)) * -0.29721838) * bsq))))) * Pb)"
