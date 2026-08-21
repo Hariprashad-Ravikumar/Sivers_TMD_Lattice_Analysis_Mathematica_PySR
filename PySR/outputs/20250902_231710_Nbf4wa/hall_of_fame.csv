@@ -1,0 +1,12 @@
+Complexity,Loss,Equation
+1,6.969255e-8,"-0.0010570874"
+5,6.6422615e-8,"PowerLaw(bL, 1.1228652) * -0.0019409957"
+7,4.7862493e-8,"(PowerLaw(bL, -0.000106231855) * bL) * -0.012779556"
+9,3.26842e-8,"PowerLaw(bL * bL, bT * bT) * -0.06775219"
+11,9.06268e-9,"PowerLaw(bL * (bL * 0.29240847), bT * bT) * -0.049924336"
+13,9.062676e-9,"(PowerLaw((bL * bL) * 0.29240847, bT * bT) * -0.049924336) * 0.99986553"
+15,8.691932e-9,"-0.049924336 * PowerLaw(PowerLaw(0.23335996, PowerLaw(0.49635744, bL * bL)) * 0.29240847, bT * bT)"
+19,7.884524e-9,"PowerLaw((bL * ((bL * 0.27941412) * PowerLaw(bT * -0.226228, bT))) * bT, bT * bT) * -0.05133733"
+23,7.2878574e-9,"PowerLaw(bT * ((bL * PowerLaw(bT * PowerLaw(-2.3778117, bL * bL), bT)) * (bL * 0.28463626)), bT * bT) * -0.050912973"
+25,7.0240436e-9,"PowerLaw((bL * ((bL * 0.27533033) * bT)) * PowerLaw(PowerLaw(-2.3281755, bL * bL) * (bT * 0.8787958), bT), bT * bT) * -0.05022108"
+27,6.9723294e-9,"PowerLaw(((bL * (bT * 0.27528632)) * bL) * PowerLaw((PowerLaw(-2.3281858, (bL * 0.99309593) * bL) * bT) * 0.87879497, bT), bT * bT) * -0.050233576"

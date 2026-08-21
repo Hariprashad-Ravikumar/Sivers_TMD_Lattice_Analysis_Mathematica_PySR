@@ -1,7 +1,13 @@
-# Ignore large binary data
+# Ignore large binary data files
 *.h5
 *.bidatex
 
-# large data
-*.h5
-*.bidatex
+# Mathematica notebooks exceeding GitHub's 100MB file size limit
+mathematica_hari/A12B_A2B_eta_dependancy_multi_paraFit_FourierTransform_LorentzianPowerLaw.nb
+mathematica_hari/A12B_A2B_eta_dependancy_multi_paraFit_FourierTransform_LorentzianPowerLawShortListed_A2B_Re_Im_c_eta.nb
+mathematica_hari/A12B_A2B_eta_dependancy_multi_paraFit_FourierTransform_LorentzianPowerLawShortListed_A2B_Re_Im_c_eta_try2.nb
+mathematica_hari/eta_dependancy_A_multi_paraFit_FourierTransform_Lorentzian.nb
+mathematica_hari/eta_dependancy_A_multi_paraFit_FourierTransform_Gaussian_Lorentzian.nb
+
+# macOS metadata
+.DS_Store

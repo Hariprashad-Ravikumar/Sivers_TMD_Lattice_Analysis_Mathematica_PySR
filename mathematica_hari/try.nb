@@ -1,0 +1,968 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     38557,        958]
+NotebookOptionsPosition[     37056,        927]
+NotebookOutlinePosition[     37451,        943]
+CellTagsIndexPosition[     37408,        940]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"SetOptions", "[", 
+  RowBox[{"$FrontEnd", ",", 
+   RowBox[{"\"\<CommonDefaultFormatTypes\>\"", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<Output\>\"", "\[Rule]", "StandardForm"}], "}"}]}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"basepath", "=", 
+  RowBox[{
+  "$HomeDirectory", "<>", 
+   "\"\</sivers_TMD_PhD_project/mathematica_hari\>\""}]}], "\
+\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SetDirectory", "[", 
+   RowBox[{"basepath", "<>", "\"\</output\>\""}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"includepath", "=", 
+   RowBox[{"basepath", "<>", "\"\</include\>\""}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"AppendTo", "[", 
+   RowBox[{"$Path", ",", " ", "includepath"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Needs", "[", "\"\<LatticeAnalysis`\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{" ", 
+  RowBox[{"<<", "\"\<LatticeAnalysis`\>\""}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "do", " ", "not", " ", "keep", " ", "track", " ", "of", " ", 
+    "intermediate", " ", "results"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"$HistoryLength", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Needs", "[", "\"\<FourierSeries`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"lata", "=", "0.11403"}]}], "Input",
+ CellLabel->"In[21]:=",ExpressionUUID->"32d1a5cd-cc37-4335-8991-e1e57d2bb46c"],
+
+Cell[BoxData["\<\"/Users/hariprashadravikumar/sivers_TMD_PhD_project/\
+mathematica_hari\"\>"], "Output",
+ CellChangeTimes->{{3.967726187460639*^9, 3.967726193168721*^9}, 
+   3.967726328589345*^9},
+ CellLabel->"Out[22]=",ExpressionUUID->"07d5d72c-0616-4316-a6ea-2e6888c5ee1a"],
+
+Cell[BoxData["0.11403`"], "Output",
+ CellChangeTimes->{{3.967726187460639*^9, 3.967726193168721*^9}, 
+   3.9677263286063232`*^9},
+ CellLabel->"Out[30]=",ExpressionUUID->"58006849-6737-43fa-8520-f69fbd2c19fc"]
+}, Open  ]],
+
+Cell[BoxData[Cell["Open Database", "Section",
+  CellChangeTimes->{{3.401074534729836*^9, 3.401074535407317*^9}, {
+   3.401077287738246*^9, 3.401077290222715*^9}, {3.965168536819435*^9, 
+   3.9651685379386673`*^9}},ExpressionUUID->
+  "7aba4c67-e337-4a61-861d-7a3dfa408c3a"]], "Input",
+ CellChangeTimes->{{3.96772652846647*^9, 3.967726537824925*^9}},
+ CellLabel->"In[42]:=",ExpressionUUID->"d6b082e5-2ccd-48e0-a09e-1b275f43490d"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.9677265494603786`*^9, 3.967726549462479*^9}},
+ CellLabel->"In[43]:=",ExpressionUUID->"3990c174-87bd-4cac-bd54-03210d532537"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"AmpDB", " ", "=", " ", 
+  RowBox[{
+  "BIDATEXReader", "[", 
+   "\"\</Users/hariprashadravikumar/sivers_TMD_PhD_project/sivers_new/\
+newDBforA12BA2B/db_Alleta_correct_try_A12B_A2B_bL_bT_bevenodd.bidatex\>\"", 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"AmpDBPbbsq", " ", "=", " ", 
+  RowBox[{
+  "BIDATEXReader", "[", 
+   "\"\</Users/hariprashadravikumar/sivers_TMD_PhD_project/sivers_new/\
+newDBforA12BA2B/db_Alleta_correct_try_A12B_A2B_Pb32by2Pi_bsq_bevenodd.bidatex\
+\>\"", "]"}]}]}], "Input",
+ CellLabel->"In[31]:=",ExpressionUUID->"1ae64de7-91a6-48fc-8f8f-90665141071b"],
+
+Cell[BoxData[
+ InterpretationBox["\<\"< -MemDB- \\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"A\\\
+\", \\\",\\\", \\\"bL\\\", \\\",\\\", \\\"bNum\\\", \\\",\\\", \\\"bT\\\", \\\
+\",\\\", \\\"data\\\", \\\",\\\", \\\"EN\\\", \\\",\\\", \\\"etav\\\", \
+\\\",\\\", \\\"MN\\\", \\\",\\\", \\\"PL\\\", \\\",\\\", \\\"zta\\\"}], \\\"}\
+\\\"}]\\)>\"\>",
+  StringForm[
+  "< -MemDB- ``>", {$CellContext`A, $CellContext`bL, $CellContext`bNum, \
+$CellContext`bT, 
+    LatticeAnalysis`data, $CellContext`EN, $CellContext`etav, \
+$CellContext`MN, $CellContext`PL, $CellContext`zta}],
+  Editable->False]], "Output",
+ CellChangeTimes->{3.967726338023278*^9},
+ CellLabel->"Out[31]=",ExpressionUUID->"a49241aa-13f1-40d6-9c74-87a4788bb2bc"],
+
+Cell[BoxData[
+ InterpretationBox["\<\"< -MemDB- \\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"A\\\
+\", \\\",\\\", \\\"bNum\\\", \\\",\\\", \\\"bsquare\\\", \\\",\\\", \
+\\\"data\\\", \\\",\\\", \\\"EN\\\", \\\",\\\", \\\"etav\\\", \\\",\\\", \
+\\\"MN\\\", \\\",\\\", \\\"Pb32by2Pi\\\", \\\",\\\", \\\"PL\\\", \\\",\\\", \
+\\\"zta\\\"}], \\\"}\\\"}]\\)>\"\>",
+  StringForm[
+  "< -MemDB- ``>", {$CellContext`A, $CellContext`bNum, $CellContext`bsquare, 
+    LatticeAnalysis`data, $CellContext`EN, $CellContext`etav, \
+$CellContext`MN, $CellContext`Pb32by2Pi, $CellContext`PL, $CellContext`zta}],
+  Editable->False]], "Output",
+ CellChangeTimes->{3.96772634011504*^9},
+ CellLabel->"Out[32]=",ExpressionUUID->"684c7d87-cbfa-4a38-b625-70d4831e3a98"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"modelfitJackkife", "[", 
+    RowBox[{
+    "model_", ",", " ", "fitParams_", ",", " ", "x_", ",", " ", "y_"}], "]"}],
+    ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "numFs", ",", " ", "modelvaluej", ",", "modelvalue", ",", " ", 
+       "jackknifeResults"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"numFs", "=", 
+       RowBox[{"Length", "[", 
+        RowBox[{"fitParams", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      
+      RowBox[{
+       RowBox[{"modelvaluej", "[", "j_", "]"}], ":=", 
+       RowBox[{"Module", "[", 
+        RowBox[{
+         RowBox[{"{", "datafitParams", "}"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"datafitParams", "=", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"fitParams", "[", 
+               RowBox[{"[", "1", "]"}], "]"}], "[", 
+              RowBox[{"[", "j", "]"}], "]"}], ",", 
+             RowBox[{
+              RowBox[{"fitParams", "[", 
+               RowBox[{"[", "2", "]"}], "]"}], "[", 
+              RowBox[{"[", "j", "]"}], "]"}], ",", 
+             RowBox[{
+              RowBox[{"fitParams", "[", 
+               RowBox[{"[", "3", "]"}], "]"}], "[", 
+              RowBox[{"[", "j", "]"}], "]"}]}], "}"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"model", "[", 
+           RowBox[{"x", ",", "y", ",", "datafitParams"}], "]"}]}]}], 
+        "\[IndentingNewLine]", "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"modelvalue", "=", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"modelvaluej", "[", "j", "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"j", ",", "numFs"}], "}"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"jackknifeResults", "=", 
+       RowBox[{"JacknifeSamples", "@@", 
+        RowBox[{"(", "modelvalue", ")"}]}]}], ";", "\[IndentingNewLine]", 
+      "jackknifeResults"}]}], "\[IndentingNewLine]", "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"meanfromJK", "[", "JKvalue_", "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "meanvalue", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"meanvalue", " ", "=", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"MakeErrBars", "[", 
+           RowBox[{"{", 
+            RowBox[{"{", 
+             RowBox[{"1", ",", "JKvalue"}], "}"}], "}"}], "]"}], "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "[", 
+        RowBox[{"[", "2", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      "meanvalue"}]}], "\[IndentingNewLine]", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"errorfromJK", "[", "JKvalue_", "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "errorvalue", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"errorvalue", " ", "=", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"MakeErrBars", "[", 
+            RowBox[{"{", 
+             RowBox[{"{", 
+              RowBox[{"1", ",", "JKvalue"}], "}"}], "}"}], "]"}], "[", 
+           RowBox[{"[", "1", "]"}], "]"}], "[", 
+          RowBox[{"[", "2", "]"}], "]"}], "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "[", 
+        RowBox[{"[", "2", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      "errorvalue"}]}], "\[IndentingNewLine]", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"chisqOEsigmasq", "[", 
+     RowBox[{"O_", ",", " ", "E_"}], "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "OEsigmasq", ",", " ", "Omean", ",", "Emean", ",", " ", "Esigmasq", 
+        ",", " ", "Osigmasq", ",", " ", "sigmasqTotal"}], "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Omean", "=", 
+        RowBox[{"meanfromJK", "[", "O", "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Emean", "=", 
+        RowBox[{"meanfromJK", "[", "E", "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Esigmasq", " ", "=", " ", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{"MakeErrBars", "[", 
+               RowBox[{"{", 
+                RowBox[{"{", 
+                 RowBox[{"1", ",", "E"}], "}"}], "}"}], "]"}], "[", 
+              RowBox[{"[", "1", "]"}], "]"}], "[", 
+             RowBox[{"[", "2", "]"}], "]"}], "[", 
+            RowBox[{"[", "1", "]"}], "]"}], "[", 
+           RowBox[{"[", "2", "]"}], "]"}], ")"}], "^", "2"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Osigmasq", " ", "=", " ", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{"MakeErrBars", "[", 
+               RowBox[{"{", 
+                RowBox[{"{", 
+                 RowBox[{"1", ",", "O"}], "}"}], "}"}], "]"}], "[", 
+              RowBox[{"[", "1", "]"}], "]"}], "[", 
+             RowBox[{"[", "2", "]"}], "]"}], "[", 
+            RowBox[{"[", "1", "]"}], "]"}], "[", 
+           RowBox[{"[", "2", "]"}], "]"}], ")"}], "^", "2"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"sigmasqTotal", " ", "=", " ", 
+        RowBox[{"Esigmasq", "+", "Osigmasq"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"OEsigmasq", " ", "=", " ", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"sigmasqTotal", "==", "0"}], ",", "0", ",", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"Omean", "-", "Emean"}], ")"}], "^", "2"}], ")"}], "/", 
+           "sigmasqTotal"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+       "OEsigmasq"}]}], "\[IndentingNewLine]", "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"JackknifeFit3D", "[", 
+     RowBox[{
+     "xyJKf_", ",", "model_", ",", "para_", ",", "vari_", ",", " ", 
+      "modelFnName_"}], "]"}], ":=", 
+    RowBox[{"Module", "[", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "numFs", ",", "fitParamsForFj", ",", "fitParamsList", ",", 
+        "paramLists", ",", "jackknifeResults", ",", "DoF", ",", " ", 
+        "chisquare", ",", " ", "observed", ",", " ", "expected", ",", " ", 
+        "chisquareperDoF"}], "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"numFs", "=", 
+        RowBox[{"Length", "[", 
+         RowBox[{"xyJKf", "[", 
+          RowBox[{"[", 
+           RowBox[{"1", ",", "3"}], "]"}], "]"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"WeightList", " ", "=", " ", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Do", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"\[CurlyEpsilon]", "=", 
+           RowBox[{"10", "^", 
+            RowBox[{"-", "6"}]}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"\[Sigma]", "=", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{
+                RowBox[{"MakeErrBars", "[", 
+                 RowBox[{"{", 
+                  RowBox[{"{", 
+                   RowBox[{"1", ",", 
+                    RowBox[{
+                    RowBox[{"xyJKf", "[", 
+                    RowBox[{"[", "ii", "]"}], "]"}], "[", 
+                    RowBox[{"[", "3", "]"}], "]"}]}], "}"}], "}"}], "]"}], 
+                "[", 
+                RowBox[{"[", "1", "]"}], "]"}], "[", 
+               RowBox[{"[", "2", "]"}], "]"}], "[", 
+              RowBox[{"[", "1", "]"}], "]"}], "[", 
+             RowBox[{"[", "2", "]"}], "]"}], ")"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"AppendTo", "[", 
+           RowBox[{"WeightList", ",", 
+            RowBox[{"1", "/", 
+             RowBox[{
+              RowBox[{"Max", "[", 
+               RowBox[{"\[Sigma]", ",", "\[CurlyEpsilon]"}], "]"}], "^", 
+              "2"}]}]}], "]"}]}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"ii", ",", " ", 
+           RowBox[{"Length", "[", "xyJKf", "]"}]}], "}"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"Function", " ", "to", " ", "extract", " ", "j"}], "-", 
+         RowBox[{
+         "th", " ", "f", " ", "values", " ", "and", " ", "fit", " ", 
+          "them"}]}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"fitParamsForFj", "[", "j_", "]"}], ":=", 
+        RowBox[{"Module", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"data", ",", "fit"}], "}"}], ",", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"data", "=", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"#", "[", 
+                 RowBox[{"[", "1", "]"}], "]"}], ",", 
+                RowBox[{"#", "[", 
+                 RowBox[{"[", "2", "]"}], "]"}], ",", 
+                RowBox[{"#", "[", 
+                 RowBox[{"[", 
+                  RowBox[{"3", ",", "j"}], "]"}], "]"}]}], "}"}], "&"}], "/@",
+              "xyJKf"}]}], ";", 
+           RowBox[{"(*", 
+            RowBox[{"Extract", " ", "f_j", " ", "values"}], "*)"}], 
+           "\[IndentingNewLine]", 
+           RowBox[{"fit", "=", 
+            RowBox[{"NonlinearModelFit", "[", 
+             RowBox[{"data", ",", "model", ",", "para", ",", "vari", ",", " ", 
+              RowBox[{"Weights", "->", "WeightList"}], ",", 
+              RowBox[{"Method", "->", 
+               RowBox[{"{", "\"\<LevenbergMarquardt\>\"", "}"}]}]}], "]"}]}], 
+           ";", "\[IndentingNewLine]", 
+           RowBox[{"fit", "[", "\"\<BestFitParameters\>\"", "]"}]}]}], " ", 
+         RowBox[{"(*", 
+          RowBox[{"Extract", " ", "fitted", " ", "parameters"}], "*)"}], 
+         "\[IndentingNewLine]", "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+        "Compute", " ", "fit", " ", "parameters", " ", "for", " ", "each", 
+         " ", "f_j"}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"fitParamsList", "=", 
+        RowBox[{"Table", "[", 
+         RowBox[{
+          RowBox[{"fitParamsForFj", "[", "j", "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"j", ",", "numFs"}], "}"}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"jackknifeResults", "=", 
+        RowBox[{"Table", "[", 
+         RowBox[{
+          RowBox[{"JacknifeSamples", "@@", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"para", "[", 
+              RowBox[{"[", "pa", "]"}], "]"}], "/.", " ", "fitParamsList"}], 
+            ")"}]}], ",", 
+          RowBox[{"{", 
+           RowBox[{"pa", ",", 
+            RowBox[{"Length", "[", "para", "]"}]}], "}"}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"DoF", "=", 
+        RowBox[{"Length", "[", "xyJKf", "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"chisquare", "=", "0"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Do", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"observed", " ", "=", " ", 
+           RowBox[{"modelfitJackkife", "[", 
+            RowBox[{"modelFnName", ",", " ", "jackknifeResults", ",", " ", 
+             RowBox[{
+              RowBox[{"xyJKf", "[", 
+               RowBox[{"[", "i", "]"}], "]"}], "[", 
+              RowBox[{"[", "1", "]"}], "]"}], ",", " ", 
+             RowBox[{
+              RowBox[{"xyJKf", "[", 
+               RowBox[{"[", "i", "]"}], "]"}], "[", 
+              RowBox[{"[", "2", "]"}], "]"}]}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"expected", "=", " ", 
+           RowBox[{
+            RowBox[{"xyJKf", "[", 
+             RowBox[{"[", "i", "]"}], "]"}], "[", 
+            RowBox[{"[", "3", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"chisquare", " ", "=", " ", 
+           RowBox[{"chisquare", " ", "+", " ", 
+            RowBox[{"chisqOEsigmasq", "[", 
+             RowBox[{"observed", ",", " ", "expected"}], "]"}]}]}], ";"}], 
+         "\[IndentingNewLine]", ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "DoF"}], "}"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"chisquareperDoF", "=", 
+        RowBox[{"chisquare", "/", 
+         RowBox[{"(", 
+          RowBox[{"DoF", "-", "3"}], ")"}]}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"FitParameters", "->", "jackknifeResults"}], ",", " ", 
+         RowBox[{"chisquareDoF", "->", "chisquareperDoF"}]}], "}"}]}]}], 
+     "]"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"modelfitJackkifband", "[", 
+     RowBox[{
+     "model_", ",", " ", "fitParams_", ",", "fixedVare_", ",", " ", "x_"}], 
+     "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "numFs", ",", " ", "modelvaluej", ",", "modelvalue", ",", " ", 
+        "jackknifeResults"}], "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"numFs", "=", 
+        RowBox[{"Length", "[", 
+         RowBox[{"fitParams", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"modelvaluej", "[", "j_", "]"}], ":=", 
+        RowBox[{"Module", "[", 
+         RowBox[{
+          RowBox[{"{", "datafitParams", "}"}], ",", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"datafitParams", "=", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"fitParams", "[", 
+                RowBox[{"[", "1", "]"}], "]"}], "[", 
+               RowBox[{"[", "j", "]"}], "]"}], ",", 
+              RowBox[{
+               RowBox[{"fitParams", "[", 
+                RowBox[{"[", "2", "]"}], "]"}], "[", 
+               RowBox[{"[", "j", "]"}], "]"}], ",", 
+              RowBox[{
+               RowBox[{"fitParams", "[", 
+                RowBox[{"[", "3", "]"}], "]"}], "[", 
+               RowBox[{"[", "j", "]"}], "]"}]}], "}"}]}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"model", "[", 
+            RowBox[{"x", ",", " ", "fixedVare", ",", "datafitParams"}], 
+            "]"}]}]}], "\[IndentingNewLine]", "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"modelvalue", "=", 
+        RowBox[{"Table", "[", 
+         RowBox[{
+          RowBox[{"modelvaluej", "[", "j", "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"j", ",", "numFs"}], "}"}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"jackknifeResults", "=", 
+        RowBox[{"JacknifeSamples", "@@", 
+         RowBox[{"(", "modelvalue", ")"}]}]}], ";", "\[IndentingNewLine]", 
+       "jackknifeResults"}]}], "\[IndentingNewLine]", "]"}]}], ";"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"modelfitJackkifex", "[", 
+    RowBox[{"model_", ",", " ", "fitParams_", ",", " ", "x_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "numFs", ",", " ", "modelvaluej", ",", "modelvalue", ",", " ", 
+       "jackknifeResults"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"numFs", "=", 
+       RowBox[{"Length", "[", 
+        RowBox[{"fitParams", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      
+      RowBox[{
+       RowBox[{"modelvaluej", "[", "j_", "]"}], ":=", 
+       RowBox[{"Module", "[", 
+        RowBox[{
+         RowBox[{"{", "datafitParams", "}"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"datafitParams", "=", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"fitParams", "[", 
+               RowBox[{"[", "1", "]"}], "]"}], "[", 
+              RowBox[{"[", "j", "]"}], "]"}], ",", 
+             RowBox[{
+              RowBox[{"fitParams", "[", 
+               RowBox[{"[", "2", "]"}], "]"}], "[", 
+              RowBox[{"[", "j", "]"}], "]"}], ",", 
+             RowBox[{
+              RowBox[{"fitParams", "[", 
+               RowBox[{"[", "3", "]"}], "]"}], "[", 
+              RowBox[{"[", "j", "]"}], "]"}]}], "}"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"model", "[", 
+           RowBox[{"x", ",", "datafitParams"}], "]"}]}]}], 
+        "\[IndentingNewLine]", "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"modelvalue", "=", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"modelvaluej", "[", "j", "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"j", ",", "numFs"}], "}"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"jackknifeResults", "=", 
+       RowBox[{"JacknifeSamples", "@@", 
+        RowBox[{"(", "modelvalue", ")"}]}]}], ";", "\[IndentingNewLine]", 
+      "jackknifeResults"}]}], "\[IndentingNewLine]", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"modelfitJackkifex", "[", 
+    RowBox[{"model_", ",", " ", "fitParams_", ",", " ", "x_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "numFs", ",", " ", "modelvaluej", ",", "modelvalue", ",", " ", 
+       "jackknifeResults"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"numFs", "=", 
+       RowBox[{"Length", "[", 
+        RowBox[{"fitParams", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      
+      RowBox[{
+       RowBox[{"modelvaluej", "[", "j_", "]"}], ":=", 
+       RowBox[{"Module", "[", 
+        RowBox[{
+         RowBox[{"{", "datafitParams", "}"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"datafitParams", "=", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"fitParams", "[", 
+               RowBox[{"[", "1", "]"}], "]"}], "[", 
+              RowBox[{"[", "j", "]"}], "]"}], ",", 
+             RowBox[{
+              RowBox[{"fitParams", "[", 
+               RowBox[{"[", "2", "]"}], "]"}], "[", 
+              RowBox[{"[", "j", "]"}], "]"}], ",", 
+             RowBox[{
+              RowBox[{"fitParams", "[", 
+               RowBox[{"[", "3", "]"}], "]"}], "[", 
+              RowBox[{"[", "j", "]"}], "]"}]}], "}"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"model", "[", 
+           RowBox[{"x", ",", "datafitParams"}], "]"}]}]}], 
+        "\[IndentingNewLine]", "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"modelvalue", "=", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"modelvaluej", "[", "j", "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"j", ",", "numFs"}], "}"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"jackknifeResults", "=", 
+       RowBox[{"JacknifeSamples", "@@", 
+        RowBox[{"(", "modelvalue", ")"}]}]}], ";", "\[IndentingNewLine]", 
+      "jackknifeResults"}]}], "\[IndentingNewLine]", "]"}]}], ";"}]}], "Input",\
+
+ CellLabel->"In[33]:=",ExpressionUUID->"74db7874-f662-4575-a128-ef6f534a72f9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"dataforfit", " ", "=", " ", 
+   RowBox[{"MemDBGet", "[", 
+    RowBox[{"AmpDBPbbsq", ",", 
+     RowBox[{"MemDBSelect", "[", 
+      RowBox[{"AmpDBPbbsq", ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"A", "->", "A12B"}], ",", 
+         RowBox[{"PL", "->", 
+          RowBox[{"-", "1"}]}], ",", 
+         RowBox[{"bsquare", "->", "8"}], ",", " ", 
+         RowBox[{"bNum", "->", "even"}]}], "}"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"etav", ",", " ", "Pb32by2Pi", ",", "data"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"dataforfit", "=", 
+  RowBox[{"Select", "[", 
+   RowBox[{"dataforfit", ",", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"#", "[", 
+       RowBox[{"[", "1", "]"}], "]"}], ">", "0"}], "&"}]}], " ", 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"modelfitA2B", "[", 
+    RowBox[{"x1_", ",", "x2_", ",", 
+     RowBox[{"{", 
+      RowBox[{"a_", ",", "b_", ",", "c_"}], "}"}]}], "]"}], ":=", 
+   RowBox[{"a", "*", "x1", "*", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", "b"}], "*", 
+      RowBox[{"x1", "^", "2"}]}], "]"}], "*", 
+    RowBox[{"Exp", "[", 
+     RowBox[{
+      RowBox[{"-", "c"}], "*", 
+      RowBox[{"x2", "^", "2"}]}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"fitJK", " ", "=", 
+  RowBox[{"JackknifeFit3D", "[", 
+   RowBox[{"dataforfit", ",", 
+    RowBox[{"modelfitA2B", "[", 
+     RowBox[{"n", ",", "bP", ",", 
+      RowBox[{"{", 
+       RowBox[{"a", ",", "b", ",", "c"}], "}"}]}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"a", ",", "b", ",", " ", "c"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "bP"}], "}"}], ",", " ", "modelfitA2B"}], 
+   "]"}]}]}], "Input",
+ CellChangeTimes->{{3.967726581343377*^9, 3.967726673652371*^9}, {
+   3.967726715307212*^9, 3.9677267156533403`*^9}, {3.9677267663155107`*^9, 
+   3.967726880609487*^9}, {3.967726947878565*^9, 3.967726949336706*^9}, 
+   3.9677270121939373`*^9, {3.967727085233663*^9, 3.967727090058041*^9}, {
+   3.9677272446729193`*^9, 3.967727386569772*^9}},
+ CellLabel->"In[81]:=",ExpressionUUID->"df400378-5812-4cdd-8459-c4119d9857a2"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", "2"}], ",", 
+     InterpretationBox["\<\"\[LeftAngleBracket]-0.0533(27)\\!\\(\\*\
+SubscriptBox[\\\"\[RightAngleBracket]\\\", \
+\\\"\\!\\(\\*RowBox[{\\\"2902\\\"}]\\)J\\\"]\\)\"\>",
+      StringForm[
+      "\[LeftAngleBracket]``\!\(\*SubscriptBox[\"\[RightAngleBracket]\", \
+\"``J\"]\)", "-0.0533(27)", 2902],
+      Editable->False]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", 
+     InterpretationBox["\<\"\[LeftAngleBracket]-0.0533(27)\\!\\(\\*\
+SubscriptBox[\\\"\[RightAngleBracket]\\\", \
+\\\"\\!\\(\\*RowBox[{\\\"2902\\\"}]\\)J\\\"]\\)\"\>",
+      StringForm[
+      "\[LeftAngleBracket]``\!\(\*SubscriptBox[\"\[RightAngleBracket]\", \
+\"``J\"]\)", "-0.0533(27)", 2902],
+      Editable->False]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", 
+     RowBox[{"-", "2"}], ",", 
+     InterpretationBox["\<\"\[LeftAngleBracket]-0.0618(27)\\!\\(\\*\
+SubscriptBox[\\\"\[RightAngleBracket]\\\", \
+\\\"\\!\\(\\*RowBox[{\\\"2902\\\"}]\\)J\\\"]\\)\"\>",
+      StringForm[
+      "\[LeftAngleBracket]``\!\(\*SubscriptBox[\"\[RightAngleBracket]\", \
+\"``J\"]\)", "-0.0618(27)", 2902],
+      Editable->False]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "2", ",", 
+     InterpretationBox["\<\"\[LeftAngleBracket]-0.0618(27)\\!\\(\\*\
+SubscriptBox[\\\"\[RightAngleBracket]\\\", \
+\\\"\\!\\(\\*RowBox[{\\\"2902\\\"}]\\)J\\\"]\\)\"\>",
+      StringForm[
+      "\[LeftAngleBracket]``\!\(\*SubscriptBox[\"\[RightAngleBracket]\", \
+\"``J\"]\)", "-0.0618(27)", 2902],
+      Editable->False]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", 
+     RowBox[{"-", "2"}], ",", 
+     InterpretationBox["\<\"\[LeftAngleBracket]-0.0531(23)\\!\\(\\*\
+SubscriptBox[\\\"\[RightAngleBracket]\\\", \
+\\\"\\!\\(\\*RowBox[{\\\"2902\\\"}]\\)J\\\"]\\)\"\>",
+      StringForm[
+      "\[LeftAngleBracket]``\!\(\*SubscriptBox[\"\[RightAngleBracket]\", \
+\"``J\"]\)", "-0.0531(23)", 2902],
+      Editable->False]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "2", ",", 
+     InterpretationBox["\<\"\[LeftAngleBracket]-0.0531(23)\\!\\(\\*\
+SubscriptBox[\\\"\[RightAngleBracket]\\\", \
+\\\"\\!\\(\\*RowBox[{\\\"2902\\\"}]\\)J\\\"]\\)\"\>",
+      StringForm[
+      "\[LeftAngleBracket]``\!\(\*SubscriptBox[\"\[RightAngleBracket]\", \
+\"``J\"]\)", "-0.0531(23)", 2902],
+      Editable->False]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", 
+     RowBox[{"-", "2"}], ",", 
+     InterpretationBox["\<\"\[LeftAngleBracket]-0.0409(19)\\!\\(\\*\
+SubscriptBox[\\\"\[RightAngleBracket]\\\", \
+\\\"\\!\\(\\*RowBox[{\\\"2902\\\"}]\\)J\\\"]\\)\"\>",
+      StringForm[
+      "\[LeftAngleBracket]``\!\(\*SubscriptBox[\"\[RightAngleBracket]\", \
+\"``J\"]\)", "-0.0409(19)", 2902],
+      Editable->False]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", "2", ",", 
+     InterpretationBox["\<\"\[LeftAngleBracket]-0.0409(19)\\!\\(\\*\
+SubscriptBox[\\\"\[RightAngleBracket]\\\", \
+\\\"\\!\\(\\*RowBox[{\\\"2902\\\"}]\\)J\\\"]\\)\"\>",
+      StringForm[
+      "\[LeftAngleBracket]``\!\(\*SubscriptBox[\"\[RightAngleBracket]\", \
+\"``J\"]\)", "-0.0409(19)", 2902],
+      Editable->False]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"5", ",", 
+     RowBox[{"-", "2"}], ",", 
+     InterpretationBox["\<\"\[LeftAngleBracket]-0.0281(16)\\!\\(\\*\
+SubscriptBox[\\\"\[RightAngleBracket]\\\", \
+\\\"\\!\\(\\*RowBox[{\\\"2902\\\"}]\\)J\\\"]\\)\"\>",
+      StringForm[
+      "\[LeftAngleBracket]``\!\(\*SubscriptBox[\"\[RightAngleBracket]\", \
+\"``J\"]\)", "-0.0281(16)", 2902],
+      Editable->False]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"5", ",", "2", ",", 
+     InterpretationBox["\<\"\[LeftAngleBracket]-0.0281(16)\\!\\(\\*\
+SubscriptBox[\\\"\[RightAngleBracket]\\\", \
+\\\"\\!\\(\\*RowBox[{\\\"2902\\\"}]\\)J\\\"]\\)\"\>",
+      StringForm[
+      "\[LeftAngleBracket]``\!\(\*SubscriptBox[\"\[RightAngleBracket]\", \
+\"``J\"]\)", "-0.0281(16)", 2902],
+      Editable->False]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"6", ",", 
+     RowBox[{"-", "2"}], ",", 
+     InterpretationBox["\<\"\[LeftAngleBracket]-0.0199(13)\\!\\(\\*\
+SubscriptBox[\\\"\[RightAngleBracket]\\\", \
+\\\"\\!\\(\\*RowBox[{\\\"2902\\\"}]\\)J\\\"]\\)\"\>",
+      StringForm[
+      "\[LeftAngleBracket]``\!\(\*SubscriptBox[\"\[RightAngleBracket]\", \
+\"``J\"]\)", "-0.0199(13)", 2902],
+      Editable->False]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"6", ",", "2", ",", 
+     InterpretationBox["\<\"\[LeftAngleBracket]-0.0199(13)\\!\\(\\*\
+SubscriptBox[\\\"\[RightAngleBracket]\\\", \
+\\\"\\!\\(\\*RowBox[{\\\"2902\\\"}]\\)J\\\"]\\)\"\>",
+      StringForm[
+      "\[LeftAngleBracket]``\!\(\*SubscriptBox[\"\[RightAngleBracket]\", \
+\"``J\"]\)", "-0.0199(13)", 2902],
+      Editable->False]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"7", ",", 
+     RowBox[{"-", "2"}], ",", 
+     InterpretationBox["\<\"\[LeftAngleBracket]-0.0141(11)\\!\\(\\*\
+SubscriptBox[\\\"\[RightAngleBracket]\\\", \
+\\\"\\!\\(\\*RowBox[{\\\"2902\\\"}]\\)J\\\"]\\)\"\>",
+      StringForm[
+      "\[LeftAngleBracket]``\!\(\*SubscriptBox[\"\[RightAngleBracket]\", \
+\"``J\"]\)", "-0.0141(11)", 2902],
+      Editable->False]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"7", ",", "2", ",", 
+     InterpretationBox["\<\"\[LeftAngleBracket]-0.0141(11)\\!\\(\\*\
+SubscriptBox[\\\"\[RightAngleBracket]\\\", \
+\\\"\\!\\(\\*RowBox[{\\\"2902\\\"}]\\)J\\\"]\\)\"\>",
+      StringForm[
+      "\[LeftAngleBracket]``\!\(\*SubscriptBox[\"\[RightAngleBracket]\", \
+\"``J\"]\)", "-0.0141(11)", 2902],
+      Editable->False]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"8", ",", 
+     RowBox[{"-", "2"}], ",", 
+     InterpretationBox["\<\"\[LeftAngleBracket]-0.00902(96)\\!\\(\\*\
+SubscriptBox[\\\"\[RightAngleBracket]\\\", \
+\\\"\\!\\(\\*RowBox[{\\\"2902\\\"}]\\)J\\\"]\\)\"\>",
+      StringForm[
+      "\[LeftAngleBracket]``\!\(\*SubscriptBox[\"\[RightAngleBracket]\", \
+\"``J\"]\)", "-0.00902(96)", 2902],
+      Editable->False]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"8", ",", "2", ",", 
+     InterpretationBox["\<\"\[LeftAngleBracket]-0.00902(96)\\!\\(\\*\
+SubscriptBox[\\\"\[RightAngleBracket]\\\", \
+\\\"\\!\\(\\*RowBox[{\\\"2902\\\"}]\\)J\\\"]\\)\"\>",
+      StringForm[
+      "\[LeftAngleBracket]``\!\(\*SubscriptBox[\"\[RightAngleBracket]\", \
+\"``J\"]\)", "-0.00902(96)", 2902],
+      Editable->False]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"9", ",", 
+     RowBox[{"-", "2"}], ",", 
+     InterpretationBox["\<\"\[LeftAngleBracket]-0.00638(87)\\!\\(\\*\
+SubscriptBox[\\\"\[RightAngleBracket]\\\", \
+\\\"\\!\\(\\*RowBox[{\\\"2902\\\"}]\\)J\\\"]\\)\"\>",
+      StringForm[
+      "\[LeftAngleBracket]``\!\(\*SubscriptBox[\"\[RightAngleBracket]\", \
+\"``J\"]\)", "-0.00638(87)", 2902],
+      Editable->False]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"9", ",", "2", ",", 
+     InterpretationBox["\<\"\[LeftAngleBracket]-0.00638(87)\\!\\(\\*\
+SubscriptBox[\\\"\[RightAngleBracket]\\\", \
+\\\"\\!\\(\\*RowBox[{\\\"2902\\\"}]\\)J\\\"]\\)\"\>",
+      StringForm[
+      "\[LeftAngleBracket]``\!\(\*SubscriptBox[\"\[RightAngleBracket]\", \
+\"``J\"]\)", "-0.00638(87)", 2902],
+      Editable->False]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"10", ",", 
+     RowBox[{"-", "2"}], ",", 
+     InterpretationBox["\<\"\[LeftAngleBracket]-0.00431(78)\\!\\(\\*\
+SubscriptBox[\\\"\[RightAngleBracket]\\\", \
+\\\"\\!\\(\\*RowBox[{\\\"2902\\\"}]\\)J\\\"]\\)\"\>",
+      StringForm[
+      "\[LeftAngleBracket]``\!\(\*SubscriptBox[\"\[RightAngleBracket]\", \
+\"``J\"]\)", "-0.00431(78)", 2902],
+      Editable->False]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"10", ",", "2", ",", 
+     InterpretationBox["\<\"\[LeftAngleBracket]-0.00431(78)\\!\\(\\*\
+SubscriptBox[\\\"\[RightAngleBracket]\\\", \
+\\\"\\!\\(\\*RowBox[{\\\"2902\\\"}]\\)J\\\"]\\)\"\>",
+      StringForm[
+      "\[LeftAngleBracket]``\!\(\*SubscriptBox[\"\[RightAngleBracket]\", \
+\"``J\"]\)", "-0.00431(78)", 2902],
+      Editable->False]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.967726674475527*^9, 3.967726716234771*^9, {3.967726781390266*^9, 
+   3.9677267918632*^9}, 3.967726883011086*^9, 3.967726972306782*^9, 
+   3.967727014942758*^9, 3.967727092548945*^9, {3.9677272735438423`*^9, 
+   3.9677273576735992`*^9}, 3.967727388992803*^9},
+ CellLabel->"Out[82]=",ExpressionUUID->"d6bc5ae1-8106-4b01-8870-936a1d54af57"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"FitParameters", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      InterpretationBox["\<\"\[LeftAngleBracket]\\!\\(\\*RowBox[{\\\"\\\\\\\"-\
+1.097(68)\[ThinSpace]\[Times]\[ThinSpace]\\\\\\\\!\\\\\\\\(\\\\\\\\*\
+TemplateBox[List[\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"10\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"3\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\"\\\\\\\\\\\\\\\"], \\\\\\\\\\\\\\\"Superscript\\\\\\\\\\\\\\\", \
+Rule[SyntaxForm, \
+SuperscriptBox]]\\\\\\\\)\\\\\\\"\\\"}]\\)\\!\\(\\*SubscriptBox[\\\"\
+\[RightAngleBracket]\\\", \\\"\\!\\(\\*RowBox[{\\\"2902\\\"}]\\)J\\\"]\\)\"\>",
+       StringForm[
+       "\[LeftAngleBracket]``\!\(\*SubscriptBox[\"\[RightAngleBracket]\", \
+\"``J\"]\)", 
+        StringForm["``\[ThinSpace]\[Times]\[ThinSpace]``", "-1.097(68)", 
+         Superscript["10", "3"]], 2902],
+       Editable->False], ",", 
+      InterpretationBox["\<\"\[LeftAngleBracket]0.0626(35)\\!\\(\\*\
+SubscriptBox[\\\"\[RightAngleBracket]\\\", \
+\\\"\\!\\(\\*RowBox[{\\\"2902\\\"}]\\)J\\\"]\\)\"\>",
+       StringForm[
+       "\[LeftAngleBracket]``\!\(\*SubscriptBox[\"\[RightAngleBracket]\", \
+\"``J\"]\)", "0.0626(35)", 2902],
+       Editable->False], ",", 
+      InterpretationBox["\<\"\[LeftAngleBracket]248.0(69)\\!\\(\\*\
+SubscriptBox[\\\"\[RightAngleBracket]\\\", \
+\\\"\\!\\(\\*RowBox[{\\\"2902\\\"}]\\)J\\\"]\\)\"\>",
+       StringForm[
+       "\[LeftAngleBracket]``\!\(\*SubscriptBox[\"\[RightAngleBracket]\", \
+\"``J\"]\)", "248.0(69)", 2902],
+       Editable->False]}], "}"}]}], ",", 
+   RowBox[{"chisquareDoF", "\[Rule]", "15.02155893324581`"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.967726674475527*^9, 3.967726716234771*^9, {3.967726781390266*^9, 
+   3.9677267918632*^9}, 3.967726883011086*^9, 3.967726972306782*^9, 
+   3.967727014942758*^9, 3.967727092548945*^9, {3.9677272735438423`*^9, 
+   3.9677273576735992`*^9}, 3.9677274004527683`*^9},
+ CellLabel->"Out[84]=",ExpressionUUID->"f66f7b9d-d495-4c86-bd14-a7c666d017d5"]
+}, Open  ]]
+},
+WindowSize->{1440, 847},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"13.0 for Mac OS X ARM (64-bit) (December 2, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"0998f96f-02fc-475f-9123-45c1a56b833c"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 1441, 37, 241, "Input",ExpressionUUID->"32d1a5cd-cc37-4335-8991-e1e57d2bb46c"],
+Cell[2024, 61, 275, 4, 34, "Output",ExpressionUUID->"07d5d72c-0616-4316-a6ea-2e6888c5ee1a"],
+Cell[2302, 67, 208, 3, 34, "Output",ExpressionUUID->"58006849-6737-43fa-8520-f69fbd2c19fc"]
+}, Open  ]],
+Cell[2525, 73, 427, 6, 56, "Input",ExpressionUUID->"d6b082e5-2ccd-48e0-a09e-1b275f43490d"],
+Cell[2955, 81, 173, 2, 30, InheritFromParent,ExpressionUUID->"3990c174-87bd-4cac-bd54-03210d532537"],
+Cell[CellGroupData[{
+Cell[3153, 87, 601, 13, 52, "Input",ExpressionUUID->"1ae64de7-91a6-48fc-8f8f-90665141071b"],
+Cell[3757, 102, 716, 13, 34, "Output",ExpressionUUID->"a49241aa-13f1-40d6-9c74-87a4788bb2bc"],
+Cell[4476, 117, 737, 12, 34, "Output",ExpressionUUID->"684c7d87-cbfa-4a38-b625-70d4831e3a98"]
+}, Open  ]],
+Cell[5228, 132, 19218, 487, 1837, "Input",ExpressionUUID->"74db7874-f662-4575-a128-ef6f534a72f9"],
+Cell[CellGroupData[{
+Cell[24471, 623, 2155, 57, 94, "Input",ExpressionUUID->"df400378-5812-4cdd-8459-c4119d9857a2"],
+Cell[26629, 682, 8339, 198, 130, "Output",ExpressionUUID->"d6bc5ae1-8106-4b01-8870-936a1d54af57"],
+Cell[34971, 882, 2069, 42, 43, "Output",ExpressionUUID->"f66f7b9d-d495-4c86-bd14-a7c666d017d5"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
