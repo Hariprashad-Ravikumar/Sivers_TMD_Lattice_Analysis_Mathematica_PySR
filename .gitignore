@@ -9,5 +9,10 @@ mathematica_hari/A12B_A2B_eta_dependancy_multi_paraFit_FourierTransform_Lorentzi
 mathematica_hari/eta_dependancy_A_multi_paraFit_FourierTransform_Lorentzian.nb
 mathematica_hari/eta_dependancy_A_multi_paraFit_FourierTransform_Gaussian_Lorentzian.nb
 
+# Ignore deep-wiki and AGENTS markdown files
+deep-wiki/
+AGENTS.md
+AGENTS*.md
+
 # macOS metadata
 .DS_Store
