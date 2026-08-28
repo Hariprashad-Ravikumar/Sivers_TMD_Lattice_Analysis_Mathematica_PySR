@@ -59,9 +59,9 @@ def print_latex_table(fitted_params, chi2_dof_list, PL, bmin, etamin, etamax):
     vals_a12b = ", ".join(res[p] for p in a12b_params if p in res)
 
     eq_re   = (r"$a\,e^{-f\eta}"
-               r"\exp\!\bigl(-c(1-k_1/\eta-k_2/\eta^2)|b_LP_L|-d\,b\bigr)$")
-    eq_im   = r"$a\,(b_LP_L)\,e^{-f\eta}\exp\!\bigl(-c|b_LP_L|-d\,b\bigr)$"
-    eq_a12b = r"$-a\,e^{-f\eta}\exp\!\bigl(-c|b_LP_L|-d\,b\bigr)$"
+               r"\exp\bigl(-c(1-k_1/\eta-k_2/\eta^2)\lvert b_LP_L\rvert-d\lvert b\rvert\bigr)$")
+    eq_im   = r"$a\,(b_LP_L)\,e^{-f\eta}\exp\bigl(-c\lvert b_LP_L\rvert-d\lvert b\rvert\bigr)$"
+    eq_a12b = r"$-a\,e^{-f\eta}\exp\bigl(-c\lvert b_LP_L\rvert-d\lvert b\rvert\bigr)$"
 
     names_re   = r"$\{a,c,d,k_1,k_2,f\}$"
     names_im   = r"$\{a,c,d,f\}$"
