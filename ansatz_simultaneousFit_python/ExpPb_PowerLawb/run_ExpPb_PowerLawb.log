@@ -1,0 +1,114 @@
+
+--- Simultaneous Fit (ExpPb_PowerLawb) : PL=-1, b_min>=3, eta in [6, 10] ---
+Re A2B points: 225, Im A2B points: 175, Re A12B points: 230
+Covariance Matrix size: (630, 630)
+Starting multiprocessing fit...
+/opt/homebrew/anaconda3/lib/python3.11/multiprocessing/reduction.py:60: UserWarning: Pickling GVars with pickle.dump/load loses correlations; use gvar.dump/load to preserve them.
+  ForkingPickler(file, protocol).dump(obj)
+
+--- Final Extracted Parameters ---
+         f = 0.4299(43)
+     k1_re = 11.14(18)
+     k2_re = -30.7(10)
+      a_re = 2.38(11)
+      c_re = 0.668(59)
+      d_re = 0.1054(83)
+      j_re = 1.786(53)
+      a_im = -0.167(31)
+      c_im = 0.004(25)
+      d_im = 0.123(32)
+      j_im = 1.57(14)
+  a_reA12B = 0.784(76)
+  c_reA12B = 0.028(24)
+  d_reA12B = 0.105(16)
+  j_reA12B = 2.03(15)
+
+ chi^2/dof : 1.286(89)
+
+
+Saving results to /Users/hariprashadravikumar/Lattice_QCD_TMD_PhD/sivers_TMD_PhD_project/save_h5_A12B_A2B/h5data//FitParams_SimulFit_ExpPb_PowerLawb_bmin3_eta610_PL-1.h5...
+Save complete!
+
+--- Simultaneous Fit (ExpPb_PowerLawb) : PL=-2, b_min>=3, eta in [6, 10] ---
+Re A2B points: 225, Im A2B points: 175, Re A12B points: 230
+Covariance Matrix size: (630, 630)
+Starting multiprocessing fit...
+
+--- Final Extracted Parameters ---
+         f = 0.503(10)
+     k1_re = 10.72(31)
+     k2_re = -27.8(15)
+      a_re = 2.79(22)
+      c_re = 0.254(50)
+      d_re = 0.0667(85)
+      j_re = 2.47(16)
+      a_im = -0.190(35)
+      c_im = 0.006(13)
+      d_im = 0.096(25)
+      j_im = 1.75(16)
+  a_reA12B = 0.801(78)
+  c_reA12B = -0.011(16)
+  d_reA12B = 0.077(10)
+  j_reA12B = 2.52(18)
+
+ chi^2/dof : 0.938(75)
+
+
+Saving results to /Users/hariprashadravikumar/Lattice_QCD_TMD_PhD/sivers_TMD_PhD_project/save_h5_A12B_A2B/h5data//FitParams_SimulFit_ExpPb_PowerLawb_bmin3_eta610_PL-2.h5...
+Save complete!
+
+--- Simultaneous Fit (ExpPb_PowerLawb) : PL=-3, b_min>=3, eta in [6, 10] ---
+Re A2B points: 225, Im A2B points: 175, Re A12B points: 230
+Covariance Matrix size: (630, 630)
+Starting multiprocessing fit...
+
+--- Final Extracted Parameters ---
+         f = 0.520(21)
+     k1_re = 11.64(39)
+     k2_re = -32.3(17)
+      a_re = 2.54(37)
+      c_re = 0.293(96)
+      d_re = 0.0601(82)
+      j_re = 3.03(18)
+      a_im = -0.197(30)
+      c_im = 0.021(17)
+      d_im = 0.141(19)
+      j_im = 1.55(19)
+  a_reA12B = 0.525(95)
+  c_reA12B = -0.020(19)
+  d_reA12B = 0.101(19)
+  j_reA12B = 2.14(19)
+
+ chi^2/dof : 0.623(61)
+
+
+Saving results to /Users/hariprashadravikumar/Lattice_QCD_TMD_PhD/sivers_TMD_PhD_project/save_h5_A12B_A2B/h5data//FitParams_SimulFit_ExpPb_PowerLawb_bmin3_eta610_PL-3.h5...
+Save complete!
+
+--- Simultaneous Fit (ExpPb_PowerLawb) : PL=-4, b_min>=3, eta in [6, 10] ---
+Re A2B points: 225, Im A2B points: 175, Re A12B points: 230
+Covariance Matrix size: (630, 630)
+Starting multiprocessing fit...
+
+--- Final Extracted Parameters ---
+         f = 0.581(41)
+     k1_re = 12.00(40)
+     k2_re = -35.3(19)
+      a_re = 3.51(39)
+      c_re = 0.337(77)
+      d_re = 0.092(16)
+      j_re = 2.34(18)
+      a_im = 0.212(27)
+      c_im = 0.422(18)
+      d_im = 0.2109(48)
+      j_im = 1.111(44)
+  a_reA12B = 0.519(58)
+  c_reA12B = 0.005(38)
+  d_reA12B = 0.106(28)
+  j_reA12B = 2.18(13)
+
+ chi^2/dof : 0.447(53)
+
+
+Saving results to /Users/hariprashadravikumar/Lattice_QCD_TMD_PhD/sivers_TMD_PhD_project/save_h5_A12B_A2B/h5data//FitParams_SimulFit_ExpPb_PowerLawb_bmin3_eta610_PL-4.h5...
+Save complete!
