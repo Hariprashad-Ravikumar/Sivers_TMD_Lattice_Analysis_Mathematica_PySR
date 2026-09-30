@@ -1,0 +1,141 @@
+import h5py
+import numpy as np
+import matplotlib.pyplot as plt
+import os
+
+# Set global Matplotlib parameters
+plt.rcParams['text.usetex'] = False
+plt.rcParams['mathtext.fontset'] = 'cm'
+
+def jk_stats(data, axis=0):
+    N_jk = data.shape[axis]
+    mean = np.mean(data, axis=axis)
+    diff = data - mean if axis == 0 else data - mean[:, None]
+    var = (N_jk - 1) * np.mean(diff**2, axis=axis)
+    return mean, np.sqrt(var)
+
+def load_params_from_h5(filename):
+    with h5py.File(filename, 'r') as f:
+        fitted_params = {key: f['jackknife_samples'][key][:] for key in f['jackknife_samples'].keys()}
+    return fitted_params
+
+h5_dir = "/Users/hariprashadravikumar/Lattice_QCD_TMD_PhD/sivers_TMD_PhD_project/save_h5_A12B_A2B/h5data"
+f_exp_exp = os.path.join(h5_dir, "FitParams_SimulFit_ExpPb_Expb_bmin3_eta610_PL-1.h5")
+f_exp_pow = os.path.join(h5_dir, "FitParams_SimulFit_ExpPb_PowerLawb_bmin3_eta610_PL-1.h5")
+f_gau_exp = os.path.join(h5_dir, "FitParams_SimulFit_GaussianPb_Expb_bmin3_eta610_PL-1.h5")
+f_gau_pow = os.path.join(h5_dir, "FitParams_SimulFit_GaussianPb_PowerLawb_bmin3_eta610_PL-1.h5")
+
+p_exp_exp = load_params_from_h5(f_exp_exp)
+p_exp_pow = load_params_from_h5(f_exp_pow)
+p_gau_exp = load_params_from_h5(f_gau_exp)
+p_gau_pow = load_params_from_h5(f_gau_pow)
+
+def eval_re_ExpPb_Expb(p_dict, x_grid, b2):
+    bT = np.sqrt(b2)
+    a = p_dict['a_re'][:, None]
+    c = p_dict['c_re'][:, None]
+    d = p_dict['d_re'][:, None]
+    bpart = np.exp(-d * bT)
+    return a * bpart * np.sqrt(2/np.pi) * c / (c**2 + x_grid[None, :]**2)
+
+def eval_re_ExpPb_PowerLawb(p_dict, x_grid, b2):
+    a = p_dict['a_re'][:, None]
+    c = p_dict['c_re'][:, None]
+    d = p_dict['d_re'][:, None]
+    j = p_dict['j_re'][:, None]
+    bpart = (1.0 + d * b2) ** (-j)
+    return a * bpart * np.sqrt(2/np.pi) * c / (c**2 + x_grid[None, :]**2)
+
+def eval_re_GaussianPb_Expb(p_dict, x_grid, b2):
+    bT = np.sqrt(b2)
+    a = p_dict['a_re'][:, None]
+    c = p_dict['c_re'][:, None]
+    d = p_dict['d_re'][:, None]
+    bpart = np.exp(-d * bT)
+    return a * bpart * (1.0/np.sqrt(2*c)) * np.exp(-x_grid[None, :]**2 / (4*c))
+
+def eval_re_GaussianPb_PowerLawb(p_dict, x_grid, b2):
+    a = p_dict['a_re'][:, None]
+    c = p_dict['c_re'][:, None]
+    d = p_dict['d_re'][:, None]
+    j = p_dict['j_re'][:, None]
+    bpart = (1.0 + d * b2) ** (-j)
+    return a * bpart * (1.0/np.sqrt(2*c)) * np.exp(-x_grid[None, :]**2 / (4*c))
+
+def eval_over_b2(func, p_dict, x_val, b2_grid):
+    x_arr = np.array([x_val])
+    out = []
+    for b2 in b2_grid:
+        res = func(p_dict, x_arr, b2)
+        out.append(res[:, 0])
+    return np.stack(out, axis=1)
+
+models = [
+    ("Exp(P.b) - Exp(bT)", p_exp_exp, eval_re_ExpPb_Expb),
+    ("Exp(P.b) - PowerLaw(bT)", p_exp_pow, eval_re_ExpPb_PowerLawb),
+    ("Gaussian(P.b) - Exp(bT)", p_gau_exp, eval_re_GaussianPb_Expb),
+    ("Gaussian(P.b) - PowerLaw(bT)", p_gau_pow, eval_re_GaussianPb_PowerLawb)
+]
+
+lata = 0.11403
+x_grid = np.linspace(0.001, 1.0, 400)
+b2_ref = 9.0
+b2_fan = [16.0, 25.0, 36.0, 49.0]
+bT_ref_fm = np.round(np.sqrt(b2_ref) * lata, 2)
+colors_fan = plt.cm.viridis(np.linspace(0.15, 0.9, len(b2_fan)))
+
+fig, axes = plt.subplots(2, 2, figsize=(14, 10), sharex=True)
+for ax, (name, p_dict, func) in zip(axes.flatten(), models):
+    obs_ref = func(p_dict, x_grid, b2_ref)
+    
+    for c, b2_i in zip(colors_fan, b2_fan):
+        bT_i_fm = np.round(np.sqrt(b2_i) * lata, 2)
+        obs_i = func(p_dict, x_grid, b2_i)
+        
+        ratio_jk = obs_i / obs_ref
+        m, e = jk_stats(ratio_jk, axis=0)
+        
+        label = fr"$\tilde{{A}}_{{2B}}^{{Re}}(x,{bT_i_fm}\,{{\rm fm}})\,/\,\tilde{{A}}_{{2B}}^{{Re}}(x,{bT_ref_fm}\,{{\rm fm}})$"
+        ax.plot(x_grid, m, color=c, linewidth=2, label=label)
+        ax.fill_between(x_grid, m - e, m + e, color=c, alpha=0.25)
+        
+    ax.set_title(name)
+    ax.set_xlabel('$x$')
+    ax.set_ylabel(r'$R_b(x)$')
+    ax.set_xlim(0, 1)
+    ax.grid(True, linestyle='--', alpha=0.5)
+    ax.legend(fontsize=8)
+
+fig.suptitle('Factorization Test: $ReA_{2B}$ at $P_L=-1$\nRatio vs x at fixed $|b_T|$ (flat $\Rightarrow$ factorized)', fontsize=14, fontweight='bold')
+plt.tight_layout()
+plt.show()
+
+b2_grid = np.linspace(9.0, 68.0, 120)
+bT_grid = np.sqrt(b2_grid) * lata
+x_ref = 0.3
+x_fan = [0.2, 0.4, 0.6, 0.8]
+colors_fan_x = plt.cm.plasma(np.linspace(0.15, 0.85, len(x_fan)))
+
+fig, axes = plt.subplots(2, 2, figsize=(14, 10), sharex=True)
+for ax, (name, p_dict, func) in zip(axes.flatten(), models):
+    obs_ref_b = eval_over_b2(func, p_dict, x_ref, b2_grid)
+    
+    for c, x_i in zip(colors_fan_x, x_fan):
+        obs_i_b = eval_over_b2(func, p_dict, x_i, b2_grid)
+        
+        ratio_jk_b = obs_i_b / obs_ref_b
+        m_b, e_b = jk_stats(ratio_jk_b, axis=0)
+        
+        label = fr"$\tilde{{A}}_{{2B}}^{{Re}}({x_i},|b_T|)\,/\,\tilde{{A}}_{{2B}}^{{Re}}({x_ref},|b_T|)$"
+        ax.plot(bT_grid, m_b, color=c, linewidth=2, label=label)
+        ax.fill_between(bT_grid, m_b - e_b, m_b + e_b, color=c, alpha=0.25)
+        
+    ax.set_title(name)
+    ax.set_xlabel('$|b_T|$ (fm)')
+    ax.set_ylabel(r'$R_x(b)$')
+    ax.grid(True, linestyle='--', alpha=0.5)
+    ax.legend(fontsize=8)
+
+fig.suptitle('Factorization Test: $ReA_{2B}$ at $P_L=-1$\nRatio vs $|b_T|$ at fixed $x$ (flat $\Rightarrow$ factorized)', fontsize=14, fontweight='bold')
+plt.tight_layout()
+plt.show()
