@@ -166,10 +166,12 @@ def plot_benchmark_fits():
                         zorder=4
                     )
 
-            ax.plot(bL_cont, model_c14(eta_val, bL_cont, abt), color=col, linestyle='-', alpha=0.9, lw=2.2, zorder=3)
-            ax.plot(bL_cont, model_c16(eta_val, bL_cont, abt), color=col, linestyle='--', alpha=0.85, lw=2.2, zorder=2)
-            ax.plot(bL_cont, model_c11(eta_val, bL_cont, abt), color=col, linestyle=':', alpha=0.8, lw=2.0, zorder=1)
-            ax.plot(bL_cont, model_c17(eta_val, bL_cont, abt), color=col, linestyle='-.', alpha=0.8, lw=2.0, zorder=1)
+            # Draw the models only in the fitted region |b| >= 3a (NaN leaves a gap)
+            fitted = np.where(bL_cont**2 + abt**2 >= bsqmin**2, 1.0, np.nan)
+            ax.plot(bL_cont, fitted * model_c14(eta_val, bL_cont, abt), color=col, linestyle='-', alpha=0.9, lw=2.2, zorder=3)
+            ax.plot(bL_cont, fitted * model_c16(eta_val, bL_cont, abt), color=col, linestyle='--', alpha=0.85, lw=2.2, zorder=2)
+            ax.plot(bL_cont, fitted * model_c11(eta_val, bL_cont, abt), color=col, linestyle=':', alpha=0.8, lw=2.0, zorder=1)
+            ax.plot(bL_cont, fitted * model_c17(eta_val, bL_cont, abt), color=col, linestyle='-.', alpha=0.8, lw=2.0, zorder=1)
 
         ax.set_title(f'$\\eta = {eta_val}$', fontsize=16)
         if idx >= 2:
