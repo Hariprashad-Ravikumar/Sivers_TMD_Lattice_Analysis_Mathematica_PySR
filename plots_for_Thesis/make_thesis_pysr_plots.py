@@ -41,7 +41,8 @@ os.makedirs(LATEX_DIR, exist_ok=True)
 # ---------------------------------------------------------
 # 1. Load Data
 # ---------------------------------------------------------
-file_path = "/Users/hariprashadravikumar/sivers_TMD_PhD_project/save_h5_A12B_A2B/eta_bL_bT_Amp_Re_Im_err.h5"
+file_path = "/Users/hariprashadravikumar/Lattice_QCD_TMD_PhD/sivers_TMD_PhD_project/save_h5_A12B_A2B/eta_bL_bT_Amp_Re_Im_err.h5"
+THESIS_PYSR_DIR = "/Users/hariprashadravikumar/Lattice_QCD_TMD_PhD/Lattice-QCD-calculations-of-x-dependence-of-Sivers-TMD-Hariprashad-Ravikumar-NMSU-PhD-Thesis/PySR_outputs"
 data_list = []
 P1 = 1
 
@@ -107,6 +108,24 @@ def model_gaussian(n, bL, bT):
 
 print(f"Optimal Gaussian Fit Baseline: A = {A_gauss:.5e}, c = {c_gauss:.5e}")
 
+# Exponential decay in |b| = sqrt(b^2), same eta factor as the Gaussian baseline
+def exponential_b_ansatz(X, A, c):
+    n, bL, bT = X
+    b_mag = np.sqrt(bL**2 + bT**2)
+    return A * np.exp(-c * b_mag) * np.exp(-0.5 * (n - 6.0))
+
+popt_expb, _ = curve_fit(
+    exponential_b_ansatz,
+    (eta_all, bL_all, bT_all),
+    A2B_all,
+    sigma=err_all,
+    absolute_sigma=True,
+    p0=[0.3, 0.5]
+)
+A_expb, c_expb = popt_expb
+
+print(f"Optimal Exponential-|b| Fit Baseline: A = {A_expb:.5e}, c = {c_expb:.5e}")
+
 
 # ---------------------------------------------------------
 # FIGURE 1: Benchmark Fits Multi-Panel Plot
@@ -114,12 +133,15 @@ print(f"Optimal Gaussian Fit Baseline: A = {A_gauss:.5e}, c = {c_gauss:.5e}")
 def plot_benchmark_fits():
     print("Generating Figure 1: Benchmark Fits Multi-Panel Plot...")
     eta_values = [6, 7, 8, 10]
-    
-    fig, axes = plt.subplots(2, 2, figsize=(14.5, 9.0), sharey=True)
+
+    # Sized close to the thesis text width (7.3 in) so fonts survive the scaling.
+    fig, axes = plt.subplots(2, 2, figsize=(10.0, 7.4), sharex=True)
     axes = axes.flatten()
 
+    # One color per |bT|: the models depend only on b^2, so +bT and -bT share a
+    # curve; the data sign is shown as filled (+bT) vs open (-bT) markers.
     colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2']
-    unique_bT = np.sort(np.unique(bT_all))
+    abs_bT = np.sort(np.unique(np.abs(bT_all)))
 
     bL_cont = np.linspace(-8.5, 8.5, 300)
 
@@ -131,78 +153,62 @@ def plot_benchmark_fits():
         A2B_sub = A2B_all[mask_eta]
         err_sub = err_all[mask_eta]
 
-        for i, bt in enumerate(unique_bT):
+        for i, abt in enumerate(abs_bT):
             col = colors[i % len(colors)]
-            mask_bt = (bT_sub == bt)
 
-            if np.any(mask_bt):
-                ax.errorbar(
-                    bL_sub[mask_bt],
-                    A2B_sub[mask_bt],
-                    yerr=err_sub[mask_bt],
-                    fmt='o',
-                    color=col,
-                    zorder=4
-                )
+            for sign, face in [(1, col), (-1, 'white')]:
+                mask_bt = (bT_sub == sign * abt)
+                if np.any(mask_bt):
+                    ax.errorbar(
+                        bL_sub[mask_bt], A2B_sub[mask_bt], yerr=err_sub[mask_bt],
+                        fmt='o', color=col, markerfacecolor=face, markeredgecolor=col,
+                        markeredgewidth=1.3, markersize=6, elinewidth=1.3, capsize=2.5,
+                        zorder=4
+                    )
 
-            y_c14 = model_c14(eta_val, bL_cont, bt)
-            ax.plot(bL_cont, y_c14, color=col, linestyle='-', alpha=0.9, lw=1.8, zorder=3)
+            ax.plot(bL_cont, model_c14(eta_val, bL_cont, abt), color=col, linestyle='-', alpha=0.9, lw=2.2, zorder=3)
+            ax.plot(bL_cont, model_c16(eta_val, bL_cont, abt), color=col, linestyle='--', alpha=0.85, lw=2.2, zorder=2)
+            ax.plot(bL_cont, model_c11(eta_val, bL_cont, abt), color=col, linestyle=':', alpha=0.8, lw=2.0, zorder=1)
+            ax.plot(bL_cont, model_c17(eta_val, bL_cont, abt), color=col, linestyle='-.', alpha=0.8, lw=2.0, zorder=1)
 
-            y_c16 = model_c16(eta_val, bL_cont, bt)
-            ax.plot(bL_cont, y_c16, color=col, linestyle='--', alpha=0.8, lw=1.6, zorder=2)
-
-            y_c11 = model_c11(eta_val, bL_cont, bt)
-            ax.plot(bL_cont, y_c11, color=col, linestyle=':', alpha=0.65, lw=1.4, zorder=1)
-
-            y_c17 = model_c17(eta_val, bL_cont, bt)
-            ax.plot(bL_cont, y_c17, color=col, linestyle='-.', alpha=0.7, lw=1.4, zorder=1)
-
-        ax.set_title(f'$\\eta = {eta_val}$', fontweight='bold', fontsize=12.5)
-        ax.set_xlabel('$b_L / a$', fontsize=11.5)
-        if idx % 2 == 0:
-            ax.set_ylabel('$\\tilde{A}_{2B}^{\\mathrm{Re}}(\\eta, b_L, b_T)$', fontsize=11.5)
+        ax.set_title(f'$\\eta = {eta_val}$', fontsize=16)
+        if idx >= 2:
+            ax.set_xlabel('$b_L / a$', fontsize=16)
+        ax.tick_params(labelsize=13)
         ax.grid(True, linestyle='--', alpha=0.35)
         ax.set_xlim(-8.5, 8.5)
 
+    fig.supylabel('$\\tilde{A}_{2B}^{\\mathrm{Re}}(\\eta, b_L, b_T)$', fontsize=16, x=0.01)
+
     legend_handles = []
     legend_labels = []
-
-    for i, bt in enumerate(unique_bT):
+    for i, abt in enumerate(abs_bT):
         col = colors[i % len(colors)]
-        h = Line2D([0], [0], marker='o', color=col, linestyle='', markersize=6)
-        legend_handles.append(h)
-        legend_labels.append(f'$b_T = {int(bt)}a$')
+        legend_handles.append(Line2D([0], [0], marker='o', color=col, linestyle='', markersize=8))
+        legend_labels.append(f'$|b_T| = {int(abt)}a$')
 
-    h_c14 = Line2D([0], [0], color='black', linestyle='-', lw=1.8)
-    h_c16 = Line2D([0], [0], color='black', linestyle='--', lw=1.6)
-    h_c11 = Line2D([0], [0], color='black', linestyle=':', lw=1.4)
-    h_c17 = Line2D([0], [0], color='black', linestyle='-.', lw=1.4)
-    
-    legend_handles.extend([h_c14, h_c16, h_c11, h_c17])
-    legend_labels.extend(['$C=14$ (Exp)', '$C=16$ (Exp+Off)', '$C=11$ (Power $\\eta^{-4}$)', '$C=17$ (Power $\\eta^{-3.3}$)'])
+    legend_handles.extend([
+        Line2D([0], [0], marker='o', color='gray', linestyle='', markersize=8),
+        Line2D([0], [0], marker='o', color='gray', markerfacecolor='white', markeredgewidth=1.3, linestyle='', markersize=8),
+        Line2D([0], [0], color='black', linestyle='-', lw=2.2),
+        Line2D([0], [0], color='black', linestyle='--', lw=2.2),
+        Line2D([0], [0], color='black', linestyle=':', lw=2.0),
+        Line2D([0], [0], color='black', linestyle='-.', lw=2.0),
+    ])
+    legend_labels.extend([
+        '$b_T > 0$', '$b_T < 0$',
+        '$C=14$ (Exp)', '$C=16$ (Exp+Off)', '$C=11$ (Power $\\eta^{-4}$)', '$C=17$ (Power $\\eta^{-3.3}$)'
+    ])
 
+    fig.tight_layout(rect=[0.02, 0.17, 1, 1], h_pad=1.0, w_pad=1.2)
     fig.legend(
-        legend_handles,
-        legend_labels,
-        loc='center left',
-        bbox_to_anchor=(0.87, 0.5),
-        ncol=2,
-        frameon=True,
-        fontsize=9.5,
-        columnspacing=1.0,
-        handletextpad=0.4
+        legend_handles, legend_labels,
+        loc='upper center', bbox_to_anchor=(0.5, 0.16), ncol=5,
+        frameon=False, fontsize=13, columnspacing=1.2, handletextpad=0.4, handlelength=2.4
     )
 
-    title_text = "PySR Discovered Analytical Models on Lattice $\\tilde{A}_{2B}^{\\mathrm{Re}}$ Data"
-    eq_row1 = r"$\mathbf{C=14:}\; \frac{39.71}{(1 + b^2)^{1.39}} e^{-0.534\eta} \; (\chi^2=3.93) \qquad\quad \mathbf{C=16:}\; \frac{245.5}{(1 + b^2)^{1.26}} e^{-0.468\eta} - 0.0013 \; (\chi^2=2.03)$"
-    eq_row2 = r"$\mathbf{C=11:}\; \frac{2473.5}{\eta^4 (1 + b^2)^{1.44}} \; (\chi^2=5.16) \qquad\qquad\quad \mathbf{C=17:}\; \frac{1}{\eta}\left(\frac{10.46}{\eta}\right)^{2.34} \frac{1.68}{(1 + b^2)^{1.21}} - 0.0017 \; (\chi^2=1.99)$"
-    
-    full_banner = f"{title_text}\n{eq_row1}\n{eq_row2}"
-    fig.suptitle(full_banner, y=1.05, fontsize=11.5, linespacing=1.35)
-    plt.subplots_adjust(top=0.86, right=0.86, hspace=0.25, wspace=0.15)
-    
-    save_path = os.path.join(PLOTS_DIR, "01_A2B_PySR_Benchmark_Fits.pdf")
-    plt.savefig(save_path, bbox_inches='tight', dpi=300)
+    save_path = os.path.join(THESIS_PYSR_DIR, "01_A2B_PySR_Benchmark_Fits.pdf")
+    plt.savefig(save_path, bbox_inches='tight')
     plt.close()
     print(f"Saved: {save_path}")
 
@@ -287,6 +293,70 @@ def plot_straight_line_test():
 
     save_path = os.path.join(PLOTS_DIR, "02_Gaussian_StraightLine_Test.pdf")
     plt.savefig(save_path, bbox_inches='tight', dpi=300)
+    plt.close()
+    print(f"Saved: {save_path}")
+
+
+# ---------------------------------------------------------
+# FIGURE 3: Straight-Line Test for exponential decay in |b| (ln|A2B| vs. |b|)
+# ---------------------------------------------------------
+def plot_exponential_b_test():
+    print("Generating Figure 3: Straight-Line Test (ln|A2B| vs. |b|)...")
+    eta_values = [6, 7, 8, 10]
+    # Sized close to the thesis text width so fonts survive the scaling.
+    fig, axes = plt.subplots(2, 2, figsize=(10.0, 7.4), sharex=True)
+    axes = axes.flatten()
+
+    b_cont = np.linspace(3.0, 8.5, 300)
+
+    for idx, eta_val in enumerate(eta_values):
+        ax = axes[idx]
+        mask_eta = (eta_all == eta_val)
+        b_sub = b_mag_all[mask_eta]
+        A2B_sub = A2B_all[mask_eta]
+        err_sub = err_all[mask_eta]
+
+        ax.errorbar(
+            b_sub, A2B_sub, yerr=err_sub,
+            fmt='o', color='black', markersize=6, alpha=0.75, elinewidth=1.3, capsize=2.5,
+            label='Lattice Data ($|b| \\geq 3a$)' if idx == 0 else "",
+            zorder=4
+        )
+
+        # Power-Law PySR Model C=14
+        y_pysr = (1.0 / 2.6322825) * (1.0 / (1.0 + b_cont**2)**1.390951) * np.exp(-0.534084 * (eta_val - 8.68932))
+        ax.plot(
+            b_cont, y_pysr, 'b-', lw=2.4,
+            label='PySR Power-Law $\\propto (1 + b^2)^{-1.39}$' if idx == 0 else "",
+            zorder=3
+        )
+
+        # Best-Fit exponential in |b| (Straight line in semi-log)
+        y_expb = A_expb * np.exp(-c_expb * b_cont) * np.exp(-0.5 * (eta_val - 6.0))
+        ax.plot(
+            b_cont, y_expb, 'r--', lw=2.4,
+            label=f'Exponential Ansatz $\\propto e^{{-{c_expb:.3f}|b|}}$ (Straight line)' if idx == 0 else "",
+            zorder=2
+        )
+
+        ax.set_yscale('log')
+        ax.set_title(f'$\\eta = {eta_val}$', fontsize=16)
+        if idx >= 2:
+            ax.set_xlabel('$|b|/a = \\sqrt{b_L^2 + b_T^2}$', fontsize=16)
+        ax.tick_params(labelsize=13)
+        ax.grid(True, which='both', linestyle='--', alpha=0.35)
+        ax.set_xlim(2.8, 8.5)
+
+    fig.supylabel('$\\tilde{A}_{2B}^{\\mathrm{Re}}$ (Log Scale)', fontsize=16, x=0.01)
+
+    fig.tight_layout(rect=[0.02, 0.1, 1, 1], h_pad=1.0, w_pad=1.2)
+    fig.legend(
+        loc='upper center', bbox_to_anchor=(0.5, 0.09), ncol=2,
+        frameon=False, fontsize=13, columnspacing=1.5, handletextpad=0.4, handlelength=2.4
+    )
+
+    save_path = os.path.join(THESIS_PYSR_DIR, "03_Exponential_b_StraightLine_Test.pdf")
+    plt.savefig(save_path, bbox_inches='tight')
     plt.close()
     print(f"Saved: {save_path}")
 
@@ -437,5 +507,6 @@ Target Observable & $\tilde{A}_{2B}^{\text{Re}}(\eta, b_L, b_T)$ (Lattice moment
 if __name__ == "__main__":
     plot_benchmark_fits()
     plot_straight_line_test()
+    plot_exponential_b_test()
     export_latex_snippets()
     print(f"\nAll thesis figures and LaTeX snippets successfully generated!")
