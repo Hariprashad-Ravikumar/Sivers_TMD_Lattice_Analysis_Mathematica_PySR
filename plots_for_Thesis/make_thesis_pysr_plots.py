@@ -380,7 +380,7 @@ def export_latex_snippets():
 \renewcommand{\arraystretch}{1.3}
 \caption{Pareto front of analytical candidate models discovered by \texttt{PySR} for the real amplitude $\tilde{A}_{2B}^{\text{Re}}(\eta, b_L, b_T)$, ranked by mathematical complexity and loss. The optimal physics-informed models ($C=14$ and $C=16$) are highlighted.}
 \label{tab:pysr_pareto_front}
-\begin{tabular}{c c l p{5.2cm}}
+\begin{tabular}{@{}c c l >{\raggedright\arraybackslash}p{4.8cm}@{}}
 \hline\hline
 \textbf{Complexity} & \textbf{Loss} & \textbf{Discovered Analytical Expression} $\tilde{A}_{2B}^{\text{Re}}(\eta, b_L, b_T)$ & \textbf{Physical Interpretation} \\
 \hline
@@ -482,7 +482,7 @@ end
 \renewcommand{\arraystretch}{1.25}
 \caption{Hyperparameter and operator configuration for the Physics-Informed \texttt{PySR} Symbolic Regression search.}
 \label{tab:pysr_config}
-\begin{tabular}{l l}
+\begin{tabular}{@{}l l@{}}
 \hline\hline
 \textbf{Configuration Parameter} & \textbf{Specification / Value} \\
 \hline
