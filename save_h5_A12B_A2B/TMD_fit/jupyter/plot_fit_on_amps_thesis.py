@@ -2,13 +2,11 @@
 Thesis versions of the amplitude-with-fit figures (Chapter 6, Simultaneous Fit Results).
 
 Same data, fit model and Jackknife bands as Plot_Fit_on_Amps.ipynb (cells 0 and 1),
-but one panel per file and print-size fonts, so each panel can be shown large:
+but with print-size fonts and legends placed under the panels:
 
-  3D (eta, coordinate, amplitude), one file per panel:
-    {amp}_PL{k}_WithFit_3D_bL.pdf          vs b_L,  colored by b_T
-    {amp}_PL{k}_WithFit_3D_bT.pdf          vs b_T,  colored by b_L
-    {amp}_Pb_bsq_PL{k}_WithFit_3D_Pb.pdf   vs P.b,  colored by b^2
-    {amp}_Pb_bsq_PL{k}_WithFit_3D_bsq.pdf  vs b^2,  colored by P.b
+  3D (eta, coordinate, amplitude), two panels side by side, legends underneath:
+    {amp}_PL{k}_WithFit_3D.pdf             [vs b_L (by b_T) | vs b_T (by b_L)]
+    {amp}_Pb_bsq_PL{k}_WithFit_3D.pdf      [vs P.b (by b^2) | vs b^2 (by P.b)]
   2D at eta|v|/a = 8, one 1x2 row per file:
     {amp}_eta8_PL{k}_WithFit_2D.pdf        [vs b_L | vs b_T]
     {amp}_Pb_bsq_eta8_PL{k}_WithFit_2D.pdf [vs P.b | vs b^2]
@@ -181,10 +179,7 @@ def legend_cols(n):
     return 1 if n <= 8 else 2
 
 
-def plot_3d_panel(data, amp, view, PL, chi2_str):
-    v = view
-    fig = plt.figure(figsize=(11.5, 5.2))
-    ax = fig.add_axes([-0.05, -0.04, 0.84, 1.08], projection='3d')   # 3D box gets most of the width
+def draw_3d(ax, data, amp, v):
     groups = np.unique(v['g'])
     colors = get_distinct_colors(len(groups))
     if v['rev']:
@@ -203,20 +198,35 @@ def plot_3d_panel(data, amp, view, PL, chi2_str):
         ax.plot_surface(ETA, Y, m, color=colors[i], alpha=0.2, rstride=5, cstride=5)
         ax.plot_surface(ETA, Y, m + e, color=colors[i], alpha=0.1, rstride=5, cstride=5)
         ax.plot_surface(ETA, Y, m - e, color=colors[i], alpha=0.1, rstride=5, cstride=5)
-    ax.set_xlabel(r'$\eta|v|/a$', labelpad=12)
-    ax.set_ylabel(v['ylab'], labelpad=14)
-    ax.set_zlabel(AMP_PRINT[amp], labelpad=22)
+    ax.set_xlabel(r'$\eta|v|/a$', labelpad=14)
+    ax.set_ylabel(v['ylab'], labelpad=16)
+    ax.set_zlabel(AMP_PRINT[amp], labelpad=30)
+    ax.zaxis.set_major_locator(plt.MaxNLocator(5))
     ax.set_xticks([6, 8, 10])
-    ax.tick_params(axis='z', pad=8)
-    fig.suptitle(fr'{AMP_PRINT[amp]},  $\hat{{\zeta}}={pl_to_zeta[PL]}$,  $\chi^2/\mathrm{{DoF}}={chi2_str}$', x=0.36, y=0.98)
+    ax.tick_params(axis='z', pad=9)
     ax.view_init(elev=10, azim=-45)
     try:
-        ax.set_box_aspect(None, zoom=1.0)
+        ax.set_box_aspect(None, zoom=0.88)
     except TypeError:
         pass
-    h, l = ax.get_legend_handles_labels()
-    fig.legend(h, l, loc='center left', bbox_to_anchor=(0.78, 0.5), ncol=legend_cols(len(groups)),
-               title=v['gtitle'], title_fontsize=15, frameon=False, handletextpad=0.2, columnspacing=0.6)
+    return len(groups)
+
+
+def plot_3d_row(data, amp, vv, keys, PL, chi2_str):
+    """Two 3D panels side by side, each with its legend underneath."""
+    with plt.rc_context({"axes.labelsize": 22, "xtick.labelsize": 16, "ytick.labelsize": 16}):
+        fig = plt.figure(figsize=(17, 9.2))
+        for col, key in enumerate(keys):
+            ax = fig.add_axes([0.46 * col - 0.03, 0.26, 0.43, 0.68], projection='3d')   # leave room right of each box for the z-label
+            n = draw_3d(ax, data, amp, vv[key])
+            h, l = ax.get_legend_handles_labels()
+            fig.legend(h, l, loc='upper center', bbox_to_anchor=(0.19 + 0.46 * col, 0.255),
+                       ncol=min(n, 8), fontsize=16, title=vv[key]['gtitle'], title_fontsize=17,
+                       frameon=False, handletextpad=0.1, columnspacing=0.7)
+        fig.suptitle(fr'{AMP_PRINT[amp]},  $\hat{{\zeta}}={pl_to_zeta[PL]}$,  $\chi^2/\mathrm{{DoF}}={chi2_str}$',
+                     y=0.985, fontsize=21)
+        # bbox_inches='tight' ignores 3D axis labels; this blank anchor keeps the right z-label inside the crop
+        fig.text(0.955, 0.6, ' ', fontsize=1)
     return fig
 
 
@@ -246,7 +256,7 @@ def plot_2d_panel(ax, data, amp, view, title):
 
 
 def plot_2d_row(data, amp, vv, keys, PL, chi2_str):
-    fig, axes = plt.subplots(1, 2, figsize=(13, 5.6))
+    fig, axes = plt.subplots(1, 2, figsize=(13, 7.6))
     head = fr'{AMP_PRINT[amp]},  $\eta|v|/a=8$,  $\hat{{\zeta}}={pl_to_zeta[PL]}$,  $\chi^2/\mathrm{{DoF}}={chi2_str}$'
     plot_2d_panel(axes[0], data, amp, vv[keys[0]], '')
     plot_2d_panel(axes[1], data, amp, vv[keys[1]], '')
@@ -265,9 +275,9 @@ if __name__ == "__main__":
         for amp in AMPLITUDES:
             data = get_processed_amplitude_data(f"{path_base}/{amp}_PL{PL}_jackknife_data.h5", PL)
             vv = views(data, amp, params, PL)
-            for key, fname in [("bL", f"{amp}_PL{PL}_WithFit_3D_bL.pdf"), ("bT", f"{amp}_PL{PL}_WithFit_3D_bT.pdf"),
-                               ("Pb", f"{amp}_Pb_bsq_PL{PL}_WithFit_3D_Pb.pdf"), ("bsq", f"{amp}_Pb_bsq_PL{PL}_WithFit_3D_bsq.pdf")]:
-                fig = plot_3d_panel(data, amp, vv[key], PL, chi2_str)
+            for keys, fname in [(("bL", "bT"), f"{amp}_PL{PL}_WithFit_3D.pdf"),
+                                (("Pb", "bsq"), f"{amp}_Pb_bsq_PL{PL}_WithFit_3D.pdf")]:
+                fig = plot_3d_row(data, amp, vv, keys, PL, chi2_str)
                 fig.savefig(os.path.join(out_dir, fname), bbox_inches='tight')
                 plt.close(fig)
             for keys, fname in [(("bL", "bT"), f"{amp}_eta8_PL{PL}_WithFit_2D.pdf"),
