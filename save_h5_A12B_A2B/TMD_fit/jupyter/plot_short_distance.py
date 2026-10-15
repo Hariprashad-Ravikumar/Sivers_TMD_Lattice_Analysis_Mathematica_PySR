@@ -1,13 +1,13 @@
 """
 Short-distance vs long-distance amplitude data for the thesis fitting chapter
-(Figures short-dis1 / short-dis2).
+(Figure short-dis1).
 
-At P_L=-1 and eta|v|/a=8, plot ReA2B and ReA12B against (P.b).L/(2pi), one color
-per b^2, split into |b|<3a (b^2<9, left) and |b|>=3a (b^2>=9, right).
+At P_L=-1 and eta|v|/a=9, plot ReA2B against (P.b).L/(2pi), one color per b^2,
+with points of the same b^2 connected, split into |b|<3a (b^2<9, left) and
+|b|>=3a (b^2>=9, right).
 The +bT / -bT entries at the same (P.b, b^2) are averaged (see load_eta_slice).
 
     A2B_Re_b_lessthan3_and_ge3.pdf
-    A12B_Re_b_lessthan3_and_ge3.pdf
 
 Loading and jackknife are the same as in Plot_Amps.ipynb / plot_amps_eta8_split.py.
 Replaces the earlier Mathematica exports with larger, print-readable fonts.
@@ -26,12 +26,13 @@ out_dir = os.path.abspath(os.path.join(
     "plots", "short_distance"))
 
 PL = -1
-ETA_SLICE = 8.0
+ETA_SLICE = 9.0
 B_SQ_CUT = 9.0   # |b| >= 3a  <=>  b^2 >= 9
 
 AMPS = {
     "ReA2B":  (r"$\tilde{A}_{2B}^{Re}$",  "A2B_Re_b_lessthan3_and_ge3.pdf"),
-    "ReA12B": (r"$\tilde{A}_{12B}^{Re}$", "A12B_Re_b_lessthan3_and_ge3.pdf"),
+    # ReA12B shows no resolved trend at fixed b^2 at any eta, so the thesis uses ReA2B only:
+    # "ReA12B": (r"$\tilde{A}_{12B}^{Re}$", "A12B_Re_b_lessthan3_and_ge3.pdf"),
 }
 
 plt.rcParams.update({
@@ -91,8 +92,9 @@ def plot_panel(ax, P_dot_b, b_sq, mean, err, title, amp_print, ncol):
     unique_b_sq = np.unique(b_sq)
     colors = get_distinct_colors(len(unique_b_sq))
     for i, val in enumerate(unique_b_sq):
-        sel = (b_sq == val)
-        ax.errorbar(P_dot_b[sel], mean[sel], yerr=err[sel], fmt='o', color=colors[i],
+        sel = np.where(b_sq == val)[0]
+        sel = sel[np.argsort(P_dot_b[sel])]   # order by P.b so the line joins same-b^2 points
+        ax.errorbar(P_dot_b[sel], mean[sel], yerr=err[sel], fmt='o-', lw=1.4, color=colors[i],
                     markersize=8.5, markeredgecolor='k', markeredgewidth=0.6,
                     ecolor=colors[i], elinewidth=1.6, capsize=4, zorder=5,
                     label=fr'$b^2/a^2={val:g}$')
