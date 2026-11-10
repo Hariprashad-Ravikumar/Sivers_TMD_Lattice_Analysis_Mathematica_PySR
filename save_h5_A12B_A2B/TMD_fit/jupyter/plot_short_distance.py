@@ -98,12 +98,14 @@ def plot_panel(ax, P_dot_b, b_sq, mean, err, title, amp_print, ncol):
                     markersize=8.5, markeredgecolor='k', markeredgewidth=0.6,
                     ecolor=colors[i], elinewidth=1.6, capsize=4, zorder=5,
                     label=fr'$b^2/a^2={val:g}$')
-    ax.axhline(0, color='k', linewidth=0.8, zorder=1)
+    ax.set_yscale('log')   # P.b=0 points dominate the linear range; log shows the weak P.b dependence
+    lo = max(mean.min() / 2, 3e-5)
+    ax.set_ylim(lo, mean.max() * 2)
     ax.axvline(0, color='k', linewidth=0.8, zorder=1)
     ax.set_title(title)
     ax.set_xlabel(r'$(P \cdot b) \cdot \hat{L} / (2\pi)$')
     ax.set_ylabel(amp_print)
-    ax.grid(True, linestyle='--', alpha=0.5)
+    ax.grid(True, which='both', linestyle='--', alpha=0.3)
     ax.legend(loc='center left', bbox_to_anchor=(1.01, 0.5), ncol=ncol,
               frameon=False, handletextpad=0.2, columnspacing=0.8)
 
