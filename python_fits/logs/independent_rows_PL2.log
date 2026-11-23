@@ -1,0 +1,5 @@
+rows: all=225, independent=140; cond(cov_ind)=1.3e+03
+INDEPENDENT rows: chi2/dof = 1.843(0.234) dof=133 nsamp=2903
+ALL rows (paper_fits, saved): chi2/dof = 1.124(0.143) dof=218
+RATIO independent/all = 1.639
+FINISHED

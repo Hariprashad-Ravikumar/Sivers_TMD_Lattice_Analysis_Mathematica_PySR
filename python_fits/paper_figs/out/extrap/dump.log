@@ -1,0 +1,39 @@
+[1] Loading and Scaling Parameters...
+[2] Extrapolating Parameters to 1/zeta_hat -> 0...
+PARAM a_re extrapolated 4.0127(21) chi2/dof 0.23(56)
+PARAM c_re extrapolated 0.027(14) chi2/dof 1.6(15)
+PARAM j_re extrapolated 2.0667(69) chi2/dof 2.1(17)
+PARAM d_re extrapolated 0.139(12) chi2/dof 0.8(10)
+PARAM a_im extrapolated -0.0586(35) chi2/dof 12.1(40)
+PARAM c_im extrapolated 0.0119(20) chi2/dof 0.14(43)
+PARAM j_im extrapolated 0.9921(92) chi2/dof 1.0(12)
+PARAM d_im extrapolated 0.183(14) chi2/dof 2.5(18)
+PARAM a_reA12B extrapolated 0.5736(68) chi2/dof 1.5(14)
+PARAM c_reA12B extrapolated 0.0054(14) chi2/dof 0.39(72)
+PARAM j_reA12B extrapolated 2.0026(40) chi2/dof 2.1(17)
+PARAM d_reA12B extrapolated 0.105(18) chi2/dof 0.01(12)
+/Users/hariprashadravikumar/Lattice_QCD_TMD_PhD/sivers_TMD_PhD_project/python_fits/paper_figs/out/extrap/extrap_dump.py:216: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+
+Computing Numerical Integrals across Jackknife samples...
+
+### Numerical Integration of Fourier Transforms (|bT| = 0.34 fm)
+
+| Integral | $\{-\infty, \infty\}$ | $\{-1, 1\}$ | $\{-1, 0\}$ | $\{0, 1\}$ |
+| :--- | :--- | :--- | :--- | :--- |
+| $\int dx\, \widetilde{A}^{[x]\text{Re}}_{2B}$ | 0.751(79) | 0.751(80) | 0.375(40) | 0.375(40) |
+| $\int dx\, (\widetilde{A}^{[x]\text{Im}}_{2B})$ | 6(96)e-17 | 3(24)e-16 | 0.165(27) | -0.169(29) |
+| $\int dx\, \tilde{f}_1^{(0)} = 2\int dx\, (\widetilde{A}^{[x]\text{Re}}_{2B} - \widetilde{A}^{[x]\text{Im}}_{2B})$ | 1.50(16) | 1.50(16) | 0.421(81) | 1.09(11) |
+| $\int dx\, \tilde{f}_{1T}^{\perp(1)} = -2\int dx\, \widetilde{A}^{[x]\text{Re}}_{12B}$ | 0.302(53) | 0.302(53) | 0.151(27) | 0.151(27) |
+| $m_N \frac{\int dx\, \tilde{f}_{1T}^{\perp(1)}}{\int dx\, \tilde{f}_1^{(0)}}$ | 0.217(38) | 0.217(38) | 0.387(89) | 0.150(26) |
+
+[3] Reconstructing Infinite-Momentum Amplitudes and Sivers Shift...
+Evaluating x slices:   0%|          | 0/200 [00:00<?, ?it/s]Evaluating x slices:   4%|▍         | 9/200 [00:00<00:02, 82.60it/s]Evaluating x slices:   9%|▉         | 18/200 [00:00<00:02, 85.55it/s]Evaluating x slices:  14%|█▎        | 27/200 [00:00<00:01, 87.02it/s]Evaluating x slices:  18%|█▊        | 36/200 [00:00<00:01, 87.41it/s]Evaluating x slices:  22%|██▎       | 45/200 [00:00<00:01, 87.38it/s]Evaluating x slices:  27%|██▋       | 54/200 [00:00<00:01, 86.95it/s]Evaluating x slices:  32%|███▏      | 63/200 [00:00<00:01, 86.14it/s]Evaluating x slices:  36%|███▌      | 72/200 [00:00<00:01, 85.07it/s]Evaluating x slices:  40%|████      | 81/200 [00:00<00:01, 83.61it/s]Evaluating x slices:  45%|████▌     | 90/200 [00:01<00:01, 83.61it/s]Evaluating x slices:  50%|█████     | 100/200 [00:01<00:01, 86.64it/s]Evaluating x slices:  55%|█████▌    | 110/200 [00:01<00:01, 88.77it/s]Evaluating x slices:  60%|█████▉    | 119/200 [00:01<00:00, 87.15it/s]Evaluating x slices:  64%|██████▍   | 128/200 [00:01<00:00, 85.04it/s]Evaluating x slices:  68%|██████▊   | 137/200 [00:01<00:00, 84.21it/s]Evaluating x slices:  73%|███████▎  | 146/200 [00:01<00:00, 84.24it/s]Evaluating x slices:  78%|███████▊  | 155/200 [00:01<00:00, 84.67it/s]Evaluating x slices:  82%|████████▏ | 164/200 [00:01<00:00, 85.39it/s]Evaluating x slices:  86%|████████▋ | 173/200 [00:02<00:00, 86.24it/s]Evaluating x slices:  91%|█████████ | 182/200 [00:02<00:00, 87.09it/s]Evaluating x slices:  96%|█████████▌| 192/200 [00:02<00:00, 88.03it/s]Evaluating x slices: 100%|██████████| 200/200 [00:02<00:00, 86.28it/s]
+SIVERS peak <k_y> = 0.21493 GeV at x = 0.0452; at x=0.5: 0.00572; x<k_y> peak = 0.02004 at x = 0.1457
+[4] Generating Final Plots...
+/Users/hariprashadravikumar/Lattice_QCD_TMD_PhD/sivers_TMD_PhD_project/python_fits/paper_figs/out/extrap/extrap_dump.py:434: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+
+Evaluating Fourier transforms and applying Jackknife for 3D Plotting...
+Evaluating over b^2 grid:   0%|          | 0/40 [00:00<?, ?it/s]Evaluating over b^2 grid:   2%|▎         | 1/40 [00:01<00:49,  1.27s/it]Evaluating over b^2 grid:   5%|▌         | 2/40 [00:02<00:49,  1.31s/it]Evaluating over b^2 grid:   8%|▊         | 3/40 [00:03<00:46,  1.26s/it]Evaluating over b^2 grid:  10%|█         | 4/40 [00:05<00:46,  1.28s/it]Evaluating over b^2 grid:  12%|█▎        | 5/40 [00:06<00:45,  1.30s/it]Evaluating over b^2 grid:  15%|█▌        | 6/40 [00:07<00:42,  1.26s/it]Evaluating over b^2 grid:  18%|█▊        | 7/40 [00:08<00:40,  1.24s/it]Evaluating over b^2 grid:  20%|██        | 8/40 [00:10<00:39,  1.24s/it]Evaluating over b^2 grid:  22%|██▎       | 9/40 [00:11<00:37,  1.22s/it]Evaluating over b^2 grid:  25%|██▌       | 10/40 [00:12<00:36,  1.20s/it]Evaluating over b^2 grid:  28%|██▊       | 11/40 [00:13<00:34,  1.19s/it]Evaluating over b^2 grid:  30%|███       | 12/40 [00:14<00:33,  1.19s/it]Evaluating over b^2 grid:  32%|███▎      | 13/40 [00:15<00:32,  1.19s/it]Evaluating over b^2 grid:  35%|███▌      | 14/40 [00:17<00:31,  1.20s/it]Evaluating over b^2 grid:  38%|███▊      | 15/40 [00:18<00:29,  1.18s/it]Evaluating over b^2 grid:  40%|████      | 16/40 [00:19<00:28,  1.17s/it]Evaluating over b^2 grid:  42%|████▎     | 17/40 [00:20<00:26,  1.16s/it]Evaluating over b^2 grid:  45%|████▌     | 18/40 [00:21<00:25,  1.17s/it]Evaluating over b^2 grid:  48%|████▊     | 19/40 [00:22<00:24,  1.16s/it]Evaluating over b^2 grid:  50%|█████     | 20/40 [00:24<00:23,  1.16s/it]Evaluating over b^2 grid:  52%|█████▎    | 21/40 [00:25<00:22,  1.21s/it]Evaluating over b^2 grid:  55%|█████▌    | 22/40 [00:26<00:21,  1.19s/it]Evaluating over b^2 grid:  57%|█████▊    | 23/40 [00:27<00:20,  1.19s/it]Evaluating over b^2 grid:  60%|██████    | 24/40 [00:28<00:18,  1.18s/it]Evaluating over b^2 grid:  62%|██████▎   | 25/40 [00:30<00:17,  1.17s/it]Evaluating over b^2 grid:  65%|██████▌   | 26/40 [00:31<00:16,  1.17s/it]Evaluating over b^2 grid:  68%|██████▊   | 27/40 [00:32<00:15,  1.16s/it]Evaluating over b^2 grid:  70%|███████   | 28/40 [00:33<00:13,  1.15s/it]Evaluating over b^2 grid:  72%|███████▎  | 29/40 [00:34<00:12,  1.15s/it]Evaluating over b^2 grid:  75%|███████▌  | 30/40 [00:35<00:11,  1.15s/it]Evaluating over b^2 grid:  78%|███████▊  | 31/40 [00:36<00:10,  1.16s/it]Evaluating over b^2 grid:  80%|████████  | 32/40 [00:38<00:09,  1.15s/it]Evaluating over b^2 grid:  82%|████████▎ | 33/40 [00:39<00:08,  1.16s/it]Evaluating over b^2 grid:  85%|████████▌ | 34/40 [00:40<00:06,  1.15s/it]Evaluating over b^2 grid:  88%|████████▊ | 35/40 [00:41<00:05,  1.15s/it]Evaluating over b^2 grid:  90%|█████████ | 36/40 [00:42<00:04,  1.15s/it]Evaluating over b^2 grid:  92%|█████████▎| 37/40 [00:43<00:03,  1.15s/it]Evaluating over b^2 grid:  95%|█████████▌| 38/40 [00:44<00:02,  1.15s/it]Evaluating over b^2 grid:  98%|█████████▊| 39/40 [00:46<00:01,  1.14s/it]Evaluating over b^2 grid: 100%|██████████| 40/40 [00:47<00:00,  1.14s/it]Evaluating over b^2 grid: 100%|██████████| 40/40 [00:47<00:00,  1.18s/it]
+GRID3D SAVED

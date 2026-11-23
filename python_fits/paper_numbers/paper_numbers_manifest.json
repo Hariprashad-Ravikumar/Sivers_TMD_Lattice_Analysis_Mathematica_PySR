@@ -1,0 +1,2662 @@
+[
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$3.863(11)$",
+  "value": 3.8633106963969404,
+  "err": 0.010973364696249528,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-1.h5:a_re"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$4.0061(31)$",
+  "value": 4.006115946389841,
+  "err": 0.0031157744425002794,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-3.h5:a_re"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$4.0086(15)$",
+  "value": 4.0086224749623645,
+  "err": 0.0015422102547735241,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-4.h5:a_re"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$0.336(40)$",
+  "value": 0.33569104394440835,
+  "err": 0.03953501485378355,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-1.h5:c_re"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$0.45(12)$",
+  "value": 0.45169341574148597,
+  "err": 0.12357136438779924,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-3.h5:c_re"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$0.27(21)$",
+  "value": 0.2719251604095036,
+  "err": 0.21381042426091404,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-4.h5:c_re"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$0.1630(74)$",
+  "value": 0.16300923951322555,
+  "err": 0.007392716273040397,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-1.h5:d_re"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$0.136(11)$",
+  "value": 0.13559203057720778,
+  "err": 0.010586908407115146,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-3.h5:d_re"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$0.122(13)$",
+  "value": 0.1219742180817376,
+  "err": 0.013205089121974075,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-4.h5:d_re"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$12.288(23)$",
+  "value": 12.288177294536277,
+  "err": 0.02314395013216803,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-1.h5:k1_re"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$12.284(11)$",
+  "value": 12.284188580164091,
+  "err": 0.011105108948032011,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-3.h5:k1_re"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$12.2751(58)$",
+  "value": 12.275091691646528,
+  "err": 0.005835098803909866,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-4.h5:k1_re"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$-36.1965(45)$",
+  "value": -36.19652870770626,
+  "err": 0.00452965193181298,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-1.h5:k2_re"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$-36.1973(19)$",
+  "value": -36.19728818013939,
+  "err": 0.0018853154549541805,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-3.h5:k2_re"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$-36.19925(89)$",
+  "value": -36.19924807294424,
+  "err": 0.0008942723798445367,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-4.h5:k2_re"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$1.627(25)$",
+  "value": 1.6269598671324557,
+  "err": 0.02465830242025817,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-1.h5:j_re"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$2.085(10)$",
+  "value": 2.085451997258471,
+  "err": 0.01036590721687047,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-3.h5:j_re"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$2.0654(56)$",
+  "value": 2.065446845388166,
+  "err": 0.005571858599862313,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-4.h5:j_re"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$0.267(13)$",
+  "value": 0.2673934115248936,
+  "err": 0.013428130032334647,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-1.h5:a_im"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$0.328(11)$",
+  "value": 0.32777470786925883,
+  "err": 0.011175188254292411,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-3.h5:a_im"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$0.269(13)$",
+  "value": 0.2686094999283688,
+  "err": 0.01347895944519526,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-4.h5:a_im"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$0.2253(69)$",
+  "value": 0.2253380465767656,
+  "err": 0.006863616084309776,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-1.h5:c_im"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$0.163(15)$",
+  "value": 0.16336214239984212,
+  "err": 0.01474410222169475,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-3.h5:c_im"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$0.264(47)$",
+  "value": 0.2637943484795149,
+  "err": 0.047426593955460825,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-4.h5:c_im"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$0.2205(66)$",
+  "value": 0.22049942602146716,
+  "err": 0.006602196360648014,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-1.h5:d_im"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$0.147(13)$",
+  "value": 0.14745983421591854,
+  "err": 0.01320552753309468,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-3.h5:d_im"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$0.196(14)$",
+  "value": 0.19620466573232434,
+  "err": 0.01439202108526197,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-4.h5:d_im"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$1.108(21)$",
+  "value": 1.1083546022623731,
+  "err": 0.020507658283071693,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-1.h5:j_im"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$1.057(15)$",
+  "value": 1.0569882156146604,
+  "err": 0.014903232490602186,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-3.h5:j_im"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$1.0084(79)$",
+  "value": 1.0083941550740854,
+  "err": 0.007853890612872194,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-4.h5:j_im"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$0.658(22)$",
+  "value": 0.6575688553795559,
+  "err": 0.0221788773537344,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-1.h5:a_reA12B"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$0.569(13)$",
+  "value": 0.5686771802841671,
+  "err": 0.012647451722685011,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-3.h5:a_reA12B"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$0.5824(55)$",
+  "value": 0.5824439161480865,
+  "err": 0.005548764362896054,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-4.h5:a_reA12B"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$0.0773(46)$",
+  "value": 0.07727788706094257,
+  "err": 0.004582575498257001,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-1.h5:c_reA12B"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$0.100(17)$",
+  "value": 0.09973888177206143,
+  "err": 0.01702340622674811,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-3.h5:c_reA12B"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$0.116(19)$",
+  "value": 0.11574667553142284,
+  "err": 0.019452994260857844,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-4.h5:c_reA12B"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$0.0747(43)$",
+  "value": 0.0746785758280683,
+  "err": 0.004316542055153624,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-1.h5:d_reA12B"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$0.094(16)$",
+  "value": 0.09435131097678301,
+  "err": 0.01607130905816846,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-3.h5:d_reA12B"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$0.102(18)$",
+  "value": 0.10225413646316285,
+  "err": 0.017917189237170963,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-4.h5:d_reA12B"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$2.0054(90)$",
+  "value": 2.005424929944302,
+  "err": 0.00902292657108759,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-1.h5:j_reA12B"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$1.9969(49)$",
+  "value": 1.9969371966945715,
+  "err": 0.004918233978759428,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-3.h5:j_reA12B"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$2.0059(34)$",
+  "value": 2.0059161666480354,
+  "err": 0.0034330441922293072,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-4.h5:j_reA12B"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$0.4702(46)$",
+  "value": 0.4702485873214714,
+  "err": 0.004562867406069841,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-1.h5:f"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$0.540(15)$",
+  "value": 0.5404973062867056,
+  "err": 0.014957695430579674,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-3.h5:f"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$0.577(19)$",
+  "value": 0.5769952990760191,
+  "err": 0.01917121847677843,
+  "src": "h5 FitParams_SimulFit_f_A2BRe_cetasq_A2BIm_A12BRe_bmin3_eta610_PL-4.h5:f"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$1.85(10)$",
+  "value": 1.8544058131029029,
+  "err": 0.10313788106980872,
+  "src": "h5 chi2_dof PL-1"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$0.712(66)$",
+  "value": 0.7116281386578575,
+  "err": 0.06560462627512814,
+  "src": "h5 chi2_dof PL-3"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "$0.434(51)$",
+  "value": 0.4341965339223043,
+  "err": 0.0513968051630759,
+  "src": "h5 chi2_dof PL-4"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$3.9833(80)$",
+  "value": 3.9832536576639135,
+  "err": 0.007990305203659745,
+  "src": "h5 PL-2:a_re"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.368(12)$",
+  "value": 0.3680094869054487,
+  "err": 0.012482462514475495,
+  "src": "h5 PL-2:a_im"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.632(19)$",
+  "value": 0.6315090150814394,
+  "err": 0.01948309594633221,
+  "src": "h5 PL-2:a_reA12B"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.166(35)$",
+  "value": 0.16601341192524763,
+  "err": 0.034617488193184394,
+  "src": "h5 PL-2:c_re"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.1346(69)$",
+  "value": 0.13462754566887095,
+  "err": 0.006909768062230398,
+  "src": "h5 PL-2:c_im"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.0769(54)$",
+  "value": 0.07686773872431892,
+  "err": 0.005443268239286194,
+  "src": "h5 PL-2:c_reA12B"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.1020(46)$",
+  "value": 0.10198006491079958,
+  "err": 0.0045579034555391015,
+  "src": "h5 PL-2:d_re"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.1305(67)$",
+  "value": 0.1304701270680964,
+  "err": 0.006667410279761228,
+  "src": "h5 PL-2:d_im"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.0741(52)$",
+  "value": 0.07411894016013926,
+  "err": 0.005164090938231523,
+  "src": "h5 PL-2:d_reA12B"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$12.305(14)$",
+  "value": 12.305229325541204,
+  "err": 0.014251969994102508,
+  "src": "h5 PL-2:k1_re"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$-36.1919(27)$",
+  "value": -36.191882097131916,
+  "err": 0.002717386720968769,
+  "src": "h5 PL-2:k2_re"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$2.061(20)$",
+  "value": 2.061163634018776,
+  "err": 0.01964163560554208,
+  "src": "h5 PL-2:j_re"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$1.141(20)$",
+  "value": 1.1405012438574427,
+  "err": 0.020279171916661745,
+  "src": "h5 PL-2:j_im"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$2.0141(69)$",
+  "value": 2.0140905491013426,
+  "err": 0.006940987970363413,
+  "src": "h5 PL-2:j_reA12B"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.5357(66)$",
+  "value": 0.5356800827356868,
+  "err": 0.00663554147173584,
+  "src": "h5 PL-2:f"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$1.197(85)$",
+  "value": 1.1966421541218062,
+  "err": 0.08529601824082049,
+  "src": "h5 chi2_dof PL-2"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$1.85(10)$",
+  "value": 1.8544058131029029,
+  "err": 0.10313788106980872,
+  "src": "h5 chi2_dof PL-1"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.712(66)$",
+  "value": 0.7116281386578575,
+  "err": 0.06560462627512814,
+  "src": "h5 chi2_dof PL-3"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.434(51)$",
+  "value": 0.4341965339223043,
+  "err": 0.0513968051630759,
+  "src": "h5 chi2_dof PL-4"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$1.406(92)$",
+  "value": 1.4063997110984068,
+  "err": 0.09231287746997371,
+  "src": "h5 chi2_dof ExpPb_Expb PL-1"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.956(75)$",
+  "value": 0.9560492646540586,
+  "err": 0.07521837039176049,
+  "src": "h5 chi2_dof ExpPb_Expb PL-2"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.622(61)$",
+  "value": 0.6217671446743032,
+  "err": 0.060500084016448866,
+  "src": "h5 chi2_dof ExpPb_Expb PL-3"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.455(53)$",
+  "value": 0.45495926126806346,
+  "err": 0.05255469640461935,
+  "src": "h5 chi2_dof ExpPb_Expb PL-4"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$1.286(89)$",
+  "value": 1.2856735209154189,
+  "err": 0.0887233636658316,
+  "src": "h5 chi2_dof ExpPb_PowerLawb PL-1"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.938(75)$",
+  "value": 0.9382640401337733,
+  "err": 0.0751480728871853,
+  "src": "h5 chi2_dof ExpPb_PowerLawb PL-2"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.623(61)$",
+  "value": 0.6232173317325127,
+  "err": 0.0606456802968547,
+  "src": "h5 chi2_dof ExpPb_PowerLawb PL-3"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.447(53)$",
+  "value": 0.44747942623344056,
+  "err": 0.052549927438726836,
+  "src": "h5 chi2_dof ExpPb_PowerLawb PL-4"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$2.389(121)$",
+  "value": 2.3888276392037784,
+  "err": 0.12140807560207557,
+  "src": "h5 chi2_dof GaussianPb_Expb PL-1"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$2.005(111)$",
+  "value": 2.005194752458796,
+  "err": 0.1113149074759657,
+  "src": "h5 chi2_dof GaussianPb_Expb PL-2"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.945(76)$",
+  "value": 0.9454196602553306,
+  "err": 0.07635832174622159,
+  "src": "h5 chi2_dof GaussianPb_Expb PL-3"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.453(52)$",
+  "value": 0.45344552510215225,
+  "err": 0.05233741978070022,
+  "src": "h5 chi2_dof GaussianPb_Expb PL-4"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$2.316(120)$",
+  "value": 2.3155564705197262,
+  "err": 0.12012410911004111,
+  "src": "h5 chi2_dof GaussianPb_PowerLawb PL-1"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$1.981(111)$",
+  "value": 1.9813293926754918,
+  "err": 0.11119992183511808,
+  "src": "h5 chi2_dof GaussianPb_PowerLawb PL-2"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.948(76)$",
+  "value": 0.9476342799269518,
+  "err": 0.07639183896572814,
+  "src": "h5 chi2_dof GaussianPb_PowerLawb PL-3"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.448(52)$",
+  "value": 0.4483537589490741,
+  "err": 0.052415366515693035,
+  "src": "h5 chi2_dof GaussianPb_PowerLawb PL-4"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$1.85(10)$",
+  "value": 1.8544058131029029,
+  "err": 0.10313788106980872,
+  "src": "h5 chi2_dof COUPLED PL-1"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$1.197(85)$",
+  "value": 1.1966421541218062,
+  "err": 0.08529601824082049,
+  "src": "h5 chi2_dof COUPLED PL-2"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.712(66)$",
+  "value": 0.7116281386578575,
+  "err": 0.06560462627512814,
+  "src": "h5 chi2_dof COUPLED PL-3"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.434(51)$",
+  "value": 0.4341965339223043,
+  "err": 0.0513968051630759,
+  "src": "h5 chi2_dof COUPLED PL-4"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$-0.001(14)$",
+  "value": -0.0014425981026456212,
+  "err": 0.01428153595282765,
+  "src": "h5 ExpPb_Expb PL-2:c_im"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.007(14)$",
+  "value": 0.0066438904208254435,
+  "err": 0.014358453567704174,
+  "src": "h5 ExpPb_Expb PL-2:c_reA12B"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$-0.224(23)$",
+  "value": -0.22367927316407657,
+  "err": 0.023161431350169893,
+  "src": "h5 ExpPb_Expb PL-2:a_im"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.006(13)$",
+  "value": 0.005866255797763879,
+  "err": 0.013333040553489307,
+  "src": "h5 ExpPb_PowerLawb PL-2:c_im"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$-0.011(16)$",
+  "value": -0.011133470702204827,
+  "err": 0.015592578488401235,
+  "src": "h5 ExpPb_PowerLawb PL-2:c_reA12B"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$-0.190(35)$",
+  "value": -0.19004449900743167,
+  "err": 0.03519361692973929,
+  "src": "h5 ExpPb_PowerLawb PL-2:a_im"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.367(51)$",
+  "value": 0.36715537029192696,
+  "err": 0.0509872112762201,
+  "src": "h5 GaussianPb_Expb PL-2:c_im"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.0021(21)$",
+  "value": 0.002079771726072207,
+  "err": 0.0020704642877315306,
+  "src": "h5 GaussianPb_Expb PL-2:c_reA12B"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$+0.243(15)$",
+  "value": 0.24313446227194246,
+  "err": 0.01464577342848304,
+  "src": "h5 GaussianPb_Expb PL-2:a_im"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.346(43)$",
+  "value": 0.34587089976962754,
+  "err": 0.043385465804806254,
+  "src": "h5 GaussianPb_PowerLawb PL-2:c_im"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.0002(19)$",
+  "value": 0.0001860070813406998,
+  "err": 0.0018923198556013612,
+  "src": "h5 GaussianPb_PowerLawb PL-2:c_reA12B"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$+0.249(12)$",
+  "value": 0.24890029160881208,
+  "err": 0.012138632141692599,
+  "src": "h5 GaussianPb_PowerLawb PL-2:a_im"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.1346(69)$",
+  "value": 0.13462754566887095,
+  "err": 0.006909768062230398,
+  "src": "h5 COUPLED PL-2:c_im"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.0769(54)$",
+  "value": 0.07686773872431892,
+  "err": 0.005443268239286194,
+  "src": "h5 COUPLED PL-2:c_reA12B"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$+0.368(12)$",
+  "value": 0.3680094869054487,
+  "err": 0.012482462514475495,
+  "src": "h5 COUPLED PL-2:a_im"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$0.001(26)$",
+  "value": 0.0010022633583400705,
+  "err": 0.026174718995549427,
+  "src": "h5 ExpPb_Expb PL-1:c_im"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$0.045(23)$",
+  "value": 0.04501634294376397,
+  "err": 0.023130092935736684,
+  "src": "h5 ExpPb_Expb PL-1:c_reA12B"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$-0.167(16)$",
+  "value": -0.16723531966705193,
+  "err": 0.015879440750580075,
+  "src": "h5 ExpPb_Expb PL-1:a_im"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$0.004(25)$",
+  "value": 0.0044867008871418215,
+  "err": 0.02480258430863525,
+  "src": "h5 ExpPb_PowerLawb PL-1:c_im"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$0.028(24)$",
+  "value": 0.02842503059763228,
+  "err": 0.024375402888031483,
+  "src": "h5 ExpPb_PowerLawb PL-1:c_reA12B"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$-0.167(31)$",
+  "value": -0.1670026035291518,
+  "err": 0.030905121119090516,
+  "src": "h5 ExpPb_PowerLawb PL-1:a_im"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$0.57(17)$",
+  "value": 0.5683138776762154,
+  "err": 0.17060420767382942,
+  "src": "h5 GaussianPb_Expb PL-1:c_im"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$0.0038(69)$",
+  "value": 0.003767690611265901,
+  "err": 0.006916809382018656,
+  "src": "h5 GaussianPb_Expb PL-1:c_reA12B"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$+0.05(12)$",
+  "value": 0.05002712562003922,
+  "err": 0.1212080413442732,
+  "src": "h5 GaussianPb_Expb PL-1:a_im"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$0.602(48)$",
+  "value": 0.6023374863172415,
+  "err": 0.04778606795878786,
+  "src": "h5 GaussianPb_PowerLawb PL-1:c_im"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$0.0016(61)$",
+  "value": 0.0016230246904171094,
+  "err": 0.006128895779784062,
+  "src": "h5 GaussianPb_PowerLawb PL-1:c_reA12B"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$+0.168(92)$",
+  "value": 0.16807148817716908,
+  "err": 0.09213052347451497,
+  "src": "h5 GaussianPb_PowerLawb PL-1:a_im"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$0.2253(69)$",
+  "value": 0.2253380465767656,
+  "err": 0.006863616084309776,
+  "src": "h5 COUPLED PL-1:c_im"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$0.0773(46)$",
+  "value": 0.07727788706094257,
+  "err": 0.004582575498257001,
+  "src": "h5 COUPLED PL-1:c_reA12B"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$+0.267(13)$",
+  "value": 0.2673934115248936,
+  "err": 0.013428130032334647,
+  "src": "h5 COUPLED PL-1:a_im"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$0.015(19)$",
+  "value": 0.015233334209789225,
+  "err": 0.018511988720345672,
+  "src": "h5 ExpPb_Expb PL-3:c_im"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$-0.003(17)$",
+  "value": -0.0034087068622221015,
+  "err": 0.017333838147641886,
+  "src": "h5 ExpPb_Expb PL-3:c_reA12B"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$-0.178(33)$",
+  "value": -0.17790341965867731,
+  "err": 0.03255841668108405,
+  "src": "h5 ExpPb_Expb PL-3:a_im"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$0.021(17)$",
+  "value": 0.021482005840680163,
+  "err": 0.01659238314553173,
+  "src": "h5 ExpPb_PowerLawb PL-3:c_im"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$-0.020(19)$",
+  "value": -0.0195422038599207,
+  "err": 0.019026793639053616,
+  "src": "h5 ExpPb_PowerLawb PL-3:c_reA12B"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$-0.197(30)$",
+  "value": -0.19722841410211533,
+  "err": 0.03005071075808644,
+  "src": "h5 ExpPb_PowerLawb PL-3:a_im"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$0.3016(15)$",
+  "value": 0.30163878870814276,
+  "err": 0.0015055291080204568,
+  "src": "h5 GaussianPb_Expb PL-3:c_im"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$0.0016(15)$",
+  "value": 0.001642836654791563,
+  "err": 0.0015146872598259652,
+  "src": "h5 GaussianPb_Expb PL-3:c_reA12B"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$+0.25982(16)$",
+  "value": 0.2598247998780561,
+  "err": 0.00016106466722655842,
+  "src": "h5 GaussianPb_Expb PL-3:a_im"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$0.30081(78)$",
+  "value": 0.30080710727331905,
+  "err": 0.000778181499029806,
+  "src": "h5 GaussianPb_PowerLawb PL-3:c_im"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$0.0007(15)$",
+  "value": 0.0006910687610692351,
+  "err": 0.0014987256585662966,
+  "src": "h5 GaussianPb_PowerLawb PL-3:c_reA12B"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$+0.259914(83)$",
+  "value": 0.2599137430882661,
+  "err": 8.319443485691009e-05,
+  "src": "h5 GaussianPb_PowerLawb PL-3:a_im"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$0.163(15)$",
+  "value": 0.16336214239984212,
+  "err": 0.01474410222169475,
+  "src": "h5 COUPLED PL-3:c_im"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$0.100(17)$",
+  "value": 0.09973888177206143,
+  "err": 0.01702340622674811,
+  "src": "h5 COUPLED PL-3:c_reA12B"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$+0.328(11)$",
+  "value": 0.32777470786925883,
+  "err": 0.011175188254292411,
+  "src": "h5 COUPLED PL-3:a_im"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$0.458(16)$",
+  "value": 0.45774022703034545,
+  "err": 0.016170168709862737,
+  "src": "h5 ExpPb_Expb PL-4:c_im"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$0.033(33)$",
+  "value": 0.033038093657029734,
+  "err": 0.03302377589941414,
+  "src": "h5 ExpPb_Expb PL-4:c_reA12B"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$+0.186(43)$",
+  "value": 0.1864295016821092,
+  "err": 0.04272773706950136,
+  "src": "h5 ExpPb_Expb PL-4:a_im"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$0.422(18)$",
+  "value": 0.4220324208103562,
+  "err": 0.018403279432900994,
+  "src": "h5 ExpPb_PowerLawb PL-4:c_im"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$0.005(38)$",
+  "value": 0.0054529274913277465,
+  "err": 0.03844763588066324,
+  "src": "h5 ExpPb_PowerLawb PL-4:c_reA12B"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$+0.212(27)$",
+  "value": 0.21239697130376964,
+  "err": 0.02667132194901816,
+  "src": "h5 ExpPb_PowerLawb PL-4:a_im"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$0.29999997(28)$",
+  "value": 0.29999997374306675,
+  "err": 2.8484439183284456e-07,
+  "src": "h5 GaussianPb_Expb PL-4:c_im"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$0.0043(27)$",
+  "value": 0.004279063272903429,
+  "err": 0.002677100179838439,
+  "src": "h5 GaussianPb_Expb PL-4:c_reA12B"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$+0.260000002(17)$",
+  "value": 0.26000000157794073,
+  "err": 1.7118052161236263e-08,
+  "src": "h5 GaussianPb_Expb PL-4:a_im"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$0.29999999(12)$",
+  "value": 0.29999998878227696,
+  "err": 1.2301626676751236e-07,
+  "src": "h5 GaussianPb_PowerLawb PL-4:c_im"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$0.0025(33)$",
+  "value": 0.0024681612420440657,
+  "err": 0.0032938524900009546,
+  "src": "h5 GaussianPb_PowerLawb PL-4:c_reA12B"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$+0.2600000007(74)$",
+  "value": 0.26000000067414203,
+  "err": 7.392804437397739e-09,
+  "src": "h5 GaussianPb_PowerLawb PL-4:a_im"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$0.264(47)$",
+  "value": 0.2637943484795149,
+  "err": 0.047426593955460825,
+  "src": "h5 COUPLED PL-4:c_im"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$0.116(19)$",
+  "value": 0.11574667553142284,
+  "err": 0.019452994260857844,
+  "src": "h5 COUPLED PL-4:c_reA12B"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$+0.269(13)$",
+  "value": 0.2686094999283688,
+  "err": 0.01347895944519526,
+  "src": "h5 COUPLED PL-4:a_im"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "$0.002$",
+  "value": null,
+  "err": null,
+  "src": "max |value-prior centre| = 0.00164 (must be < 0.002)"
+ },
+ {
+  "file": "tables/table_gauss_family_PL2.tex",
+  "literal": "(all cells)",
+  "value": null,
+  "err": null,
+  "src": "paper_fits.py tables == paper table, 187 cells"
+ },
+ {
+  "file": "tables/table_powerlaw_family_PL2.tex",
+  "literal": "(all cells)",
+  "value": null,
+  "err": null,
+  "src": "paper_fits.py tables == paper table, 121 cells"
+ },
+ {
+  "file": "tables/table_c_eta_forms_PL2.tex",
+  "literal": "(all cells)",
+  "value": null,
+  "err": null,
+  "src": "paper_fits.py tables == paper table, 77 cells"
+ },
+ {
+  "file": "main.tex",
+  "literal": "197.32698",
+  "value": null,
+  "err": null,
+  "src": "ft_xdep_final.py: massterm = full PL_-1 jackknife array [condition OK]"
+ },
+ {
+  "file": "main.tex",
+  "literal": "197.32698",
+  "value": null,
+  "err": null,
+  "src": "ft_xdep_3d_final.py: massterm = full PL_-1 jackknife array [condition OK]"
+ },
+ {
+  "file": "main.tex",
+  "literal": "197.32698",
+  "value": null,
+  "err": null,
+  "src": "zeta_slices_final.py: PL_-1 jackknife mass, hbar c 197.32698 [condition OK]"
+ },
+ {
+  "file": "main.tex",
+  "literal": "197.32698",
+  "value": null,
+  "err": null,
+  "src": "extrap_final.py: PL_-1 jackknife mass, hbar c 197.32698 [condition OK]"
+ },
+ {
+  "file": "main.tex",
+  "literal": "197.32698",
+  "value": null,
+  "err": null,
+  "src": "fact_shift_final.py: PL_-1 jackknife mass, hbar c 197.32698 [condition OK]"
+ },
+ {
+  "file": "main.tex",
+  "literal": "197.32698",
+  "value": null,
+  "err": null,
+  "src": "fact_ratios_final.py: PL_-1 jackknife mass, hbar c 197.32698 [condition OK]"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$\\epsilon=0.1$",
+  "value": null,
+  "err": null,
+  "src": "run_pysr_A2B_real.py custom loss: wmse + 0.1*penalty at five points incl. [10, 80, 1] (bL up to 80) [condition OK]"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "up to $80a$",
+  "value": null,
+  "err": null,
+  "src": "run_pysr_A2B_real.py penalty points [condition OK]"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "($2.0$ to $2.4$)",
+  "value": null,
+  "err": null,
+  "src": "Gaussian-profile chi2/dof at PL=-1,-2: 1.981..2.389 [condition OK]"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "($0.95$ against $0.71$)",
+  "value": null,
+  "err": null,
+  "src": "PL-3 chi2/dof: Gaussian-profile max 0.948, coupled 0.712 [condition OK]"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "all forms agree within errors",
+  "value": null,
+  "err": null,
+  "src": "PL-4 chi2/dof: |separable - coupled| < combined jackknife error for the four ansatze [condition OK]"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "at $P_L=-1$ to $-3$, but only with a longitudinal coefficient",
+  "value": null,
+  "err": null,
+  "src": "ExpPb forms have lower chi2/dof than the coupled power law at PL-1..-3 [condition OK]"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "0.090772",
+  "value": null,
+  "err": null,
+  "src": "pl_to_zeta in extrapolation_para_level.py [condition OK]"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "0.539684",
+  "value": null,
+  "err": null,
+  "src": "pl_to_zeta in extrapolation_para_level.py [condition OK]"
+ },
+ {
+  "file": "sections/appendix_fit_results.tex",
+  "literal": "0.785756",
+  "value": null,
+  "err": null,
+  "src": "pl_to_zeta in extrapolation_para_level.py [condition OK]"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "b^2=18,20,25,32",
+  "value": null,
+  "err": null,
+  "src": "factorization_ratio_test.py grid [condition OK]"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$[0.1,0.9]$",
+  "value": null,
+  "err": null,
+  "src": "factorization_sivers_shift.py windows [condition OK]"
+ },
+ {
+  "file": "sections/appendix_factorization.tex",
+  "literal": "$[0.1,0.9]$",
+  "value": null,
+  "err": null,
+  "src": "factorization_sivers_shift.py windows [condition OK]"
+ },
+ {
+  "file": "sections/appendix_factorization.tex",
+  "literal": "$[0.2,0.8]$",
+  "value": null,
+  "err": null,
+  "src": "same windows [condition OK]"
+ },
+ {
+  "file": "sections/appendix_factorization.tex",
+  "literal": "$[0.3,0.8]$",
+  "value": null,
+  "err": null,
+  "src": "same windows [condition OK]"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$[0.2,0.8]$",
+  "value": null,
+  "err": null,
+  "src": "same windows [condition OK]"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$[0.3,0.8]$",
+  "value": null,
+  "err": null,
+  "src": "same windows [condition OK]"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "at $b^2=25$",
+  "value": null,
+  "err": null,
+  "src": "grid nodes [18, 20, 25, 32] in factorization_ratio_test.py [condition OK]"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "at $b^2=32$",
+  "value": null,
+  "err": null,
+  "src": "grid nodes [18, 20, 25, 32] in factorization_ratio_test.py [condition OK]"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "up to $b^2=25$",
+  "value": null,
+  "err": null,
+  "src": "grid nodes [18, 20, 25, 32] in factorization_ratio_test.py [condition OK]"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$b^2=25$",
+  "value": null,
+  "err": null,
+  "src": "grid nodes [18, 20, 25, 32] in factorization_ratio_test.py [condition OK]"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$[0.0,1.0]$",
+  "value": null,
+  "err": null,
+  "src": "factorization_sivers_shift.py windows [condition OK]"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "for $x=0.2$, $0.4$, $0.6$ and $0.8$",
+  "value": null,
+  "err": null,
+  "src": "x_fan in the R_x(b) cell [condition OK]"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "($0.30$ and $0.26$)",
+  "value": null,
+  "err": null,
+  "src": "priors in simultaneous_fit_GaussianPb_Expb.py [condition OK]"
+ },
+ {
+  "file": "tables/table_separable_params_app.tex",
+  "literal": "($0.30$ and $0.26$)",
+  "value": null,
+  "err": null,
+  "src": "priors in simultaneous_fit_GaussianPb_PowerLawb.py [condition OK]"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "|\\vect b_T|=0.34$~fm",
+  "value": null,
+  "err": null,
+  "src": "3a, a = 0.11403 fm in extrapolation_para_level.py [condition OK]"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "from $0.34$ to $0.94$~fm",
+  "value": null,
+  "err": null,
+  "src": "3a and sqrt(68) a [condition OK]"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "\\sqrt{68}",
+  "value": null,
+  "err": null,
+  "src": "b2 range [9,68] in factorization_sivers_shift cells [condition OK]"
+ },
+ {
+  "file": "sections/appendix_extra_figs.tex",
+  "literal": "an error above $100$",
+  "value": null,
+  "err": null,
+  "src": "ReA12B quad ratio at b2=25, P.b=6: error 147.8594 [condition OK]"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "to a peak near $x\\approx0.1$",
+  "value": null,
+  "err": null,
+  "src": "R_b peaks: {16.0: (0.7439, 0.8484, 0.094), 25.0: (0.5308, 0.6917, 0.094), 36.0: (0.3763, 0.5535, 0.091), 49.0: (0.2699, 0.4404, 0.091)} [condition OK]"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "by factors of $2.5$, $2.6$, $18$ and $120$",
+  "value": null,
+  "err": null,
+  "src": "R_x max/min = {0.2: 2.487, 0.4: 2.631, 0.6: 17.917, 0.8: 119.439} [condition OK]"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$|\\vect b_T|_{\\rm ref}=0.34$~fm",
+  "value": null,
+  "err": null,
+  "src": "R_b reference |b_T| [condition OK]"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "x_{\\rm ref}=0.3",
+  "value": null,
+  "err": null,
+  "src": "R_x reference x [condition OK]"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "72.06",
+  "value": 72.061615,
+  "err": null,
+  "src": "PySR hall_of_fame loss C=1"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "48.89",
+  "value": 48.89435,
+  "err": null,
+  "src": "PySR hall_of_fame loss C=3"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "48.03",
+  "value": 48.032726,
+  "err": null,
+  "src": "PySR hall_of_fame loss C=4"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "29.71",
+  "value": 29.705366,
+  "err": null,
+  "src": "PySR hall_of_fame loss C=7"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "5.89",
+  "value": 5.8894467,
+  "err": null,
+  "src": "PySR hall_of_fame loss C=9"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "2.54",
+  "value": 2.5396383,
+  "err": null,
+  "src": "PySR hall_of_fame loss C=11"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "1.61",
+  "value": 1.6097203,
+  "err": null,
+  "src": "PySR hall_of_fame loss C=13"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "1.38",
+  "value": 1.3797385,
+  "err": null,
+  "src": "PySR hall_of_fame loss C=15"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "1.26",
+  "value": 1.2594782,
+  "err": null,
+  "src": "PySR hall_of_fame loss C=17"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "1.05",
+  "value": 1.0462536,
+  "err": null,
+  "src": "PySR hall_of_fame loss C=19"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "0.00328",
+  "value": 0.0032764,
+  "err": null,
+  "src": "PySR C=1 constant"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "0.4693",
+  "value": 0.46930042,
+  "err": null,
+  "src": "PySR C=3"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "0.757",
+  "value": 0.7565121612322402,
+  "err": null,
+  "src": "PySR C=3: -ln(base)"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "0.851",
+  "value": 0.85085624,
+  "err": null,
+  "src": "PySR C=4"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "19.64",
+  "value": 19.641384,
+  "err": null,
+  "src": "PySR C=7"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "9.475",
+  "value": 9.475094,
+  "err": null,
+  "src": "PySR C=9"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "4.065",
+  "value": 4.0654826,
+  "err": null,
+  "src": "PySR C=9"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "7.034",
+  "value": 7.0341153,
+  "err": null,
+  "src": "PySR C=11"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "4.123",
+  "value": 4.122877,
+  "err": null,
+  "src": "PySR C=11"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "1.56",
+  "value": 1.5645496,
+  "err": null,
+  "src": "PySR C=11: 2*0.7822748"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "9.715",
+  "value": 9.715478,
+  "err": null,
+  "src": "C=13"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "6.19",
+  "value": 6.190332094228847,
+  "err": null,
+  "src": "C=13 1/scale"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "5.73",
+  "value": 5.72782936557456,
+  "err": null,
+  "src": "C=13"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "0.570",
+  "value": 0.5704607679755849,
+  "err": null,
+  "src": "C=13 ln(base)"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "4.596",
+  "value": 4.5963902,
+  "err": null,
+  "src": "C=15"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "21.2",
+  "value": 21.218082603480983,
+  "err": null,
+  "src": "C=15"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "20.4",
+  "value": 20.401455139208984,
+  "err": null,
+  "src": "C=15"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "3.23",
+  "value": 3.2270408,
+  "err": null,
+  "src": "C=15 2*power"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "4.172",
+  "value": 4.1718407,
+  "err": null,
+  "src": "C=17"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "15.4",
+  "value": 15.449045642150757,
+  "err": null,
+  "src": "C=17"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "14.8",
+  "value": 14.841964285729002,
+  "err": null,
+  "src": "C=17"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "2.64",
+  "value": 2.6367724,
+  "err": null,
+  "src": "C=17"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "0.542",
+  "value": 0.5420092412024407,
+  "err": null,
+  "src": "C=17"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "0.000396",
+  "value": 0.00039604199,
+  "err": null,
+  "src": "C=17 offset"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "4.848",
+  "value": 4.8479595,
+  "err": null,
+  "src": "C=19"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "22.0",
+  "value": 21.993703475280224,
+  "err": null,
+  "src": "C=19"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "18.9",
+  "value": 18.925602547163567,
+  "err": null,
+  "src": "C=19"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "3.35",
+  "value": 3.3529494,
+  "err": null,
+  "src": "C=19"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "6.83",
+  "value": 6.82956735383009,
+  "err": null,
+  "src": "C=19"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "\\approx0.76$",
+  "value": null,
+  "err": null,
+  "src": "f from C=3 base [condition OK]"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$4\\%$",
+  "value": null,
+  "err": null,
+  "src": "max relative difference of bL/bT scales over C=13,15,17: 0.0396 [condition OK]"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "below $1$ at $C\\ge21$",
+  "value": null,
+  "err": null,
+  "src": "PySR losses C>=21 < 1, C=19 >= 1 [condition OK]"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "lower by more than a third",
+  "value": null,
+  "err": null,
+  "src": "1-L13/L11 = 0.366 [condition OK]"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$1.59$",
+  "value": 1.59,
+  "err": null,
+  "src": "make_paper_PL_figs.py"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$1.36$",
+  "value": 1.36,
+  "err": null,
+  "src": "make_paper_PL_figs.py"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$1.24$",
+  "value": 1.24,
+  "err": null,
+  "src": "make_paper_PL_figs.py (C=17)"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$2.51$",
+  "value": 2.51,
+  "err": null,
+  "src": "make_paper_PL_figs.py (C=11)"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "\\Delta\\chi^2\\approx138",
+  "value": null,
+  "err": null,
+  "src": "make_paper_PL_figs.py: Delta chi2 = 137.7 [condition OK]"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$c=0.076$",
+  "value": 0.07607737,
+  "err": null,
+  "src": "make_paper_PL_figs.py Gaussian straight line"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$\\chi^2/\\text{dof}=2.03$",
+  "value": 2.03,
+  "err": null,
+  "src": "same"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "0.041",
+  "value": 0.04129687,
+  "err": null,
+  "src": "Lorentzian c"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "3.48",
+  "value": 3.4770358,
+  "err": null,
+  "src": "Lorentzian j"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$\\chi^2/\\text{dof}=1.42$",
+  "value": 1.42,
+  "err": null,
+  "src": "same"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "-0.474(5)",
+  "value": -0.4738,
+  "err": 0.005,
+  "src": "gauss_corr.py --pl 2"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$93.9(2.4)$",
+  "value": 93.882,
+  "err": 2.441,
+  "src": "gauss_corr.py --pl 2"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.005(30)$",
+  "value": 0.005,
+  "err": 0.0296,
+  "src": "gauss_corr.py --pl 2"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$2.39(39)$",
+  "value": 2.39,
+  "err": 0.388,
+  "src": "gauss_corr.py --pl 2"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$66$",
+  "value": 66.0,
+  "err": null,
+  "src": "gauss_corr.py rows"
+ },
+ {
+  "file": "sections/appendixC.tex",
+  "literal": "$c=0.685$",
+  "value": 0.68525429,
+  "err": null,
+  "src": "make_exp_straight_PL.py --pl 2"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$c=0.685$",
+  "value": 0.68525429,
+  "err": null,
+  "src": "make_exp_straight_PL.py --pl 2"
+ },
+ {
+  "file": "sections/appendixC.tex",
+  "literal": "$\\mathcal L=1.42$",
+  "value": 1.422,
+  "err": null,
+  "src": "make_exp_straight_PL.py"
+ },
+ {
+  "file": "sections/appendixC.tex",
+  "literal": "$\\mathcal L=1.31$",
+  "value": 1.314,
+  "err": null,
+  "src": "make_exp_straight_PL.py"
+ },
+ {
+  "file": "sections/appendixC.tex",
+  "literal": "$\\mathcal L=1.61$",
+  "value": 1.61,
+  "err": null,
+  "src": "PySR Pareto C=13"
+ },
+ {
+  "file": "sections/appendixC.tex",
+  "literal": "$1.38$",
+  "value": 1.38,
+  "err": null,
+  "src": "PySR C=15"
+ },
+ {
+  "file": "sections/appendixC.tex",
+  "literal": "$1.26$",
+  "value": 1.259,
+  "err": null,
+  "src": "PySR C=17"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$1.24(15)$",
+  "value": 1.2408995722097103,
+  "err": 0.14944391445071153,
+  "src": "paper_fits.py fit P0"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$1.12(14)$",
+  "value": 1.1192948635797368,
+  "err": 0.1423945991660362,
+  "src": "paper_fits.py fit P1"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "by 28",
+  "value": null,
+  "err": null,
+  "src": "chi2(P0)-chi2(P1) = 27.87 [condition OK]"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "-6(25)",
+  "value": -5.561358835269712,
+  "err": 25.0024982520184,
+  "src": "paper_fits.py fit P2 k2"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$1.56$",
+  "value": 1.5649921739948722,
+  "err": null,
+  "src": "paper_fits.py: min Gaussian-family chi2/dof"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$1.91$",
+  "value": 1.9137827889064705,
+  "err": null,
+  "src": "paper_fits.py: max Gaussian-family chi2/dof"
+ },
+ {
+  "file": "sections/appendixC.tex",
+  "literal": "$\\chi^2/\\text{dof}=1.56$",
+  "value": 1.5649921739948722,
+  "err": null,
+  "src": "same"
+ },
+ {
+  "file": "sections/appendixC.tex",
+  "literal": "$1.10$",
+  "value": 1.0955731982449313,
+  "err": null,
+  "src": "paper_fits.py: min power-law chi2/dof"
+ },
+ {
+  "file": "sections/appendixC.tex",
+  "literal": "$1.24$",
+  "value": 1.2408995722097103,
+  "err": null,
+  "src": "paper_fits.py: max power-law chi2/dof"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$-0.0017(7)$",
+  "value": -0.0016873988269493125,
+  "err": 0.0006777858996819618,
+  "src": "paper_fits.py fit G00 c"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "73 to 138",
+  "value": null,
+  "err": null,
+  "src": "chi2(Gaussian) - chi2(best power law, same #params): min 73.4 max 138.1 over 15 models [condition OK]"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "15 Gaussian forms",
+  "value": null,
+  "err": null,
+  "src": "15 Gaussian forms have a power-law form with the same number of parameters [condition OK]"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$1.84$",
+  "value": 1.843,
+  "err": null,
+  "src": "independent_rows.py"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$1.12$",
+  "value": 1.1242833237241208,
+  "err": null,
+  "src": "paper_fits.py fit P2"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "about 1.6 times larger",
+  "value": null,
+  "err": null,
+  "src": "ratio 1.639 [condition OK]"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "140",
+  "value": 140.0,
+  "err": null,
+  "src": "independent_rows.py (unique rows)"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.0054(19)$",
+  "value": 0.005440034481320644,
+  "err": 0.0019463998192506967,
+  "src": "paper_fits.py slopes seq"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.29$",
+  "value": 0.2936821283529794,
+  "err": null,
+  "src": "paper_fits.py slopes seq"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$2.8\\sigma$",
+  "value": 2.7949213864060507,
+  "err": null,
+  "src": "slope/err"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.0006(9)$",
+  "value": 0.0005793021030890172,
+  "err": 0.0008873669715640083,
+  "src": "paper_fits.py slopes seq"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$4.3$",
+  "value": 4.337661329757513,
+  "err": null,
+  "src": "paper_fits.py slopes seq"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.0098(87)$",
+  "value": 0.009770036754804182,
+  "err": 0.008715735387321536,
+  "src": "slopes seq"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.0004(29)$",
+  "value": 0.00044349343080910035,
+  "err": 0.002928942385771355,
+  "src": "slopes seq"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$0.0010(41)$",
+  "value": 0.0009826313379343596,
+  "err": 0.004051192791799613,
+  "src": "slopes seq"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$-0.0006(29)$",
+  "value": -0.0005775951856004255,
+  "err": 0.002940014326717716,
+  "src": "slopes seq"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "within $1.2\\sigma$ of zero",
+  "value": null,
+  "err": null,
+  "src": "max |slope|/err over the four A12B/Im slopes = 1.121 [condition OK]"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$\\chi^2/\\text{dof}<1$",
+  "value": null,
+  "err": null,
+  "src": "chi2/dof<1 for the four lines [condition OK]"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$a=2.47$",
+  "value": 2.4747513304777944,
+  "err": null,
+  "src": "fit_P2.npz"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$f=0.484$",
+  "value": 0.4841202403323247,
+  "err": null,
+  "src": "fit_P2.npz"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$j=2.52$",
+  "value": 2.5165803788062324,
+  "err": null,
+  "src": "fit_P2.npz"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$a=0.77$",
+  "value": 0.7661094436383397,
+  "err": null,
+  "src": "fit_ReA12B_c0.npz"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$f=0.50$",
+  "value": 0.49546391261493883,
+  "err": null,
+  "src": "fit_ReA12B_c0.npz"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$j=2.41$",
+  "value": 2.4086524773627236,
+  "err": null,
+  "src": "fit_ReA12B_c0.npz"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$a=0.44$",
+  "value": 0.4371610114915659,
+  "err": null,
+  "src": "fit_ImA2B_c0.npz"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$f=0.60$",
+  "value": 0.6035120490759103,
+  "err": null,
+  "src": "fit_ImA2B_c0.npz"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$j=2.37$",
+  "value": 2.365184821501333,
+  "err": null,
+  "src": "fit_ImA2B_c0.npz"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "$\\chi^2/\\text{dof}=2.17$",
+  "value": 2.1731579853122276,
+  "err": null,
+  "src": "paper_fits.py cfits seq: constant c, chi2/dof"
+ },
+ {
+  "file": "sections/analysis_fitting.tex",
+  "literal": "while all $\\eta$-dependent forms do",
+  "value": null,
+  "err": null,
+  "src": "max chi2 of the eta-dependent forms = 2.18 [condition OK]"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$0.81(6)$",
+  "value": 0.8112,
+  "err": 0.064,
+  "src": "factorization_ratio_test_PLscaled.py output (PL-2) ('ReA2B', 'top', 6, 18)"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$1.14(8)$",
+  "value": 1.1401,
+  "err": 0.0824,
+  "src": "factorization_ratio_test_PLscaled.py output (PL-2) ('ReA2B', 'top', 6, 25)"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$2.0(4)$",
+  "value": 2.0112,
+  "err": 0.4059,
+  "src": "factorization_ratio_test_PLscaled.py output (PL-2) ('ReA2B', 'top', 6, 32)"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$1.01(17)$",
+  "value": 1.0091,
+  "err": 0.1703,
+  "src": "factorization_ratio_test_PLscaled.py output (PL-2) ('ReA2B', 'top', 0, 25)"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$0.92(3)$",
+  "value": 0.9208,
+  "err": 0.0316,
+  "src": "factorization_ratio_test_PLscaled.py output (PL-1) ('ReA2B', 'top', 3, 18)"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$1.17(3)$",
+  "value": 1.1706,
+  "err": 0.0341,
+  "src": "factorization_ratio_test_PLscaled.py output (PL-1) ('ReA2B', 'top', 3, 25)"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$1.55(9)$",
+  "value": 1.5513,
+  "err": 0.0905,
+  "src": "factorization_ratio_test_PLscaled.py output (PL-1) ('ReA2B', 'top', 3, 32)"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$0.42(5)$",
+  "value": 0.4164,
+  "err": 0.0549,
+  "src": "factorization_ratio_test_PLscaled.py output (PL-2) ('ReA2B', 'bottom', 32, 0)"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$0.54(3)$",
+  "value": 0.5393,
+  "err": 0.0323,
+  "src": "factorization_ratio_test_PLscaled.py output (PL-2) ('ReA2B', 'bottom', 32, 6)"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$0.22(5)$",
+  "value": 0.2175,
+  "err": 0.0505,
+  "src": "factorization_ratio_test_PLscaled.py output (PL-2) ('ReA2B', 'bottom', 32, 8)"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$0.40(3)$",
+  "value": 0.4021,
+  "err": 0.0279,
+  "src": "factorization_ratio_test_PLscaled.py output (PL-1) ('ReA2B', 'bottom', 32, 0)"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$0.60(1)$",
+  "value": 0.5966,
+  "err": 0.014,
+  "src": "factorization_ratio_test_PLscaled.py output (PL-1) ('ReA2B', 'bottom', 32, 3)"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$0.35(2)$",
+  "value": 0.3541,
+  "err": 0.0249,
+  "src": "factorization_ratio_test_PLscaled.py output (PL-1) ('ReA2B', 'bottom', 32, 4)"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "errors are about twice as large",
+  "value": null,
+  "err": null,
+  "src": "error ratio PL-2/PL-1 of T at b2=18: 2.03 [condition OK]"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "0.090772",
+  "value": 0.090772,
+  "err": null,
+  "src": "pl_to_zeta in extrapolation_para_level.py"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "0.294367",
+  "value": 0.294367,
+  "err": null,
+  "src": "pl_to_zeta in extrapolation_para_level.py"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "0.539684",
+  "value": 0.539684,
+  "err": null,
+  "src": "pl_to_zeta in extrapolation_para_level.py"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "0.785756",
+  "value": 0.785756,
+  "err": null,
+  "src": "pl_to_zeta in extrapolation_para_level.py"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "11.02",
+  "value": 11.016613052483144,
+  "err": null,
+  "src": "1/zeta_hat"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "3.40",
+  "value": 3.397119921730357,
+  "err": null,
+  "src": "1/zeta_hat"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "1.85",
+  "value": 1.8529361626433245,
+  "err": null,
+  "src": "1/zeta_hat"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "1.27",
+  "value": 1.2726597060665144,
+  "err": null,
+  "src": "1/zeta_hat"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$0.751(79)$",
+  "value": 0.751,
+  "err": 0.079,
+  "src": "extrapolation_para_level.py log, integral table row 0 col 0"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$0.751(80)$",
+  "value": 0.751,
+  "err": 0.08,
+  "src": "extrapolation_para_level.py log, integral table row 0 col 1"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$0.375(40)$",
+  "value": 0.375,
+  "err": 0.04,
+  "src": "extrapolation_para_level.py log, integral table row 0 col 2"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$0.375(40)$",
+  "value": 0.375,
+  "err": 0.04,
+  "src": "extrapolation_para_level.py log, integral table row 0 col 3"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$6(96)\\!\\times\\!10^{-17}$",
+  "value": 6e-17,
+  "err": 9.6e-16,
+  "src": "extrapolation_para_level.py log, integral table row 1 col 0"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$3(24)\\!\\times\\!10^{-16}$",
+  "value": 3e-16,
+  "err": 2.4e-15,
+  "src": "extrapolation_para_level.py log, integral table row 1 col 1"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$0.165(27)$",
+  "value": 0.165,
+  "err": 0.027,
+  "src": "extrapolation_para_level.py log, integral table row 1 col 2"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$-0.169(29)$",
+  "value": -0.169,
+  "err": 0.029,
+  "src": "extrapolation_para_level.py log, integral table row 1 col 3"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$1.50(16)$",
+  "value": 1.5,
+  "err": 0.16,
+  "src": "extrapolation_para_level.py log, integral table row 2 col 0"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$1.50(16)$",
+  "value": 1.5,
+  "err": 0.16,
+  "src": "extrapolation_para_level.py log, integral table row 2 col 1"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$0.421(81)$",
+  "value": 0.421,
+  "err": 0.081,
+  "src": "extrapolation_para_level.py log, integral table row 2 col 2"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$1.09(11)$",
+  "value": 1.09,
+  "err": 0.11,
+  "src": "extrapolation_para_level.py log, integral table row 2 col 3"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$0.302(53)$",
+  "value": 0.302,
+  "err": 0.053,
+  "src": "extrapolation_para_level.py log, integral table row 3 col 0"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$0.302(53)$",
+  "value": 0.302,
+  "err": 0.053,
+  "src": "extrapolation_para_level.py log, integral table row 3 col 1"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$0.151(27)$",
+  "value": 0.151,
+  "err": 0.027,
+  "src": "extrapolation_para_level.py log, integral table row 3 col 2"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$0.151(27)$",
+  "value": 0.151,
+  "err": 0.027,
+  "src": "extrapolation_para_level.py log, integral table row 3 col 3"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$0.217(38)$",
+  "value": 0.217,
+  "err": 0.038,
+  "src": "extrapolation_para_level.py log, integral table row 4 col 0"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$0.217(38)$",
+  "value": 0.217,
+  "err": 0.038,
+  "src": "extrapolation_para_level.py log, integral table row 4 col 1"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$0.387(89)$",
+  "value": 0.387,
+  "err": 0.089,
+  "src": "extrapolation_para_level.py log, integral table row 4 col 2"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$0.150(26)$",
+  "value": 0.15,
+  "err": 0.026000000000000002,
+  "src": "extrapolation_para_level.py log, integral table row 4 col 3"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "about $0.21$~GeV at small $x$",
+  "value": null,
+  "err": null,
+  "src": "peak 0.21493 at x=0.0452 [condition OK]"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "near zero by $x\\approx0.5$",
+  "value": null,
+  "err": null,
+  "src": "<k_y>(x=0.5) = 0.00572 [condition OK]"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "about $0.02$~GeV near $x\\approx0.15$",
+  "value": null,
+  "err": null,
+  "src": "x<k_y> peak 0.02004 at x=0.1457 [condition OK]"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "2.0667(69)",
+  "value": 2.0667,
+  "err": 0.006900000000000001,
+  "src": "extrapolation_para_level.py log PARAM j_re"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "0.9921(92)",
+  "value": 0.9921,
+  "err": 0.0092,
+  "src": "extrapolation_para_level.py log PARAM j_im"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "2.0026(40)",
+  "value": 2.0026,
+  "err": 0.004,
+  "src": "extrapolation_para_level.py log PARAM j_reA12B"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "0.139(12)",
+  "value": 0.139,
+  "err": 0.012,
+  "src": "extrapolation_para_level.py log PARAM d_re"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "0.183(14)",
+  "value": 0.183,
+  "err": 0.014,
+  "src": "extrapolation_para_level.py log PARAM d_im"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "0.105(18)",
+  "value": 0.105,
+  "err": 0.018000000000000002,
+  "src": "extrapolation_para_level.py log PARAM d_reA12B"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$0.0568(78)$",
+  "value": 0.0568,
+  "err": 0.0078000000000000005,
+  "src": "factorization_sivers_shift.py log"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$0.0714(95)$",
+  "value": 0.0714,
+  "err": 0.0095,
+  "src": "factorization_sivers_shift.py log"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$0.0758(75)$",
+  "value": 0.0758,
+  "err": 0.007500000000000001,
+  "src": "factorization_sivers_shift.py log"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$0.0620(88)$",
+  "value": 0.062,
+  "err": 0.0088,
+  "src": "factorization_sivers_shift.py log"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$5.7$--$7.6\\%$",
+  "value": null,
+  "err": null,
+  "src": "distance range 5.68-7.58% [condition OK]"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "[0.3421,0.9403]",
+  "value": null,
+  "err": null,
+  "src": "0.3421 0.9403 [condition OK]"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$60$ points",
+  "value": null,
+  "err": null,
+  "src": "factorization_sivers_shift.py log [condition OK]"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "3a\\approx0.34$~fm",
+  "value": null,
+  "err": null,
+  "src": "a = 0.11403 fm in extrapolation_para_level.py [condition OK]"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "\\approx0.94$~fm",
+  "value": null,
+  "err": null,
+  "src": "sqrt(68) a [condition OK]"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "\\approx0.49$~fm",
+  "value": null,
+  "err": null,
+  "src": "2.5 GeV^-1 * hbar c (197 MeV fm, as in extrapolation_para_level.py) [condition OK]"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$1.6\\sigma$ to $3.4\\sigma$",
+  "value": null,
+  "err": null,
+  "src": "pairwise d_X differences in sigma: [2.39, 1.57, 3.42] [condition OK]"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "not decreasing as the window moves away from $x=0$",
+  "value": null,
+  "err": null,
+  "src": "Sivers windows: [0.0568, 0.0714, 0.0758, 0.062] [condition OK]"
+ },
+ {
+  "file": "sections/appendix_factorization.tex",
+  "literal": "$0.0804(18)$",
+  "value": 0.0804,
+  "err": 0.0018000000000000002,
+  "src": "factorization_amplitudes.py log reA12B window 0"
+ },
+ {
+  "file": "sections/appendix_factorization.tex",
+  "literal": "$0.0573(26)$",
+  "value": 0.0573,
+  "err": 0.0026000000000000003,
+  "src": "factorization_amplitudes.py log reA12B window 1"
+ },
+ {
+  "file": "sections/appendix_factorization.tex",
+  "literal": "$0.0397(24)$",
+  "value": 0.0397,
+  "err": 0.0024000000000000002,
+  "src": "factorization_amplitudes.py log reA12B window 2"
+ },
+ {
+  "file": "sections/appendix_factorization.tex",
+  "literal": "$0.0303(21)$",
+  "value": 0.0303,
+  "err": 0.0021000000000000003,
+  "src": "factorization_amplitudes.py log reA12B window 3"
+ },
+ {
+  "file": "sections/appendix_factorization.tex",
+  "literal": "$0.08138(65)$",
+  "value": 0.08138,
+  "err": 0.0006500000000000001,
+  "src": "factorization_amplitudes.py log re window 0"
+ },
+ {
+  "file": "sections/appendix_factorization.tex",
+  "literal": "$0.0718(36)$",
+  "value": 0.0718,
+  "err": 0.0036000000000000003,
+  "src": "factorization_amplitudes.py log re window 1"
+ },
+ {
+  "file": "sections/appendix_factorization.tex",
+  "literal": "$0.0581(55)$",
+  "value": 0.0581,
+  "err": 0.0055000000000000005,
+  "src": "factorization_amplitudes.py log re window 2"
+ },
+ {
+  "file": "sections/appendix_factorization.tex",
+  "literal": "$0.0478(56)$",
+  "value": 0.0478,
+  "err": 0.0056,
+  "src": "factorization_amplitudes.py log re window 3"
+ },
+ {
+  "file": "sections/appendix_factorization.tex",
+  "literal": "$0.107(18)$",
+  "value": 0.107,
+  "err": 0.018000000000000002,
+  "src": "factorization_amplitudes.py log im window 0"
+ },
+ {
+  "file": "sections/appendix_factorization.tex",
+  "literal": "$0.0868(30)$",
+  "value": 0.0868,
+  "err": 0.003,
+  "src": "factorization_amplitudes.py log im window 1"
+ },
+ {
+  "file": "sections/appendix_factorization.tex",
+  "literal": "$0.0578(28)$",
+  "value": 0.0578,
+  "err": 0.0028,
+  "src": "factorization_amplitudes.py log im window 2"
+ },
+ {
+  "file": "sections/appendix_factorization.tex",
+  "literal": "$0.0425(23)$",
+  "value": 0.0425,
+  "err": 0.0023,
+  "src": "factorization_amplitudes.py log im window 3"
+ },
+ {
+  "file": "sections/appendix_factorization.tex",
+  "literal": "$0.1943(63)$",
+  "value": 0.1943,
+  "err": 0.0063,
+  "src": "factorization_amplitudes.py log denom window 0"
+ },
+ {
+  "file": "sections/appendix_factorization.tex",
+  "literal": "$0.0926(59)$",
+  "value": 0.0926,
+  "err": 0.0059,
+  "src": "factorization_amplitudes.py log denom window 1"
+ },
+ {
+  "file": "sections/appendix_factorization.tex",
+  "literal": "$0.0594(40)$",
+  "value": 0.0594,
+  "err": 0.004,
+  "src": "factorization_amplitudes.py log denom window 2"
+ },
+ {
+  "file": "sections/appendix_factorization.tex",
+  "literal": "$0.0470(47)$",
+  "value": 0.047,
+  "err": 0.0047,
+  "src": "factorization_amplitudes.py log denom window 3"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$8$--$19\\%$",
+  "value": null,
+  "err": null,
+  "src": "amplitude [0,1] distances 8.04-19.43% [condition OK]"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "than the $5.7\\%$",
+  "value": null,
+  "err": null,
+  "src": "amplitude distances exceed Sivers 0.0568 [condition OK]"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$1.36$",
+  "value": 1.36,
+  "err": null,
+  "src": "zeta_ansatz_compare.py mean chi2/dof, 1/zeta"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$2.04$",
+  "value": 2.039,
+  "err": null,
+  "src": "zeta_ansatz_compare.py mean chi2/dof, 1/zeta^2"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "lower for six of them",
+  "value": null,
+  "err": null,
+  "src": "power 2 lower for 6 of 12 [condition OK]"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$3.1$",
+  "value": 3.128,
+  "err": null,
+  "src": "zeta_ansatz_compare.py a_im power1"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$12.1$",
+  "value": 12.087,
+  "err": null,
+  "src": "zeta_ansatz_compare.py a_im power2"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "-0.0023",
+  "value": -0.0022701,
+  "err": null,
+  "src": "zeta_ansatz_compare.py a_im intercept power1"
+ },
+ {
+  "file": "sections/analysis_extrapolation.tex",
+  "literal": "$-0.0586(35)$",
+  "value": null,
+  "err": null,
+  "src": "zeta_ansatz_compare.py a_im intercept power2 (= extrapolation_para_level.py PARAM a_im) [condition OK]"
+ }
+]

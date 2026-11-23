@@ -1,0 +1,14 @@
+ZETA a_re: power1 chi2/dof 0.887(1.088) extrap 4.0212  | power2 chi2/dof 0.232(0.556) extrap 4.0127
+ZETA c_re: power1 chi2/dof 1.541(1.434) extrap 0.019288  | power2 chi2/dof 1.649(1.483) extrap 0.027474
+ZETA j_re: power1 chi2/dof 2.072(1.663) extrap 2.0626  | power2 chi2/dof 2.061(1.659) extrap 2.0667
+ZETA d_re: power1 chi2/dof 1.091(1.206) extrap 0.15385  | power2 chi2/dof 0.784(1.022) extrap 0.13882
+ZETA a_im: power1 chi2/dof 3.128(2.043) extrap -0.0022701  | power2 chi2/dof 12.087(4.015) extrap -0.058607
+ZETA c_im: power1 chi2/dof 0.710(0.974) extrap 0.00092858  | power2 chi2/dof 0.138(0.430) extrap 0.011907
+ZETA j_im: power1 chi2/dof 0.292(0.624) extrap 0.93257  | power2 chi2/dof 1.047(1.181) extrap 0.99212
+ZETA d_im: power1 chi2/dof 1.939(1.608) extrap 0.20892  | power2 chi2/dof 2.455(1.810) extrap 0.18325
+ZETA a_reA12B: power1 chi2/dof 2.094(1.671) extrap 0.55527  | power2 chi2/dof 1.463(1.397) extrap 0.57361
+ZETA c_reA12B: power1 chi2/dof 0.049(0.257) extrap 0.00011061  | power2 chi2/dof 0.392(0.723) extrap 0.0054044
+ZETA j_reA12B: power1 chi2/dof 2.523(1.833) extrap 2  | power2 chi2/dof 2.145(1.690) extrap 2.0026
+ZETA d_reA12B: power1 chi2/dof 0.000(0.014) extrap 0.11894  | power2 chi2/dof 0.011(0.123) extrap 0.10511
+ZETA mean chi2/dof over 12 parameters: power1 1.360 power2 2.039; power2 lower for 6 of 12 parameters
+FINISHED

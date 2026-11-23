@@ -1,0 +1,5 @@
+
+Evaluating discrete Fourier transforms over PL list for fixed b^2 = 9.0...
+Evaluating PL slices:   0%|          | 0/4 [00:00<?, ?it/s]Evaluating PL slices:  25%|██▌       | 1/4 [00:05<00:17,  5.74s/it]Evaluating PL slices:  50%|█████     | 2/4 [00:11<00:11,  5.78s/it]Evaluating PL slices:  75%|███████▌  | 3/4 [00:17<00:05,  5.82s/it]Evaluating PL slices: 100%|██████████| 4/4 [00:23<00:00,  5.79s/it]Evaluating PL slices: 100%|██████████| 4/4 [00:23<00:00,  5.79s/it]
+
+FINISHED rc=0

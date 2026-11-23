@@ -1,0 +1,46 @@
+[1] Loading and Scaling Parameters...
+[2] Extrapolating Parameters to 1/zeta_hat -> 0...
+PARAM a_re extrapolated 4.0127(21) chi2/dof 0.23(56)
+PARAM c_re extrapolated 0.027(14) chi2/dof 1.6(15)
+PARAM j_re extrapolated 2.0667(69) chi2/dof 2.1(17)
+PARAM d_re extrapolated 0.139(12) chi2/dof 0.8(10)
+PARAM a_im extrapolated -0.0586(35) chi2/dof 12.1(40)
+PARAM c_im extrapolated 0.0119(20) chi2/dof 0.14(43)
+PARAM j_im extrapolated 0.9921(92) chi2/dof 1.0(12)
+PARAM d_im extrapolated 0.183(14) chi2/dof 2.5(18)
+PARAM a_reA12B extrapolated 0.5736(68) chi2/dof 1.5(14)
+PARAM c_reA12B extrapolated 0.0054(14) chi2/dof 0.39(72)
+PARAM j_reA12B extrapolated 2.0026(40) chi2/dof 2.1(17)
+PARAM d_reA12B extrapolated 0.105(18) chi2/dof 0.01(12)
+/Users/hariprashadravikumar/Lattice_QCD_TMD_PhD/sivers_TMD_PhD_project/python_fits/sivers_pipeline/scripts/extrap_final.py:212: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+
+Computing Numerical Integrals across Jackknife samples...
+
+### Numerical Integration of Fourier Transforms (|bT| = 0.34 fm)
+
+| Integral | $\{-\infty, \infty\}$ | $\{-1, 1\}$ | $\{-1, 0\}$ | $\{0, 1\}$ |
+| :--- | :--- | :--- | :--- | :--- |
+| $\int dx\, \widetilde{A}^{[x]\text{Re}}_{2B}$ | 0.751(79) | 0.751(80) | 0.375(40) | 0.375(40) |
+| $\int dx\, (\widetilde{A}^{[x]\text{Im}}_{2B})$ | 6(96)e-17 | 3(24)e-16 | 0.165(27) | -0.169(29) |
+| $\int dx\, \tilde{f}_1^{(0)} = 2\int dx\, (\widetilde{A}^{[x]\text{Re}}_{2B} - \widetilde{A}^{[x]\text{Im}}_{2B})$ | 1.50(16) | 1.50(16) | 0.421(81) | 1.09(11) |
+| $\int dx\, \tilde{f}_{1T}^{\perp(1)} = -2\int dx\, \widetilde{A}^{[x]\text{Re}}_{12B}$ | 0.302(53) | 0.302(53) | 0.151(27) | 0.151(27) |
+| $m_N \frac{\int dx\, \tilde{f}_{1T}^{\perp(1)}}{\int dx\, \tilde{f}_1^{(0)}}$ | 0.217(38) | 0.217(38) | 0.387(89) | 0.150(26) |
+
+[3] Reconstructing Infinite-Momentum Amplitudes and Sivers Shift...
+Evaluating x slices:   0%|          | 0/200 [00:00<?, ?it/s]Evaluating x slices:   4%|▍         | 8/200 [00:00<00:02, 77.16it/s]Evaluating x slices:   8%|▊         | 16/200 [00:00<00:02, 78.17it/s]Evaluating x slices:  12%|█▎        | 25/200 [00:00<00:02, 80.66it/s]Evaluating x slices:  17%|█▋        | 34/200 [00:00<00:02, 82.42it/s]Evaluating x slices:  22%|██▏       | 43/200 [00:00<00:01, 83.25it/s]Evaluating x slices:  26%|██▌       | 52/200 [00:00<00:01, 83.39it/s]Evaluating x slices:  30%|███       | 61/200 [00:00<00:01, 83.04it/s]Evaluating x slices:  35%|███▌      | 70/200 [00:00<00:01, 80.02it/s]Evaluating x slices:  40%|███▉      | 79/200 [00:00<00:01, 77.63it/s]Evaluating x slices:  44%|████▎     | 87/200 [00:01<00:01, 77.62it/s]Evaluating x slices:  48%|████▊     | 96/200 [00:01<00:01, 79.10it/s]Evaluating x slices:  52%|█████▎    | 105/200 [00:01<00:01, 80.53it/s]Evaluating x slices:  57%|█████▋    | 114/200 [00:01<00:01, 79.90it/s]Evaluating x slices:  62%|██████▏   | 123/200 [00:01<00:00, 79.17it/s]Evaluating x slices:  66%|██████▌   | 131/200 [00:01<00:00, 78.68it/s]Evaluating x slices:  70%|███████   | 140/200 [00:01<00:00, 79.54it/s]Evaluating x slices:  74%|███████▍  | 148/200 [00:02<00:01, 41.12it/s]Evaluating x slices:  78%|███████▊  | 156/200 [00:02<00:00, 47.05it/s]Evaluating x slices:  82%|████████▏ | 164/200 [00:02<00:00, 53.07it/s]Evaluating x slices:  86%|████████▌ | 171/200 [00:02<00:00, 50.80it/s]Evaluating x slices:  89%|████████▉ | 178/200 [00:02<00:00, 53.93it/s]Evaluating x slices:  92%|█████████▎| 185/200 [00:02<00:00, 47.12it/s]Evaluating x slices:  96%|█████████▌| 192/200 [00:02<00:00, 51.93it/s]Evaluating x slices: 100%|█████████▉| 199/200 [00:03<00:00, 55.34it/s]Evaluating x slices: 100%|██████████| 200/200 [00:03<00:00, 65.02it/s]
+SIVERS peak <k_y> = 0.21493 GeV at x = 0.0452; at x=0.5: 0.00572; x<k_y> peak = 0.02004 at x = 0.1457
+[4] Generating Final Plots...
+/Users/hariprashadravikumar/Lattice_QCD_TMD_PhD/sivers_TMD_PhD_project/python_fits/sivers_pipeline/scripts/extrap_final.py:429: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+
+Evaluating Fourier transforms and applying Jackknife for 3D Plotting...
+Evaluating over b^2 grid:   0%|          | 0/40 [00:00<?, ?it/s]Evaluating over b^2 grid:   2%|▎         | 1/40 [00:01<00:45,  1.16s/it]Evaluating over b^2 grid:   5%|▌         | 2/40 [00:02<00:45,  1.19s/it]Evaluating over b^2 grid:   8%|▊         | 3/40 [00:03<00:45,  1.22s/it]Evaluating over b^2 grid:  10%|█         | 4/40 [00:04<00:43,  1.20s/it]Evaluating over b^2 grid:  12%|█▎        | 5/40 [00:05<00:42,  1.20s/it]Evaluating over b^2 grid:  15%|█▌        | 6/40 [00:07<00:41,  1.21s/it]Evaluating over b^2 grid:  18%|█▊        | 7/40 [00:08<00:39,  1.21s/it]Evaluating over b^2 grid:  20%|██        | 8/40 [00:09<00:39,  1.22s/it]Evaluating over b^2 grid:  22%|██▎       | 9/40 [00:10<00:37,  1.21s/it]Evaluating over b^2 grid:  25%|██▌       | 10/40 [00:14<00:54,  1.82s/it]Evaluating over b^2 grid:  28%|██▊       | 11/40 [00:15<00:52,  1.81s/it]Evaluating over b^2 grid:  30%|███       | 12/40 [00:17<00:48,  1.73s/it]Evaluating over b^2 grid:  32%|███▎      | 13/40 [00:18<00:42,  1.57s/it]Evaluating over b^2 grid:  35%|███▌      | 14/40 [00:19<00:38,  1.48s/it]Evaluating over b^2 grid:  38%|███▊      | 15/40 [00:21<00:34,  1.39s/it]Evaluating over b^2 grid:  40%|████      | 16/40 [00:22<00:31,  1.32s/it]Evaluating over b^2 grid:  42%|████▎     | 17/40 [00:23<00:29,  1.28s/it]Evaluating over b^2 grid:  45%|████▌     | 18/40 [00:24<00:27,  1.25s/it]Evaluating over b^2 grid:  48%|████▊     | 19/40 [00:25<00:26,  1.26s/it]Evaluating over b^2 grid:  50%|█████     | 20/40 [00:27<00:24,  1.23s/it]Evaluating over b^2 grid:  52%|█████▎    | 21/40 [00:28<00:24,  1.30s/it]Evaluating over b^2 grid:  55%|█████▌    | 22/40 [00:29<00:23,  1.29s/it]Evaluating over b^2 grid:  57%|█████▊    | 23/40 [00:30<00:21,  1.27s/it]Evaluating over b^2 grid:  60%|██████    | 24/40 [00:32<00:20,  1.25s/it]Evaluating over b^2 grid:  62%|██████▎   | 25/40 [00:33<00:21,  1.41s/it]Evaluating over b^2 grid:  65%|██████▌   | 26/40 [00:35<00:20,  1.46s/it]Evaluating over b^2 grid:  68%|██████▊   | 27/40 [00:36<00:18,  1.43s/it]Evaluating over b^2 grid:  70%|███████   | 28/40 [00:38<00:16,  1.37s/it]Evaluating over b^2 grid:  72%|███████▎  | 29/40 [00:39<00:14,  1.33s/it]Evaluating over b^2 grid:  75%|███████▌  | 30/40 [00:40<00:13,  1.32s/it]Evaluating over b^2 grid:  78%|███████▊  | 31/40 [00:42<00:12,  1.40s/it]Evaluating over b^2 grid:  80%|████████  | 32/40 [00:43<00:10,  1.36s/it]Evaluating over b^2 grid:  82%|████████▎ | 33/40 [00:44<00:09,  1.30s/it]Evaluating over b^2 grid:  85%|████████▌ | 34/40 [00:45<00:07,  1.28s/it]Evaluating over b^2 grid:  88%|████████▊ | 35/40 [00:47<00:06,  1.24s/it]Evaluating over b^2 grid:  90%|█████████ | 36/40 [00:48<00:04,  1.21s/it]Evaluating over b^2 grid:  92%|█████████▎| 37/40 [00:49<00:03,  1.21s/it]Evaluating over b^2 grid:  95%|█████████▌| 38/40 [00:50<00:02,  1.22s/it]Evaluating over b^2 grid:  98%|█████████▊| 39/40 [00:51<00:01,  1.22s/it]Evaluating over b^2 grid: 100%|██████████| 40/40 [00:53<00:00,  1.21s/it]Evaluating over b^2 grid: 100%|██████████| 40/40 [00:53<00:00,  1.33s/it]
+/Users/hariprashadravikumar/Lattice_QCD_TMD_PhD/sivers_TMD_PhD_project/python_fits/sivers_pipeline/scripts/extrap_final.py:567: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+
+[5] Generating 2D Overlay Plot for all momenta + Extrapolated at fixed b^2 = 9.0...
+/Users/hariprashadravikumar/Lattice_QCD_TMD_PhD/sivers_TMD_PhD_project/python_fits/sivers_pipeline/scripts/extrap_final.py:691: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show()
+
+FINISHED rc=0

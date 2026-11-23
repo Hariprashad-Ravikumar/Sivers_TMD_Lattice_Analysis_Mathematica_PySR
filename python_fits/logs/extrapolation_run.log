@@ -1,0 +1,38 @@
+[1] Loading and Scaling Parameters...
+[2] Extrapolating Parameters to 1/zeta_hat -> 0...
+PARAM a_re extrapolated 4.0127(21) chi2/dof 0.23(56)
+PARAM c_re extrapolated 0.027(14) chi2/dof 1.6(15)
+PARAM j_re extrapolated 2.0667(69) chi2/dof 2.1(17)
+PARAM d_re extrapolated 0.139(12) chi2/dof 0.8(10)
+PARAM a_im extrapolated -0.0586(35) chi2/dof 12.1(40)
+PARAM c_im extrapolated 0.0119(20) chi2/dof 0.14(43)
+PARAM j_im extrapolated 0.9921(92) chi2/dof 1.0(12)
+PARAM d_im extrapolated 0.183(14) chi2/dof 2.5(18)
+PARAM a_reA12B extrapolated 0.5736(68) chi2/dof 1.5(14)
+PARAM c_reA12B extrapolated 0.0054(14) chi2/dof 0.39(72)
+PARAM j_reA12B extrapolated 2.0026(40) chi2/dof 2.1(17)
+PARAM d_reA12B extrapolated 0.105(18) chi2/dof 0.01(12)
+
+Computing Numerical Integrals across Jackknife samples...
+
+### Numerical Integration of Fourier Transforms (|bT| = 0.34 fm)
+
+| Integral | $\{-\infty, \infty\}$ | $\{-1, 1\}$ | $\{-1, 0\}$ | $\{0, 1\}$ |
+| :--- | :--- | :--- | :--- | :--- |
+| $\int dx\, \widetilde{A}^{[x]\text{Re}}_{2B}$ | 0.751(79) | 0.751(80) | 0.375(40) | 0.375(40) |
+| $\int dx\, (\widetilde{A}^{[x]\text{Im}}_{2B})$ | 6(96)e-17 | 3(24)e-16 | 0.165(27) | -0.169(29) |
+| $\int dx\, \tilde{f}_1^{(0)} = 2\int dx\, (\widetilde{A}^{[x]\text{Re}}_{2B} - \widetilde{A}^{[x]\text{Im}}_{2B})$ | 1.50(16) | 1.50(16) | 0.421(81) | 1.09(11) |
+| $\int dx\, \tilde{f}_{1T}^{\perp(1)} = -2\int dx\, \widetilde{A}^{[x]\text{Re}}_{12B}$ | 0.302(53) | 0.302(53) | 0.151(27) | 0.151(27) |
+| $m_N \frac{\int dx\, \tilde{f}_{1T}^{\perp(1)}}{\int dx\, \tilde{f}_1^{(0)}}$ | 0.217(38) | 0.217(38) | 0.387(89) | 0.150(26) |
+
+[3] Reconstructing Infinite-Momentum Amplitudes and Sivers Shift...
+Evaluating x slices:   0%|          | 0/200 [00:00<?, ?it/s]Evaluating x slices:   4%|▍         | 9/200 [00:00<00:02, 82.28it/s]Evaluating x slices:   9%|▉         | 18/200 [00:00<00:02, 82.60it/s]Evaluating x slices:  14%|█▎        | 27/200 [00:00<00:02, 82.73it/s]Evaluating x slices:  18%|█▊        | 36/200 [00:00<00:01, 82.55it/s]Evaluating x slices:  22%|██▎       | 45/200 [00:00<00:01, 78.66it/s]Evaluating x slices:  26%|██▋       | 53/200 [00:00<00:01, 76.59it/s]Evaluating x slices:  30%|███       | 61/200 [00:00<00:01, 75.23it/s]Evaluating x slices:  34%|███▍      | 69/200 [00:00<00:01, 74.90it/s]Evaluating x slices:  38%|███▊      | 77/200 [00:01<00:01, 73.36it/s]Evaluating x slices:  42%|████▎     | 85/200 [00:01<00:01, 73.70it/s]Evaluating x slices:  46%|████▋     | 93/200 [00:01<00:01, 75.03it/s]Evaluating x slices:  51%|█████     | 102/200 [00:01<00:01, 78.10it/s]Evaluating x slices:  56%|█████▌    | 111/200 [00:01<00:01, 80.00it/s]Evaluating x slices:  60%|██████    | 120/200 [00:01<00:01, 79.01it/s]Evaluating x slices:  64%|██████▍   | 128/200 [00:01<00:00, 77.93it/s]Evaluating x slices:  68%|██████▊   | 136/200 [00:01<00:00, 77.07it/s]Evaluating x slices:  72%|███████▏  | 144/200 [00:01<00:00, 75.53it/s]Evaluating x slices:  76%|███████▌  | 152/200 [00:01<00:00, 76.56it/s]Evaluating x slices:  80%|████████  | 160/200 [00:02<00:00, 72.45it/s]Evaluating x slices:  84%|████████▍ | 169/200 [00:02<00:00, 75.36it/s]Evaluating x slices:  89%|████████▉ | 178/200 [00:02<00:00, 77.63it/s]Evaluating x slices:  94%|█████████▎| 187/200 [00:02<00:00, 79.22it/s]Evaluating x slices:  98%|█████████▊| 196/200 [00:02<00:00, 80.21it/s]Evaluating x slices: 100%|██████████| 200/200 [00:02<00:00, 77.68it/s]
+SIVERS peak <k_y> = 0.21457 GeV at x = 0.0452; at x=0.5: 0.00571; x<k_y> peak = 0.02001 at x = 0.1457
+[4] Generating Final Plots...
+
+Evaluating Fourier transforms and applying Jackknife for 3D Plotting...
+Evaluating over b^2 grid:   0%|          | 0/40 [00:00<?, ?it/s]Evaluating over b^2 grid:   2%|▎         | 1/40 [00:01<00:49,  1.27s/it]Evaluating over b^2 grid:   5%|▌         | 2/40 [00:02<00:47,  1.25s/it]Evaluating over b^2 grid:   8%|▊         | 3/40 [00:03<00:46,  1.24s/it]Evaluating over b^2 grid:  10%|█         | 4/40 [00:05<00:45,  1.26s/it]Evaluating over b^2 grid:  12%|█▎        | 5/40 [00:06<00:43,  1.24s/it]Evaluating over b^2 grid:  15%|█▌        | 6/40 [00:07<00:42,  1.24s/it]Evaluating over b^2 grid:  18%|█▊        | 7/40 [00:08<00:40,  1.23s/it]Evaluating over b^2 grid:  20%|██        | 8/40 [00:09<00:39,  1.22s/it]Evaluating over b^2 grid:  22%|██▎       | 9/40 [00:11<00:38,  1.24s/it]Evaluating over b^2 grid:  25%|██▌       | 10/40 [00:12<00:37,  1.25s/it]Evaluating over b^2 grid:  28%|██▊       | 11/40 [00:13<00:38,  1.33s/it]Evaluating over b^2 grid:  30%|███       | 12/40 [00:15<00:36,  1.32s/it]Evaluating over b^2 grid:  32%|███▎      | 13/40 [00:16<00:35,  1.31s/it]Evaluating over b^2 grid:  35%|███▌      | 14/40 [00:17<00:33,  1.28s/it]Evaluating over b^2 grid:  38%|███▊      | 15/40 [00:18<00:31,  1.27s/it]Evaluating over b^2 grid:  40%|████      | 16/40 [00:20<00:30,  1.26s/it]Evaluating over b^2 grid:  42%|████▎     | 17/40 [00:21<00:28,  1.25s/it]Evaluating over b^2 grid:  45%|████▌     | 18/40 [00:22<00:28,  1.28s/it]Evaluating over b^2 grid:  48%|████▊     | 19/40 [00:24<00:26,  1.27s/it]Evaluating over b^2 grid:  50%|█████     | 20/40 [00:25<00:25,  1.26s/it]Evaluating over b^2 grid:  52%|█████▎    | 21/40 [00:26<00:23,  1.24s/it]Evaluating over b^2 grid:  55%|█████▌    | 22/40 [00:27<00:22,  1.24s/it]Evaluating over b^2 grid:  57%|█████▊    | 23/40 [00:28<00:20,  1.23s/it]Evaluating over b^2 grid:  60%|██████    | 24/40 [00:30<00:19,  1.22s/it]Evaluating over b^2 grid:  62%|██████▎   | 25/40 [00:31<00:18,  1.24s/it]Evaluating over b^2 grid:  65%|██████▌   | 26/40 [00:32<00:17,  1.23s/it]Evaluating over b^2 grid:  68%|██████▊   | 27/40 [00:33<00:15,  1.22s/it]Evaluating over b^2 grid:  70%|███████   | 28/40 [00:35<00:14,  1.22s/it]Evaluating over b^2 grid:  72%|███████▎  | 29/40 [00:36<00:13,  1.21s/it]Evaluating over b^2 grid:  75%|███████▌  | 30/40 [00:37<00:12,  1.20s/it]Evaluating over b^2 grid:  78%|███████▊  | 31/40 [00:38<00:10,  1.19s/it]Evaluating over b^2 grid:  80%|████████  | 32/40 [00:39<00:09,  1.19s/it]Evaluating over b^2 grid:  82%|████████▎ | 33/40 [00:40<00:08,  1.19s/it]Evaluating over b^2 grid:  85%|████████▌ | 34/40 [00:42<00:07,  1.19s/it]Evaluating over b^2 grid:  88%|████████▊ | 35/40 [00:43<00:05,  1.18s/it]Evaluating over b^2 grid:  90%|█████████ | 36/40 [00:44<00:04,  1.18s/it]Evaluating over b^2 grid:  92%|█████████▎| 37/40 [00:45<00:03,  1.20s/it]Evaluating over b^2 grid:  95%|█████████▌| 38/40 [00:46<00:02,  1.21s/it]Evaluating over b^2 grid:  98%|█████████▊| 39/40 [00:48<00:01,  1.21s/it]Evaluating over b^2 grid: 100%|██████████| 40/40 [00:49<00:00,  1.20s/it]Evaluating over b^2 grid: 100%|██████████| 40/40 [00:49<00:00,  1.23s/it]
+
+[5] Generating 2D Overlay Plot for all momenta + Extrapolated at fixed b^2 = 9.0...
+/opt/homebrew/anaconda3/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

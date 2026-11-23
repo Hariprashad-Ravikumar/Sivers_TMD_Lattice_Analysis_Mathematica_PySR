@@ -1,0 +1,17 @@
+=== PL=2: Gaussian fits at eta=8, all b (66 pts) ===
+ReA2B: gamma,alpha,beta=[0.36934812 0.36500494 0.45940188]  alpha-beta=-0.0944(0.0038) chi2/dof=87.5
+ReA12B: gamma,alpha,beta=[-0.05832411  0.22035742  0.27726027]  alpha-beta=-0.0569(0.0215) chi2/dof=2.7
+=== PL=2: short-distance, eta=9, relative change across P.b at fixed b^2 ===
+b^2=5: x=[-4.0, -2.0, 2.0, 4.0]  A=[0.03878 0.02758 0.02758 0.03878]  max/min-1=0.406
+b^2=20: x=[-8.0, -4.0, 4.0, 8.0]  A=[0.0028  0.00307 0.00307 0.0028 ]  max/min-1=0.095
+b^2=45: x=[-12.0, -6.0, 6.0, 12.0]  A=[0.00045 0.00042 0.00042 0.00045]  max/min-1=0.062
+  b^2=5: |P.b| extremes vs smallest: A(|x|=4)=0.03897(0.00077) vs A(|x|=2)=0.02724(0.00084)
+  b^2=20: |P.b| extremes vs smallest: A(|x|=8)=0.00283(0.00056) vs A(|x|=4)=0.00359(0.00055)
+  b^2=45: |P.b| extremes vs smallest: A(|x|=12)=0.00054(0.00056) vs A(|x|=6)=0.00000(0.00047)
+C=11: chi2/dof(npar not subtracted)=2.51, N=225
+C=13: chi2/dof(npar not subtracted)=1.59, N=225
+C=15: chi2/dof(npar not subtracted)=1.36, N=225
+C=17: chi2/dof(npar not subtracted)=1.24, N=225
+Gaussian: params=[0.08228601 0.07607737 0.57102693], chi2/dof=2.03
+Lorentzian: params=[0.139637   0.04129687 3.4770358  0.56959611], chi2/dof=1.42
+Delta chi2 (Gaussian - Lorentzian, one extra parameter) = 137.7

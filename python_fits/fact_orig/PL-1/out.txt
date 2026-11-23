@@ -1,0 +1,178 @@
+
+===== second row: b^2 = 18 / 20 =====
+
+ReA2B  (PL=-1, eta=8)
+  available (P.b: b^2): {2: [20], 3: [18, 45], 4: [17, 20, 32], 5: [50], 6: [45], 8: [68]}
+  R vs b^2  x= 18  +1.0860 +- 0.0372  interp  denom S/N=31.4
+  R vs b^2  x= 20  +0.9491 +- 0.0318  interp  denom S/N=31.5
+  R vs b^2  x= 32  +0.6446 +- 0.0376  interp  denom S/N=26.6
+  S vs P.b  x=  3  +1.0612 +- 0.0023  interp  denom S/N=31.5
+  S vs P.b  x=  4  +1.2141 +- 0.0239  interp  denom S/N=24.8
+
+ImA2B  (PL=-1, eta=8)
+  available (P.b: b^2): {2: [20], 3: [18, 45], 4: [17, 20, 32], 5: [50], 6: [45], 8: [68]}
+  R vs b^2  x= 18  +1.2448 +- 0.1512  interp  denom S/N=8.6
+  R vs b^2  x= 20  +1.1308 +- 0.1271  interp  denom S/N=8.7
+  R vs b^2  x= 32  +0.9217 +- 0.1402  interp  denom S/N=7.4
+  S vs P.b  x=  3  +1.0548 +- 0.0088  interp  denom S/N=8.7
+  S vs P.b  x=  4  +1.1610 +- 0.0723  interp  denom S/N=8.4
+
+ReA12B  (PL=-1, eta=8)
+  available (P.b: b^2): {2: [20], 3: [18, 45], 4: [17, 20, 32], 5: [50], 6: [45], 8: [68]}
+  R vs b^2  x= 18  +1.5403 +- 0.4999  interp  denom S/N=4.0
+  R vs b^2  x= 20  +1.3498 +- 0.3258  interp  denom S/N=4.1
+  R vs b^2  x= 32  +0.8763 +- 0.2446  interp  denom S/N=4.1
+  S vs P.b  x=  3  +1.0679 +- 0.0080  interp  denom S/N=4.1
+  S vs P.b  x=  4  +1.2186 +- 0.2352  interp  denom S/N=3.7
+
+Saved: Factorization_ratios_b2_18_20_eta8_PL-1.pdf
+
+===== second row: b^2 = 20 / 32 =====
+
+ReA2B  (PL=-1, eta=8)
+  available (P.b: b^2): {2: [20], 3: [18, 45], 4: [17, 20, 32], 5: [50], 6: [45], 8: [68]}
+  R vs b^2  x= 18  +1.0860 +- 0.0372  interp  denom S/N=31.4
+  R vs b^2  x= 20  +0.9491 +- 0.0318  interp  denom S/N=31.5
+  R vs b^2  x= 32  +0.6446 +- 0.0376  interp  denom S/N=26.6
+  S vs P.b  x=  3  +1.5796 +- 0.0338  interp  denom S/N=26.6
+  S vs P.b  x=  4  +2.3258 +- 0.1584  data    denom S/N=14.0
+
+ImA2B  (PL=-1, eta=8)
+  available (P.b: b^2): {2: [20], 3: [18, 45], 4: [17, 20, 32], 5: [50], 6: [45], 8: [68]}
+  R vs b^2  x= 18  +1.2448 +- 0.1512  interp  denom S/N=8.6
+  R vs b^2  x= 20  +1.1308 +- 0.1271  interp  denom S/N=8.7
+  R vs b^2  x= 32  +0.9217 +- 0.1402  interp  denom S/N=7.4
+  S vs P.b  x=  3  +1.4893 +- 0.1179  interp  denom S/N=7.4
+  S vs P.b  x=  4  +1.8272 +- 0.3325  data    denom S/N=5.6
+
+ReA12B  (PL=-1, eta=8)
+  available (P.b: b^2): {2: [20], 3: [18, 45], 4: [17, 20, 32], 5: [50], 6: [45], 8: [68]}
+  R vs b^2  x= 18  +1.5403 +- 0.4999  interp  denom S/N=4.0
+  R vs b^2  x= 20  +1.3498 +- 0.3258  interp  denom S/N=4.1
+  R vs b^2  x= 32  +0.8763 +- 0.2446  interp  denom S/N=4.1
+  S vs P.b  x=  3  +1.6878 +- 0.1360  interp  denom S/N=4.1
+  S vs P.b  x=  4  +2.5999 +- 0.8884  data    denom S/N=2.9
+
+Saved: Factorization_ratios_b2_20_32_eta8_PL-1.pdf
+
+===== common b^2 grid [18, 20, 25, 32] =====
+
+ReA2B  (PL=-1, eta=8)
+  F(P.b=0, b^2)/F(P.b=4, b^2): b2=18: +1.0000(0.0517)  b2=20: +1.0666(0.0622)  b2=25: +0.9149(0.0716)  b2=32: +1.1354(0.1304)
+  F(P.b=3, b^2)/F(P.b=4, b^2): b2=18: +0.9208(0.0316)  b2=20: +1.0536(0.0352)  b2=25: +1.1706(0.0341)  b2=32: +1.5513(0.0905)
+  F(P.b, b^2=20)/F(P.b, b^2=18): P.b=0: +0.8784(0.0069)  P.b=3: +0.9424(0.0020)  P.b=4: +0.8236(0.0162)
+  F(P.b, b^2=25)/F(P.b, b^2=18): P.b=0: +0.5745(0.0243)  P.b=3: +0.7983(0.0070)  P.b=4: +0.6280(0.0157)
+  F(P.b, b^2=32)/F(P.b, b^2=18): P.b=0: +0.4021(0.0279)  P.b=3: +0.5966(0.0140)  P.b=4: +0.3541(0.0249)
+
+ImA2B  (PL=-1, eta=8)
+  F(P.b=3, b^2)/F(P.b=4, b^2): b2=18: +0.8034(0.0978)  b2=20: +0.8843(0.0993)  b2=25: +0.9407(0.0882)  b2=32: +1.0849(0.1652)
+  F(P.b, b^2=20)/F(P.b, b^2=18): P.b=3: +0.9481(0.0079)  P.b=4: +0.8613(0.0536)
+  F(P.b, b^2=25)/F(P.b, b^2=18): P.b=3: +0.8183(0.0278)  P.b=4: +0.6988(0.0549)
+  F(P.b, b^2=32)/F(P.b, b^2=18): P.b=3: +0.6366(0.0555)  P.b=4: +0.4714(0.0892)
+
+ReA12B  (PL=-1, eta=8)
+  F(P.b=0, b^2)/F(P.b=4, b^2): b2=18: +0.6630(0.2651)  b2=20: +0.7401(0.2585)  b2=25: +0.7673(0.2855)  b2=32: +1.4308(0.6154)
+  F(P.b=3, b^2)/F(P.b=4, b^2): b2=18: +0.6492(0.2115)  b2=20: +0.7409(0.1792)  b2=25: +0.8271(0.1710)  b2=32: +1.1412(0.3225)
+  F(P.b, b^2=20)/F(P.b, b^2=18): P.b=0: +0.9161(0.0333)  P.b=3: +0.9364(0.0070)  P.b=4: +0.8206(0.1590)
+  F(P.b, b^2=25)/F(P.b, b^2=18): P.b=0: +0.7062(0.1164)  P.b=3: +0.7774(0.0244)  P.b=4: +0.6102(0.1309)
+  F(P.b, b^2=32)/F(P.b, b^2=18): P.b=0: +0.6812(0.1347)  P.b=3: +0.5548(0.0489)  P.b=4: +0.3156(0.1297)
+
+Saved: Factorization_ratios_Pb034_eta8_PL-1.pdf
+
+===== matched test (P.b=0 interpolated at P.b=3,4 data b^2) =====
+
+ReA2B  (PL=-1, eta=8)   mean(stat)(sys)
+  F(P.b=0, b^2)/F(P.b=3, b^2): b2=18: +1.0860(0.0515)(0.0651)  b2=45: +1.0721(0.2049)(0.0481)
+  F(P.b=0, b^2)/F(P.b=4, b^2): b2=17: +0.9748(0.0500)(0.0337)  b2=20: +1.0666(0.0622)(0.0919)  b2=32: +1.1354(0.1304)(0.0821)
+  F(P.b, 18)/F(P.b, 45): P.b=0: +4.5626(0.6603)(0.0723)  P.b=3: +4.5046(0.5476)(0.0000)
+  F(P.b, 17)/F(P.b, 20): P.b=0: +1.2076(0.0135)(0.0682)  P.b=4: +1.3212(0.0358)(0.0000)
+  F(P.b, 20)/F(P.b, 32): P.b=0: +2.1847(0.1377)(0.0327)  P.b=4: +2.3258(0.1584)(0.0000)
+
+ReA12B  (PL=-1, eta=8)   mean(stat)(sys)
+  F(P.b=0, b^2)/F(P.b=3, b^2): b2=18: +1.0212(0.3159)(0.0326)  b2=45: +2.8464(1.9181)(0.3235)
+  F(P.b=0, b^2)/F(P.b=4, b^2): b2=17: +0.6339(0.2798)(0.0118)  b2=20: +0.7401(0.2585)(0.0332)  b2=32: +1.4308(0.6154)(0.0039)
+  F(P.b, 18)/F(P.b, 45): P.b=0: +2.5369(0.8255)(0.2338)  P.b=3: +7.0713(4.7077)(0.0000)
+  F(P.b, 17)/F(P.b, 20): P.b=0: +1.1374(0.0595)(0.0314)  P.b=4: +1.3280(0.3528)(0.0000)
+  F(P.b, 20)/F(P.b, 32): P.b=0: +1.3449(0.2296)(0.0569)  P.b=4: +2.5999(0.8884)(0.0000)
+
+Saved: Factorization_ratios_matched_eta8_PL-1.pdf
+
+===== common b^2 grid, quadratic for P.b=0,4 / linear for P.b=3 =====
+
+ReA2B  (PL=-1, eta=8)
+  P.b=0 nodes [9, 16, 25, 36, 49]: 18:quad(9, 16, 25)  20:quad(9, 16, 25)  25:data  32:quad(16, 25, 36)
+  P.b=3 nodes [18, 45]: 18:data  20:lin  25:lin  32:lin
+  P.b=4 nodes [17, 20, 32]: 18:quad(17, 20, 32)  20:data  25:quad(17, 20, 32)  32:data
+  F(P.b=0, b^2)/F(P.b=4, b^2): b2=18: +0.9092(0.0525)  b2=20: +0.8987(0.0617)  b2=25: +1.1188(0.1123)  b2=32: +0.9925(0.1280)
+  F(P.b=3, b^2)/F(P.b=4, b^2): b2=18: +0.9269(0.0315)  b2=20: +1.0536(0.0352)  b2=25: +1.4315(0.0863)  b2=32: +1.5513(0.0905)
+  F(P.b, b^2=20)/F(P.b, b^2=18): P.b=0: +0.8195(0.0097)  P.b=3: +0.9424(0.0020)  P.b=4: +0.8290(0.0153)
+  F(P.b, b^2=25)/F(P.b, b^2=18): P.b=0: +0.6361(0.0271)  P.b=3: +0.7983(0.0070)  P.b=4: +0.5169(0.0329)
+  F(P.b, b^2=32)/F(P.b, b^2=18): P.b=0: +0.3891(0.0341)  P.b=3: +0.5966(0.0140)  P.b=4: +0.3565(0.0250)
+
+ImA2B  (PL=-1, eta=8)
+  P.b=3 nodes [18, 45]: 18:data  20:lin  25:lin  32:lin
+  P.b=4 nodes [17, 20, 32]: 18:quad(17, 20, 32)  20:data  25:quad(17, 20, 32)  32:data
+  F(P.b=3, b^2)/F(P.b=4, b^2): b2=18: +0.8073(0.0974)  b2=20: +0.8843(0.0993)  b2=25: +1.0727(0.1785)  b2=32: +1.0849(0.1652)
+  F(P.b, b^2=20)/F(P.b, b^2=18): P.b=3: +0.9481(0.0079)  P.b=4: +0.8656(0.0505)
+  F(P.b, b^2=25)/F(P.b, b^2=18): P.b=3: +0.8183(0.0278)  P.b=4: +0.6159(0.1098)
+  F(P.b, b^2=32)/F(P.b, b^2=18): P.b=3: +0.6366(0.0555)  P.b=4: +0.4737(0.0895)
+
+ReA12B  (PL=-1, eta=8)
+  P.b=0 nodes [9, 16, 25, 36, 49]: 18:quad(9, 16, 25)  20:quad(9, 16, 25)  25:data  32:quad(16, 25, 36)
+  P.b=3 nodes [18, 45]: 18:data  20:lin  25:lin  32:lin
+  P.b=4 nodes [17, 20, 32]: 18:quad(17, 20, 32)  20:data  25:quad(17, 20, 32)  32:data
+  F(P.b=0, b^2)/F(P.b=4, b^2): b2=18: +0.5508(0.2401)  b2=20: +0.5387(0.2332)  b2=25: +0.9382(0.5495)  b2=32: +1.3179(0.5982)
+  F(P.b=3, b^2)/F(P.b=4, b^2): b2=18: +0.6534(0.2081)  b2=20: +0.7409(0.1792)  b2=25: +1.0114(0.4861)  b2=32: +1.1412(0.3225)
+  F(P.b, b^2=20)/F(P.b, b^2=18): P.b=0: +0.8077(0.0552)  P.b=3: +0.9364(0.0070)  P.b=4: +0.8258(0.1503)
+  F(P.b, b^2=25)/F(P.b, b^2=18): P.b=0: +0.8555(0.1604)  P.b=3: +0.7774(0.0244)  P.b=4: +0.5023(0.3224)
+  F(P.b, b^2=32)/F(P.b, b^2=18): P.b=0: +0.7601(0.2042)  P.b=3: +0.5548(0.0489)  P.b=4: +0.3177(0.1288)
+
+Saved: Factorization_ratios_Pb034_quadratic_eta8_PL-1.pdf
+
+===== lin vs quad: points where quadratic differs =====
+  ReA2B  top    curve=0 x=18: lin 1.0000(0.0517)  quad 0.9092(0.0525)  DIFF
+  ReA2B  top    curve=0 x=20: lin 1.0666(0.0622)  quad 0.8987(0.0617)  DIFF
+  ReA2B  top    curve=0 x=25: lin 0.9149(0.0716)  quad 1.1188(0.1123)  DIFF
+  ReA2B  top    curve=0 x=32: lin 1.1354(0.1304)  quad 0.9925(0.1280)  DIFF
+  ReA2B  top    curve=3 x=18: lin 0.9208(0.0316)  quad 0.9269(0.0315)  DIFF
+  ReA2B  top    curve=3 x=20: lin 1.0536(0.0352)  quad 1.0536(0.0352)  same
+  ReA2B  top    curve=3 x=25: lin 1.1706(0.0341)  quad 1.4315(0.0863)  DIFF
+  ReA2B  top    curve=3 x=32: lin 1.5513(0.0905)  quad 1.5513(0.0905)  same
+  ReA2B  bottom curve=20 x=0: lin 0.8784(0.0069)  quad 0.8195(0.0097)  DIFF
+  ReA2B  bottom curve=20 x=3: lin 0.9424(0.0020)  quad 0.9424(0.0020)  same
+  ReA2B  bottom curve=20 x=4: lin 0.8236(0.0162)  quad 0.8290(0.0153)  DIFF
+  ReA2B  bottom curve=25 x=0: lin 0.5745(0.0243)  quad 0.6361(0.0271)  DIFF
+  ReA2B  bottom curve=25 x=3: lin 0.7983(0.0070)  quad 0.7983(0.0070)  same
+  ReA2B  bottom curve=25 x=4: lin 0.6280(0.0157)  quad 0.5169(0.0329)  DIFF
+  ReA2B  bottom curve=32 x=0: lin 0.4021(0.0279)  quad 0.3891(0.0341)  DIFF
+  ReA2B  bottom curve=32 x=3: lin 0.5966(0.0140)  quad 0.5966(0.0140)  same
+  ReA2B  bottom curve=32 x=4: lin 0.3541(0.0249)  quad 0.3565(0.0250)  DIFF
+  ImA2B  top    curve=3 x=18: lin 0.8034(0.0978)  quad 0.8073(0.0974)  DIFF
+  ImA2B  top    curve=3 x=20: lin 0.8843(0.0993)  quad 0.8843(0.0993)  same
+  ImA2B  top    curve=3 x=25: lin 0.9407(0.0882)  quad 1.0727(0.1785)  DIFF
+  ImA2B  top    curve=3 x=32: lin 1.0849(0.1652)  quad 1.0849(0.1652)  same
+  ImA2B  bottom curve=20 x=3: lin 0.9481(0.0079)  quad 0.9481(0.0079)  same
+  ImA2B  bottom curve=20 x=4: lin 0.8613(0.0536)  quad 0.8656(0.0505)  DIFF
+  ImA2B  bottom curve=25 x=3: lin 0.8183(0.0278)  quad 0.8183(0.0278)  same
+  ImA2B  bottom curve=25 x=4: lin 0.6988(0.0549)  quad 0.6159(0.1098)  DIFF
+  ImA2B  bottom curve=32 x=3: lin 0.6366(0.0555)  quad 0.6366(0.0555)  same
+  ImA2B  bottom curve=32 x=4: lin 0.4714(0.0892)  quad 0.4737(0.0895)  DIFF
+  ReA12B top    curve=0 x=18: lin 0.6630(0.2651)  quad 0.5508(0.2401)  DIFF
+  ReA12B top    curve=0 x=20: lin 0.7401(0.2585)  quad 0.5387(0.2332)  DIFF
+  ReA12B top    curve=0 x=25: lin 0.7673(0.2855)  quad 0.9382(0.5495)  DIFF
+  ReA12B top    curve=0 x=32: lin 1.4308(0.6154)  quad 1.3179(0.5982)  DIFF
+  ReA12B top    curve=3 x=18: lin 0.6492(0.2115)  quad 0.6534(0.2081)  DIFF
+  ReA12B top    curve=3 x=20: lin 0.7409(0.1792)  quad 0.7409(0.1792)  same
+  ReA12B top    curve=3 x=25: lin 0.8271(0.1710)  quad 1.0114(0.4861)  DIFF
+  ReA12B top    curve=3 x=32: lin 1.1412(0.3225)  quad 1.1412(0.3225)  same
+  ReA12B bottom curve=20 x=0: lin 0.9161(0.0333)  quad 0.8077(0.0552)  DIFF
+  ReA12B bottom curve=20 x=3: lin 0.9364(0.0070)  quad 0.9364(0.0070)  same
+  ReA12B bottom curve=20 x=4: lin 0.8206(0.1590)  quad 0.8258(0.1503)  DIFF
+  ReA12B bottom curve=25 x=0: lin 0.7062(0.1164)  quad 0.8555(0.1604)  DIFF
+  ReA12B bottom curve=25 x=3: lin 0.7774(0.0244)  quad 0.7774(0.0244)  same
+  ReA12B bottom curve=25 x=4: lin 0.6102(0.1309)  quad 0.5023(0.3224)  DIFF
+  ReA12B bottom curve=32 x=0: lin 0.6812(0.1347)  quad 0.7601(0.2042)  DIFF
+  ReA12B bottom curve=32 x=3: lin 0.5548(0.0489)  quad 0.5548(0.0489)  same
+  ReA12B bottom curve=32 x=4: lin 0.3156(0.1297)  quad 0.3177(0.1288)  DIFF
+
+Saved: Factorization_ratios_Pb034_lin_vs_quad_eta8_PL-1.pdf

@@ -1,0 +1,52 @@
+[slices] PL=-2, fixed from 'seq': {"ReA2B": {"a": 2.4747513304777944, "f": 0.4841202403323247, "j": 2.5165803788062324, "sign": 1, "odd": false}, "ReA12B": {"a": 0.7661094436383397, "f": 0.49546391261493883, "j": 2.4086524773627236, "sign": -1, "odd": false}, "ImA2B": {"a": 0.4371610114915659, "f": 0.6035120490759103, "j": 2.365184821501333, "sign": 1, "odd": true}}
+  ReA2B  eta= 6 c=-0.003949(0.002) d=0.06452(0.0013) chi2/dof=1.215 dof=43 noconv=0 [11s]
+  ReA2B  eta= 7 c=0.001308(0.0034) d=0.06602(0.0019) chi2/dof=1.334 dof=43 noconv=0 [12s]
+  ReA2B  eta= 8 c=0.008332(0.0056) d=0.06376(0.0026) chi2/dof=1.516 dof=43 noconv=0 [12s]
+  ReA2B  eta= 9 c=0.01722(0.0099) d=0.06729(0.004) chi2/dof=0.951 dof=43 noconv=0 [12s]
+  ReA12B eta= 6 c=0.003376(0.012) d=0.07656(0.0054) chi2/dof=0.831 dof=44 noconv=0 [10s]
+  ReA2B  eta=10 c=0.02967(0.016) d=0.06462(0.0055) chi2/dof=0.741 dof=43 noconv=0 [10s]
+  ReA12B eta= 7 c=0.01962(0.018) d=0.07793(0.0071) chi2/dof=0.922 dof=44 noconv=0 [11s]
+  ReA12B eta= 8 c=0.02187(0.024) d=0.07617(0.0091) chi2/dof=0.845 dof=44 noconv=0 [12s]
+  ImA2B  eta= 6 c=-0.0008523(0.0045) d=0.04288(0.0037) chi2/dof=0.874 dof=33 noconv=0 [8s]
+  ImA2B  eta= 7 c=-0.001884(0.0076) d=0.04456(0.0062) chi2/dof=0.456 dof=33 noconv=0 [8s]
+  ReA12B eta= 9 c=0.0341(0.041) d=0.07857(0.013) chi2/dof=0.627 dof=44 noconv=0 [12s]
+  ReA12B eta=10 c=0.01142(0.058) d=0.07781(0.016) chi2/dof=0.608 dof=44 noconv=0 [11s]
+  ImA2B  eta= 8 c=-0.0007011(0.012) d=0.04467(0.0092) chi2/dof=0.327 dof=33 noconv=0 [8s]
+  ImA2B  eta= 9 c=-0.01863(0.022) d=0.05982(0.019) chi2/dof=0.583 dof=33 noconv=0 [8s]
+  ImA2B  eta=10 c=0.005968(0.026) d=0.04315(0.019) chi2/dof=0.543 dof=33 noconv=0 [10s]
+  ReA2B  c: slope = 0.00544(0.0019)  [2.79 sigma]  chi2/dof = 0.294 (dof 3)  y0 = 0.007052(0.0052)
+  ReA2B  d: slope = 0.0005793(0.00089)  [0.65 sigma]  chi2/dof = 4.338 (dof 3)  y0 = 0.06488(0.0025)
+  ReA12B c: slope = 0.00977(0.0087)  [1.12 sigma]  chi2/dof = 0.532 (dof 3)  y0 = 0.02157(0.023)
+  ReA12B d: slope = 0.0004435(0.0029)  [0.15 sigma]  chi2/dof = 0.201 (dof 3)  y0 = 0.07703(0.0087)
+  ImA2B  c: slope = 0.0009826(0.0041)  [0.24 sigma]  chi2/dof = 0.827 (dof 3)  y0 = 0.002066(0.011)
+  ImA2B  d: slope = -0.0005776(0.0029)  [-0.20 sigma]  chi2/dof = 0.745 (dof 3)  y0 = 0.04027(0.0078)
+  P0: c=-0.0065886  chi2=8.693 dof=4
+  P1: c=0.030503 k1=6.8013  chi2=2.178 dof=3
+  P2: c=0.13713 k1=11.482 k2=-31.866  chi2=0.409 dof=2
+  P3: c=0.42174 k1=18.074 k2=-111.1 k3=233.96  chi2=0.034 dof=1
+  P4: c=0.071657 k1=3.5323  chi2=1.527 dof=3
+  P5: c=-0.020056 k1=-0.048053 k2=0.15118 nu=-0.28001  chi2=0.006 dof=1
+  W1: c=0.23002 k1=-3.8461 k2=5.552  chi2=0.322 dof=2
+  W2: c=0.41523 k1=-5.4267 k2=-4.6879  chi2=0.277 dof=2
+  W3: c=0.79747 k1=0.4914 k2=-1.2618  chi2=0.232 dof=2
+  W4: c=0.59522 k1=-0.89055 k2=0.19453  chi2=0.201 dof=2
+'created' timestamp seems very low; regarding as unix timestamp
+'modified' timestamp seems very low; regarding as unix timestamp
+'created' timestamp seems very low; regarding as unix timestamp
+'modified' timestamp seems very low; regarding as unix timestamp
+'created' timestamp seems very low; regarding as unix timestamp
+'modified' timestamp seems very low; regarding as unix timestamp
+'created' timestamp seems very low; regarding as unix timestamp
+'modified' timestamp seems very low; regarding as unix timestamp
+[plots] /Users/hariprashadravikumar/Lattice_QCD_TMD_PhD/sivers_TMD_PhD_project/python_fits/paper_out/PL2/c_d_vs_eta_PL2.pdf
+[plots] c_eff P0: -0.0066 -0.0066 -0.0066 -0.0066 -0.0066
+[plots] c_eff P1: -0.0041 0.0009 0.0046 0.0075 0.0098
+[plots] c_eff P2: -0.0039 0.0014 0.0086 0.0161 0.0234
+[plots] c_eff P3: -0.0039 0.0014 0.0083 0.0179 0.0294
+[plots] c_eff P4: -0.0039 0.0013 0.0059 0.0099 0.0134
+[plots] c_eff P5: -0.0039 0.0013 0.0083 0.0175 0.0297
+[plots] c_eff W1: -0.0039 0.0014 0.0087 0.0165 0.0244
+[plots] c_eff W2: -0.0039 0.0014 0.0087 0.0167 0.0250
+[plots] c_eff W3: -0.0039 0.0014 0.0087 0.0169 0.0256
+[plots] c_eff W4: -0.0039 0.0014 0.0087 0.0171 0.0261
+DONE

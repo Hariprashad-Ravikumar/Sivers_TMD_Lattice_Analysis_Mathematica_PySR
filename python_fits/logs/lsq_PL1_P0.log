@@ -1,0 +1,16 @@
+
+[P0] c const  mode=prior  dof=225  samples=2903 (failed 0)  chi2/dof = 2.806(0.212)   Mathematica chi2/dof 24.778   [296s]
+  par        Mathematica       lsqfit prior   (lsq-M)/errM
+  a          2.19(0.16  )       2.527(0.069  )      2.11
+  c        0.0218(0.0044)   -0.005511(0.0011 )     -6.21
+  d        0.0218(0.0044)     0.07242(0.0031 )     11.50
+  f        0.5382(0.0088)       0.471(0.004  )     -7.63
+  j          2.62(0.33  )       2.104(0.048  )     -1.56
+
+[P0] c const  mode=free  dof=220  samples=2903 (failed 0)  chi2/dof = 2.495(0.212)   Mathematica chi2/dof 24.778   [372s]
+  par        Mathematica        lsqfit free   (lsq-M)/errM
+  a          2.19(0.16  )       3.003(0.17   )      5.08
+  c        0.0218(0.0044)    -0.01188(0.0024 )     -7.65
+  d        0.0218(0.0044)      0.1131(0.012  )     20.75
+  f        0.5382(0.0088)      0.4693(0.0044 )     -7.83
+  j          2.62(0.33  )       1.771(0.064  )     -2.57

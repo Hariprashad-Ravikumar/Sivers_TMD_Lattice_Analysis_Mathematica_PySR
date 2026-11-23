@@ -1,0 +1,24 @@
+[1] Loading and Scaling Parameters...
+[2] Extrapolating Parameters to 1/zeta_hat -> 0...
+
+Extrapolated parameter means (for the factorization-degeneracy check):
+        j_re = 2.0667(69)
+        j_im = 0.9921(92)
+    j_reA12B = 2.0026(40)
+        d_re = 0.139(12)
+        d_im = 0.183(14)
+    d_reA12B = 0.105(18)
+  Factorization in (x, b_T) requires j_re ~ j_im ~ j_reA12B and
+  d_re ~ d_im ~ d_reA12B; compare the values above.
+Self-check 1 PASSED: eval_obs_jk reproduces Extrapolation_para_level.ipynb's siv curve at b^2=9.0.
+Self-check 2 PASSED: R_b(x; b_ref, b_ref) = 1 exactly, with zero jackknife error.
+RB b2=16: value at x->0 0.7439, peak 0.8484 at x=0.094, value at x=1 0.2322
+RB b2=25: value at x->0 0.5308, peak 0.6917 at x=0.094, value at x=1 0.0442
+RB b2=36: value at x->0 0.3763, peak 0.5535 at x=0.091, value at x=1 0.0074
+RB b2=49: value at x->0 0.2699, peak 0.4404 at x=0.091, value at x=1 0.0011
+RX x=0.2: min 2.3840 max 5.9298 max/min 2.487
+RX x=0.4: min 0.1488 max 0.3915 max/min 2.631
+RX x=0.6: min 0.0031 max 0.0559 max/min 17.917
+RX x=0.8: min 0.0001 max 0.0078 max/min 119.439
+REF b2_ref=9 -> |b_T| = 0.34 fm ; x_ref=0.3
+FINISHED rc=0

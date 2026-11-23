@@ -1,0 +1,7 @@
+ft_xdep rc 0
+ft_xdep_3d rc 0
+zeta_slices rc 0
+fact_shift rc 0
+fact_ratios rc 0
+extrap rc TIMEOUT
+DONE
