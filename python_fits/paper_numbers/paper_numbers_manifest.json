@@ -1050,13 +1050,6 @@
   "src": "paper_fits.py tables == paper table, 121 cells"
  },
  {
-  "file": "tables/table_c_eta_forms_PL2.tex",
-  "literal": "(all cells)",
-  "value": null,
-  "err": null,
-  "src": "paper_fits.py tables == paper table, 77 cells"
- },
- {
   "file": "main.tex",
   "literal": "197.32698",
   "value": null,
@@ -2028,20 +2021,6 @@
   "value": 2.365184821501333,
   "err": null,
   "src": "fit_ImA2B_c0.npz"
- },
- {
-  "file": "sections/analysis_fitting.tex",
-  "literal": "$\\chi^2/\\text{dof}=2.17$",
-  "value": 2.1731579853122276,
-  "err": null,
-  "src": "paper_fits.py cfits seq: constant c, chi2/dof"
- },
- {
-  "file": "sections/analysis_fitting.tex",
-  "literal": "while all $\\eta$-dependent forms do",
-  "value": null,
-  "err": null,
-  "src": "max chi2 of the eta-dependent forms = 2.18 [condition OK]"
  },
  {
   "file": "sections/analysis_extrapolation.tex",

@@ -163,10 +163,6 @@ def group_eta():
     add(FIT, "$a=2.47$", ra["a"], None, "fit_P2.npz"); add(FIT, "$f=0.484$", ra["f"], None, "fit_P2.npz"); add(FIT, "$j=2.52$", ra["j"], None, "fit_P2.npz")
     add(FIT, "$a=0.77$", rb["a"], None, "fit_ReA12B_c0.npz"); add(FIT, "$f=0.50$", rb["f"], None, "fit_ReA12B_c0.npz"); add(FIT, "$j=2.41$", rb["j"], None, "fit_ReA12B_c0.npz")
     add(FIT, "$a=0.44$", rc["a"], None, "fit_ImA2B_c0.npz"); add(FIT, "$f=0.60$", rc["f"], None, "fit_ImA2B_c0.npz"); add(FIT, "$j=2.37$", rc["j"], None, "fit_ImA2B_c0.npz")
-    # c(eta) forms fitted to the slice c values
-    cj = json.load(open(f"{od}/cfits_seq.json"))["forms"]
-    add(FIT, "$\\chi^2/\\text{dof}=2.17$", cj["P0"]["chi2"] / cj["P0"]["dof"], None, "paper_fits.py cfits seq: constant c, chi2/dof")
-    add_bool(FIT, "while all $\\eta$-dependent forms do", all(v["chi2"] < 2.5 for k, v in cj.items() if k != "P0"), f"max chi2 of the eta-dependent forms = {max(v['chi2'] for k, v in cj.items() if k != 'P0'):.2f}")
     # table of the forms (cell by cell against the generated table is done in group_generated_tables)
 
 

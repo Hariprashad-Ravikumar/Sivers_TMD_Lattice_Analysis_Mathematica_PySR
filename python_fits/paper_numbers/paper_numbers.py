@@ -184,7 +184,7 @@ def group_generated_tables():
     r = subprocess.run(["/opt/homebrew/anaconda3/bin/python", f"{PF}/paper_fits.py", "tables", "--pl", "2", "--fixed", "seq"], capture_output=True, text=True, env=env)
     if r.returncode != 0:
         FAIL.append("paper_fits.py tables failed: " + r.stderr[-300:])
-    for name in ("table_gauss_family_PL2.tex", "table_powerlaw_family_PL2.tex", "table_c_eta_forms_PL2.tex"):
+    for name in ("table_gauss_family_PL2.tex", "table_powerlaw_family_PL2.tex"):
         a = open(f"{PF}/paper_out/PL2/{name}").read()
         b = open(f"{PAPER}/tables/{name}").read()
         ca, cb = [c for r_ in tex_cells(a) for c in r_], [c for r_ in tex_cells(b) for c in r_]

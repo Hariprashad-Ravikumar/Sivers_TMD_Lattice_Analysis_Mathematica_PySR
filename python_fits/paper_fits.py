@@ -684,21 +684,6 @@ def cmd_tables(a):
     L += [r"\end{tabular}", r"\end{ruledtabular}", r"\end{table*}"]
     open(f"{od}/table_powerlaw_family_{tag}.tex", "w").write("\n".join(L) + "\n")
     # (the per-eta slice table and the slopes table are no longer in the paper; slopes and chi2/dof are quoted in the text and shown in the figure)
-    fcj = f"{od}/cfits_{a.fixed}.json"
-    if os.path.exists(fcj):
-        cf = json.load(open(fcj))["forms"]
-        def g3(v):
-            return f"{v:.3g}".replace("e-0", "e-").replace("e+0", "e+")
-        L = [r"\begin{table*}",
-             rf"\caption{{Forms $c(\eta)=c\,g(\eta)$ fitted to the five values of $c$ from the fits of individual $\eta$ slices of $\tAmp_{{2B}}^{{\text{{Re}}}}$ at ${pls}$ (dashed curves in Fig.~\ref{{fig:c_d_eta_PL2}}). The $\chi^2/\mathrm{{dof}}$ is the correlated value with the jackknife covariance of the five $c$ across $\eta$.}}",
-             r"\label{tab:c_eta_forms_PL2}", r"\scriptsize", r"\begin{ruledtabular}", r"\begin{tabular}{l@{\hspace{3pt}}c@{\hspace{3pt}}c@{\hspace{3pt}}c@{\hspace{3pt}}c@{\hspace{3pt}}c@{\hspace{3pt}}c}",
-             r"$c(\eta)$ & $c$ & $k_1$ & $k_2$ & $k_3$ & $\nu$ & $\chi^2/\mathrm{dof}$ \\", r"\hline"]
-        for key in PFORMS:
-            f_ = cf[key]; P = dict(zip(f_["names"], f_["params"]))
-            cells = [f"${g3(P[k])}$" if k in P else "" for k in ("c", "k1", "k2", "k3", "nu")]
-            L.append(f"${POWER_TEX[key]}$ & " + " & ".join(cells) + f" & ${f_['chi2'] / f_['dof']:.2f}$ \\\\")
-        L += [r"\end{tabular}", r"\end{ruledtabular}", r"\end{table*}"]
-        open(f"{od}/table_c_eta_forms_{tag}.tex", "w").write("\n".join(L) + "\n")
     print(f"[tables] written to {od}", flush=True)
 
 
@@ -803,22 +788,11 @@ def cmd_panels(a):
             band = np.sqrt(np.maximum(var, 0))
             ax.fill_between(xx, line - band, line + band, color=ps.OKABE["vermillion"], alpha=0.2, lw=0)
             ax.plot(xx, line, color=ps.OKABE["vermillion"], lw=1.5, zorder=2)
-            if amp == "ReA2B" and par == "c":
-                for k, key in enumerate(pkeys):
-                    ax.plot(xx, power_c_eff(od, key, xx, a.fixed), color=cols[k], ls=styles[k % 4], lw=1.0, zorder=1)
             ax.errorbar(eta, y, ye, fmt="o", color="k", ms=4, capsize=2, lw=1.0, zorder=4)
             ax.set_xlabel(r"$\eta|\vec v|/a$"); ax.set_ylabel(f"${par}$ of {tit}", fontsize=9); ax.set_xticks([6, 7, 8, 9, 10]); ax.margins(y=0.3)
-            if amp == "ReA2B" and par == "c":
-                lo, hi = float((y - ye).min()), float((y + ye).max()); pad = 0.25 * (hi - lo); ax.set_ylim(lo - pad, hi + pad)
             ax.text(0.04, 0.96, rf"$s={fmt_err(r['slope'], r['slope_err'])}$" + "\n" + rf"$\chi^2/\mathrm{{dof}}={r['chi2dof']:.2f}$", transform=ax.transAxes, va="top", fontsize=8,
                     bbox=dict(fc="w", ec="none", alpha=0.85, pad=1.5))
             ps.save(fig, f"{out}/cd_{amp}_{par}.pdf")
-    # legend-only panel for the model curves
-    fig, ax = ps.new_panel(); ax.set_position([0.0, 0.0, 1.0, 1.0]); ax.axis("off")
-    hs = [Line2D([0], [0], color="k", marker="o", ls="", ms=4, label="slice fits"), Line2D([0], [0], color=ps.OKABE["vermillion"], lw=1.5, label=r"straight line $y_0+s(\eta-8)$")]
-    hs += [Line2D([0], [0], color=cols[k], ls=styles[k % 4], lw=1.0, label=f"${POWER_TEX[key]}$") for k, key in enumerate(pkeys)]
-    ax.legend(handles=hs, loc="center", fontsize=8, frameon=False, labelspacing=0.5, handlelength=2.0, ncol=2, columnspacing=1.0)
-    ps.save(fig, f"{out}/cd_legend.pdf")
     print("[panels] written to", out)
 
 
