@@ -74,14 +74,68 @@ def model_fn(key):
 ALLKEYS = [fam + g for fam in FAMS for g in GFORMS]
 
 
-def starts(key, nstart=24, seed=1):
+def starts(key, nstart=80, seed=1):
+    """many starts: the base point, log-normal scatter around it, and wide log-uniform draws of c and j (the power-law
+    longitudinal models have a nearly flat valley in (c, j, k))"""
     names = model_names(key)
     base = INIT[key[:2]]
     rng = np.random.default_rng(seed)
     out = [np.array([base[k] for k in names], float)]
-    for _ in range(nstart - 1):
-        out.append(np.array([base[k] * np.exp(rng.normal(0, 0.6)) * (1 if rng.random() < 0.8 else -1) for k in names], float))
+    for i in range(nstart - 1):
+        v = []
+        for k in names:
+            x = base[k] * np.exp(rng.normal(0, 0.6)) * (1 if rng.random() < 0.8 else -1)
+            if i % 2 and k == "c" and key[:2] == "PE":
+                x = 10 ** rng.uniform(-3, 2)
+            if i % 2 and k == "j":
+                x = 10 ** rng.uniform(-2, 0.7)
+            v.append(x)
+        out.append(np.array(v, float))
+    if key[:2] == "PE":      # deterministic grid over the flat (c, j, k) valley of the power-law longitudinal models
+        kset = [(6.0, -10.0, -50.0), (12.0, -37.0, 0.0), (21.0, -145.0, 335.0), (3.0, 0.0, 0.0)]
+        for c0 in (0.1, 1.0, 5.0, 20.0, 60.0):
+            for j0 in (0.01, 0.03, 0.1, 0.3, 1.0):
+                for ks in kset:
+                    v, ik = [], 0
+                    for k in names:
+                        if k in ("k1", "k2", "k3"):
+                            v.append(ks[int(k[1]) - 1])
+                        else:
+                            v.append({"c": c0, "j": j0}.get(k, base[k]))
+                    out.append(np.array(v, float))
     return out
+
+
+def polish(fn_vec, y0, W, best, rounds=25, seed=7):
+    """basin-hopping style refinement of the full-data optimum: perturb the best point and re-minimise, keep the lowest chi^2"""
+    from scipy.optimize import least_squares
+    rng = np.random.default_rng(seed)
+    cur = best
+    for r in range(rounds):
+        scale = 0.02 if r % 2 == 0 else 0.15
+        p0 = cur.x * (1 + scale * rng.normal(size=cur.x.size))
+        def res(p):
+            f = fn_vec(p)
+            return W @ (y0 - f) if np.all(np.isfinite(f)) else np.full(len(y0), 1e6)
+        try:
+            t = least_squares(res, p0, method="lm", xtol=1e-14, ftol=1e-14, gtol=1e-14, max_nfev=20000)
+        except Exception:
+            continue
+        if np.all(np.isfinite(t.x)) and t.cost < cur.cost:
+            cur = t
+    return cur
+
+
+def lsq_fit_tight(fcn, y, cov, p0):
+    """PF.lsq_fit with the same options (svdcut, no priors, private gvar store) and a tighter lsqfit convergence tolerance, so a flat valley is followed to its bottom"""
+    import gvar as gv, lsqfit
+    gv.switch_gvar()
+    try:
+        yg = gv.gvar(y, cov)
+        fit = lsqfit.nonlinear_fit(data=(None, yg), fcn=fcn, p0=p0, svdcut=PF.SVDCUT, tol=1e-12, maxit=20000, debug=False)
+        return dict(pmean={k: float(v) for k, v in fit.pmean.items()}, chi2=float(fit.chi2), dof=int(fit.dof), stop=getattr(fit, "stopping_criterion", 1))
+    finally:
+        gv.restore_gvar()
 
 
 def fit_samples(key, pl, nsamp=None):
@@ -97,12 +151,13 @@ def fit_samples(key, pl, nsamp=None):
     best = PF.best_start(fn_vec, S[:, 0], W, starts(key))
     if best is None:
         return dict(key=key, ok=False, reason="no start converged")
+    best = polish(fn_vec, S[:, 0], W, best)
     cur = {k: float(v) for k, v in zip(names, best.x)}
     Ns = S.shape[1] if nsamp is None else nsamp
     P, chi, dofs, failed, noconv = [], [], [], [], []
     for i in range(Ns):
         try:
-            fit = PF.lsq_fit(fcn, S[:, i], cov, cur)
+            fit = lsq_fit_tight(fcn, S[:, i], cov, cur)
             if not np.all(np.isfinite(list(fit["pmean"].values()))) or not np.isfinite(fit["chi2"]):
                 raise FloatingPointError("non-finite fit")
             P.append([fit["pmean"][k] for k in names]); chi.append(fit["chi2"] / fit["dof"]); dofs.append(fit["dof"])
