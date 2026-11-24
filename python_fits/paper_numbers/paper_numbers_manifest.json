@@ -1040,14 +1040,14 @@
   "literal": "(all cells)",
   "value": null,
   "err": null,
-  "src": "paper_fits.py tables == paper table, 45 lines"
+  "src": "paper_fits.py tables == paper table, 187 cells"
  },
  {
   "file": "tables/table_powerlaw_family_PL2.tex",
   "literal": "(all cells)",
   "value": null,
   "err": null,
-  "src": "paper_fits.py tables == paper table, 31 lines"
+  "src": "paper_fits.py tables == paper table, 121 cells"
  },
  {
   "file": "main.tex",

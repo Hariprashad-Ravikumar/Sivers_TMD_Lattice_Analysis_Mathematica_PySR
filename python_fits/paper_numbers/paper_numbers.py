@@ -187,10 +187,10 @@ def group_generated_tables():
     for name in ("table_gauss_family_PL2.tex", "table_powerlaw_family_PL2.tex"):
         a = open(f"{PF}/paper_out/PL2/{name}").read()
         b = open(f"{PAPER}/tables/{name}").read()
-        ca, cb = [ln.strip() for ln in a.splitlines()], [ln.strip() for ln in b.splitlines()]
+        ca, cb = [c for r_ in tex_cells(a) for c in r_], [c for r_ in tex_cells(b) for c in r_]
         if ca != cb:
-            FAIL.append(f"table {name}: content differs from the paper_fits.py output")
-        CLAIMS.append(dict(file=f"tables/{name}", literal="(all cells)", value=None, err=None, src=f"paper_fits.py tables == paper table, {len(cb)} lines"))
+            FAIL.append(f"table {name}: cell content differs from the paper_fits.py output")
+        CLAIMS.append(dict(file=f"tables/{name}", literal="(all cells)", value=None, err=None, src=f"paper_fits.py tables == paper table, {len(cb)} cells"))
 
 
 def run_check(files_cache={}):
