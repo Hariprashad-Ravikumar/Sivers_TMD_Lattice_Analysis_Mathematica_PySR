@@ -637,50 +637,37 @@ def cmd_tables(a):
     foot_slice = (r"The $\chi^2/\mathrm{dof}$ is the correlated value with the jackknife covariance matrix of the rows in the slice (no correlations between different $\eta$), "
                   r"from \texttt{lsqfit} (singular-value cut $10^{-12}$), given as the jackknife mean (error) over the 2903 jackknife columns (including the central value); "
                   r"$\mathrm{dof}$ is the number of rows minus 2 and counts the duplicated ($b_L\to-b_L$) rows. The rows with $b_L=0$ of $\tAmp_{2B}^{\text{Im}}$, which vanish identically, are removed.")
-    # Gaussian
-    L = []
-    cols = GAUSS_ORDER
-    L.append(r"\begin{table*}")
-    L.append(rf"\caption{{Fits of $\tAmp_{{2B}}^{{\text{{Re}}}}(b_L,b_T,\eta)$ at ${pls}$ ($|\vect b|\ge3a$, $6\le\eta\le10$) to $a\,e^{{-f\eta}}\exp[-c(\eta)(b_LP_L)^2-d(\eta)(b_L^2+b_T^2)]$ for different $c(\eta)$ and $d(\eta)$. Here $c$ multiplies $(b_LP_L)^2$, so it differs from the $c$ of the other tables by $P_L^2$. {foot}}}")
-    L.append(rf"\label{{tab:gauss_family_{tag}}}")
-    L.append(r"\scriptsize")
-    L.append(r"\begin{ruledtabular}")
-    L.append(r"\begin{tabular}{l@{\hspace{3pt}}l" + r"@{\hspace{3pt}}c" * (len(cols) + 1) + "}")
-    L.append(r"$c(\eta)$ & $d(\eta)$ & " + " & ".join(f"${PNAME[c]}$" for c in cols) + r" & $\chi^2/\mathrm{dof}$ \\")
-    L.append(r"\hline")
+    A = r"\tAmp_{2B}^{\text{Re}}"
+
+    def vals(z, cols, mark=""):
+        nm = list(z["names"])
+        parts = [f"{PNAME[c]}={fmt_err(z['pmean'][nm.index(c)], z['perr'][nm.index(c)])}" for c in cols if c in nm]
+        parts.append(r"\chi^2/\mathrm{dof}=" + fmt_err(float(z["chi2"]), float(z["chi2err"])))
+        if len(parts) > 8:   # keep every line inside the page width
+            return r",\;".join(parts[:5]) + r",$ \\" + "\n$" + r",\;".join(parts[5:])
+        return r",\;".join(parts)
+
+    # Gaussian: each model is one equation line and one line with the fitted values
+    L = [r"\begin{table*}",
+         rf"\caption{{Fits of ${A}(b_L,b_T,\eta)$ at ${pls}$ ($|\vect b|\ge3a$, $6\le\eta\le10$) to Gaussian models with different $\eta$ dependences of the widths. The parameter $c$ multiplies $(b_LP_L)^2$, so it differs from the $c$ of Table~\ref{{tab:powerlaw_family_{tag}}} by $P_L^2$. {foot}}}",
+         rf"\label{{tab:gauss_family_{tag}}}", r"\scriptsize", r"\begin{ruledtabular}", r"\begin{tabular}{l}"]
     for cf in CFORMS:
         for df in DFORMS:
-            key = f"G{cf[1]}{df[1]}"
-            z = _load_fit(od, key)
-            desc = f"${GAUSS_C_TEX[cf]}$ & ${GAUSS_D_TEX[df]}$"
-            if z is None:
-                L.append(desc + " & " + " & ".join("---" for _ in cols) + r" & not run \\")
-                continue
-            nm = list(z["names"])
-            cells = [(f"${fmt_err(z['pmean'][nm.index(c)], z['perr'][nm.index(c)])}$" if c in nm else "") for c in cols]
-            L.append(desc + " & " + " & ".join(cells) + f" & ${fmt_err(float(z['chi2']), float(z['chi2err']))}$ \\\\")
+            z = _load_fit(od, f"G{cf[1]}{df[1]}")
+            eq = rf"{A}=a\,e^{{-f\eta}}\exp\left[-{GAUSS_C_TEX[cf]}(b_LP_L)^2-{GAUSS_D_TEX[df]}(b_L^2+b_T^2)\right]"
+            L.append(f"${eq}$ \\\\")
+            L.append((f"${vals(z, GAUSS_ORDER)}$" if z is not None else "not run") + r" \\[4pt]")
     L += [r"\end{tabular}", r"\end{ruledtabular}", r"\end{table*}"]
     open(f"{od}/table_gauss_family_{tag}.tex", "w").write("\n".join(L) + "\n")
-    # power law
-    L = []
-    cols = POWER_ORDER
-    L.append(r"\begin{table*}")
-    L.append(rf"\caption{{Fits of $\tAmp_{{2B}}^{{\text{{Re}}}}$ at ${pls}$ ($|\vect b|\ge3a$, $6\le\eta\le10$) to $a\,e^{{-f\eta}}\{{1+[d+c\,g(\eta)]b_L^2+d\,b_T^2\}}^{{-j}}$ for different $c(\eta)=c\,g(\eta)$. {foot}}}")
-    L.append(rf"\label{{tab:powerlaw_family_{tag}}}")
-    L.append(r"\scriptsize")
-    L.append(r"\begin{ruledtabular}")
-    L.append(r"\begin{tabular}{l" + r"@{\hspace{3pt}}c" * (len(cols) + 1) + "}")
-    L.append(r"$c(\eta)$ & " + " & ".join(f"${PNAME[c]}$" for c in cols) + r" & $\chi^2/\mathrm{dof}$ \\")
-    L.append(r"\hline")
+    # power law (Lorentzian-type): a e^{-f eta} / {...}^j
+    L = [r"\begin{table*}",
+         rf"\caption{{Fits of ${A}(b_L,b_T,\eta)$ at ${pls}$ ($|\vect b|\ge3a$, $6\le\eta\le10$) to power-law models with different $\eta$ dependences of the coefficient of $b_L^2$. {foot}}}",
+         rf"\label{{tab:powerlaw_family_{tag}}}", r"\scriptsize", r"\begin{ruledtabular}", r"\begin{tabular}{l}"]
     for key in PFORMS:
         z = _load_fit(od, key)
-        desc = f"${POWER_TEX[key]}$"
-        if z is None:
-            L.append(desc + " & " + " & ".join("---" for _ in cols) + r" & not run \\")
-            continue
-        nm = list(z["names"])
-        cells = [(f"${fmt_err(z['pmean'][nm.index(c)], z['perr'][nm.index(c)])}$" if c in nm else "") for c in cols]
-        L.append(desc + " & " + " & ".join(cells) + f" & ${fmt_err(float(z['chi2']), float(z['chi2err']))}$ \\\\")
+        eq = rf"{A}=\dfrac{{a\,e^{{-f\eta}}}}{{\left\{{1+\left[d+{POWER_TEX[key]}\right]b_L^2+d\,b_T^2\right\}}^{{j}}}}"
+        L.append(f"${eq}$ \\\\")
+        L.append((f"${vals(z, POWER_ORDER)}$" if z is not None else "not run") + r" \\[4pt]")
     L += [r"\end{tabular}", r"\end{ruledtabular}", r"\end{table*}"]
     open(f"{od}/table_powerlaw_family_{tag}.tex", "w").write("\n".join(L) + "\n")
     # (the per-eta slice table and the slopes table are no longer in the paper; slopes and chi2/dof are quoted in the text and shown in the figure)
