@@ -1050,6 +1050,27 @@
   "src": "paper_fits.py tables == paper table, 121 cells"
  },
  {
+  "file": "tables/table_sep_EE_PL2.tex",
+  "literal": "(all cells)",
+  "value": null,
+  "err": null,
+  "src": "paper_fits.py tables == paper table, 54 cells"
+ },
+ {
+  "file": "tables/table_sep_PE_PL2.tex",
+  "literal": "(all cells)",
+  "value": null,
+  "err": null,
+  "src": "paper_fits.py tables == paper table, 60 cells"
+ },
+ {
+  "file": "tables/table_sep_EP_PL2.tex",
+  "literal": "(all cells)",
+  "value": null,
+  "err": null,
+  "src": "paper_fits.py tables == paper table, 60 cells"
+ },
+ {
   "file": "main.tex",
   "literal": "197.32698",
   "value": null,
